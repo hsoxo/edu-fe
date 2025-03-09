@@ -32,6 +32,7 @@ export interface Course {
   teacher_id: number;
   program: Program;
   teacher: Teacher;
+  comment: string;
   schedule: Schedule[];
   created_at: string;
   updated_at: string;
@@ -42,12 +43,16 @@ export interface Course {
 export interface CreateCourseDto {
   program_id: number;
   teacher_id: number;
+  comment: string;
   schedule: Schedule[];
 }
 
 // 更新课程的参数类型
-export interface UpdateCourseDto extends Partial<CreateCourseDto> {
+export interface UpdateCourseDto {
   id: number;
+  program_id: number;
+  teacher_id: number;
+  comment: string;
 }
 
 // 查询键常量

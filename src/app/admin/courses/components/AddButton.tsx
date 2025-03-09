@@ -50,6 +50,7 @@ const AddButton = () => {
   const [form, setForm] = useState<CreateCourseForm>({
     program_id: 0,
     teacher_id: 0,
+    comment: "",
     schedule: [
       {
         date: at9amOfToday,
@@ -78,6 +79,7 @@ const AddButton = () => {
     setForm({
       program_id: 0,
       teacher_id: 0,
+      comment: "",
       schedule: [],
     });
   };
@@ -88,6 +90,7 @@ const AddButton = () => {
       setForm({
         program_id: 0,
         teacher_id: 0,
+        comment: "",
         schedule: [],
       });
     }

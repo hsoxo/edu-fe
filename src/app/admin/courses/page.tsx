@@ -21,6 +21,7 @@ import {
 import AddButton from "./components/AddButton";
 import dayjs from "dayjs";
 import Link from "next/link";
+import EditDialog from "./components/EditDialog";
 
 export default function CoursePage() {
   const { data: courses } = useGetCourses();
@@ -43,6 +44,13 @@ export default function CoursePage() {
         <h1 className="text-2xl font-bold">Courses</h1>
         <AddButton />
       </div>
+
+      {editingCourse && (
+        <EditDialog
+          initialData={editingCourse}
+          onClose={() => setEditingCourse(null)}
+        />
+      )}
 
       <Dialog open={deleteDialogOpen} onOpenChange={setDeleteDialogOpen}>
         <DialogContent>
@@ -72,6 +80,7 @@ export default function CoursePage() {
             <TableRow>
               <TableHead>Program</TableHead>
               <TableHead>Teacher</TableHead>
+              <TableHead>Comments</TableHead>
               <TableHead className="w-80">Schedule</TableHead>
               <TableHead className="text-right w-36">Actions</TableHead>
             </TableRow>
@@ -81,6 +90,7 @@ export default function CoursePage() {
               <TableRow key={course.id}>
                 <TableCell>{course.program.name}</TableCell>
                 <TableCell>{course.teacher.name}</TableCell>
+                <TableCell>{course.comment}</TableCell>
                 <TableCell>
                   {course.lessons.map((lesson) => (
                     <div key={lesson.id} className="font-mono">
