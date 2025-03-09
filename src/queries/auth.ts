@@ -20,7 +20,10 @@ export function useAuth() {
 
   const loginMutation = useMutation({
     mutationFn: (data: { email: string; password: string }) =>
-      post("/api/admin-auth/login", data),
+      post<{ email: string; password: string }, { accessToken: string }>(
+        "/api/admin-auth/login",
+        data
+      ),
     onSuccess: (user) => {
       queryClient.setQueryData(["user"], user);
     },
@@ -28,7 +31,8 @@ export function useAuth() {
 
   const handleLogin = useCallback(
     async (email: string, password: string) => {
-      await loginMutation.mutateAsync({ email, password });
+      const user = await loginMutation.mutateAsync({ email, password });
+      localStorage.setItem("token", user.accessToken);
       router.push("/admin");
     },
     [loginMutation, router]
