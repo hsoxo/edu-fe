@@ -47,7 +47,7 @@ export default function Home() {
       {/* Banner */}
       <section className="relative h-[600px] flex items-center">
         <Image
-          src="/education-banner.jpg"
+          src="/images/home-banner.jpg"
           alt="International Education"
           fill
           priority
