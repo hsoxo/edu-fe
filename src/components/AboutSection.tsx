@@ -1,12 +1,13 @@
 import React from "react";
 import { Users, Star, Trophy } from "lucide-react";
+import Image from "next/image";
 
 const AboutSection: React.FC = () => {
   return (
     <section className="bg-gradient-to-br from-white to-[#fff5f5] py-16">
       <div className="max-w-[1120px] mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
         {/* Left: Text content */}
-        <div>
+        <div className="pt-6">
           <h2 className="text-2xl md:text-3xl font-bold mb-4 text-rose-600">
             About VanLearn Education
           </h2>
@@ -60,11 +61,37 @@ const AboutSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Right: Decorative cards (can be replaced with images) */}
-        <div className="grid grid-cols-2 gap-4">
-          <div className="col-span-2 h-64 bg-white rounded-lg shadow-sm"></div>
-          <div className="h-40 bg-white rounded-lg shadow-sm"></div>
-          <div className="h-40 bg-white rounded-lg shadow-sm"></div>
+        {/* Right: Staggered Images with Spacing */}
+        <div className="grid grid-cols-2 gap-6 relative -mt-8">
+          {/* 上方大图 */}
+          <div className="col-span-2 relative w-full h-[280px] rounded-xl overflow-hidden shadow-lg">
+            <Image
+              src="/classroom1.jpg"
+              alt="classroom"
+              fill
+              className="object-cover"
+            />
+          </div>
+
+          {/* 左下小图（轻微右移） */}
+          <div className="relative w-full h-[200px] rounded-xl overflow-hidden shadow-md transform translate-x-1 translate-y-3 transition duration-500 hover:scale-105 hover:shadow-xl">
+            <Image
+              src="/students1.jpg"
+              alt="student"
+              fill
+              className="object-cover"
+            />
+          </div>
+
+          {/* 右下小图（轻微左移） */}
+          <div className="relative w-full h-[200px] rounded-xl overflow-hidden shadow-md transform translate-x-1 translate-y-12 transition duration-500 hover:scale-105 hover:shadow-xl">
+            <Image
+              src="/classroom2.jpg"
+              alt="classroom"
+              fill
+              className="object-cover"
+            />
+          </div>
         </div>
       </div>
     </section>

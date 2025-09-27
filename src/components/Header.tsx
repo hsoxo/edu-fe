@@ -23,7 +23,7 @@ const Header = () => {
             </Link>
           </div>
           <div className="hidden md:flex items-center text-gray-600">
-            <Link
+            {/* <Link
               href="/course-overview"
               className="font-semibold px-4 py-2 rounded hover:text-rose-600 hover:bg-rose-100 transition-colors"
             >
@@ -34,7 +34,7 @@ const Header = () => {
               className="font-semibold px-4 py-2 rounded hover:text-rose-600 hover:bg-rose-100 transition-colors"
             >
               After School Services
-            </Link>
+            </Link> */}
             <div className="pr-4">
               <Link
                 href="/about-us"
