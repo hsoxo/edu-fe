@@ -1,22 +1,18 @@
-import AboutSection from "@/components/AboutSection";
-import CoursesSection from "@/components/CourseSection";
 import FooterSection from "@/components/FooterSection";
 import Header from "@/components/Header";
-import HeroSection from "@/components/HeroSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
+import IntroSection from "./IntroSection";
+import DetailedCourses from "./DetailedCourses";
+import FeaturesSection from "./FeaturesSection";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       <Header />
 
-      <HeroSection />
-
-      <CoursesSection />
-
-      <AboutSection />
-
-      <TestimonialsSection />
+      {/* Banner */}
+      <IntroSection />
+      <DetailedCourses />
+      <FeaturesSection />
 
       <FooterSection />
       <div className="border-t border-white/20 py-4">

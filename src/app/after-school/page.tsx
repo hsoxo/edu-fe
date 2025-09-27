@@ -3,7 +3,6 @@ import CoursesSection from "@/components/CourseSection";
 import FooterSection from "@/components/FooterSection";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
 
 export default function Home() {
   return (
@@ -16,12 +15,10 @@ export default function Home() {
 
       <AboutSection />
 
-      <TestimonialsSection />
-
       <FooterSection />
       <div className="border-t border-white/20 py-4">
         <div className="max-w-[1120px] mx-auto px-6 text-center text-sm text-black/80">
-          © {new Date().getFullYear()} VanLearn International. All rights reserved.
+          © {new Date().getFullYear()} Wenxue International. All rights reserved.
         </div>
       </div>
     </div>
