@@ -76,7 +76,7 @@ const FooterSection: React.FC = () => {
             onSubmit={handleSubmit}
             className="bg-white text-gray-800 rounded-lg shadow p-6 space-y-4"
           >
-            <h2 className="text-lg font-semibold text-gray-900">预约试听 / Book trial</h2>
+            <h2 className="text-lg font-semibold text-gray-900">Book trial</h2>
 
             {/* 姓名 */}
             <div>
