@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 const features = [
   {
@@ -57,7 +58,7 @@ const FeaturesSection: React.FC = () => {
             >
               {/* Image */}
               <div className="h-40 w-full">
-                <img
+                <Image
                   src={feature.image}
                   alt={feature.title}
                   className="h-full w-full object-cover"

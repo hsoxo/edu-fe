@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { BookOpen, Music, GraduationCap, Clock } from "lucide-react";
 
 const pillars = [
@@ -49,7 +50,7 @@ const IntroSection: React.FC = () => {
 
           {/* Right image */}
           <div>
-            <img
+            <Image
               src="/classroom.jpg"
               alt="Classroom"
               className="w-full rounded-lg shadow-lg"

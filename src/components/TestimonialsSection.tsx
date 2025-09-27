@@ -50,7 +50,7 @@ const TestimonialsSection: React.FC = () => {
                   <User className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-gray-700 italic mb-2">"{t.quote}"</p>
+                  <p className="text-gray-700 italic mb-2">&quot;{t.quote}&quot;</p>
                   <p className="text-sm text-gray-500">{t.author}</p>
                 </div>
               </div>

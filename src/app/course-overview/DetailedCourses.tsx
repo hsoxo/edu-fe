@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 const courses = [
   {
@@ -38,7 +39,7 @@ const DetailedCourses: React.FC = () => {
         >
           {/* Image */}
           <div className={`${idx % 2 === 1 ? "lg:order-2" : ""}`}>
-            <img
+            <Image
               src={course.image}
               alt={course.title}
               className="w-full h-[360px] rounded-xl shadow-lg object-cover"
