@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { GraduationCap, Phone, Mail, MapPin, Clock } from "lucide-react";
+import Image from "next/image";
 
 const FooterSection: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -30,7 +31,7 @@ const FooterSection: React.FC = () => {
         <div className="flex justify-center flex-col">
           <div className="flex items-center space-x-3 mb-4">
             <GraduationCap className="w-8 h-8 text-white" />
-            <h3 className="text-xl font-semibold">VanLearn International</h3>
+            <h3 className="text-xl font-semibold">VanLearn International Education</h3>
           </div>
           <p className="text-white/90 text-sm mb-6 leading-relaxed">
             Empowering students through comprehensive academic excellence and
@@ -38,22 +39,32 @@ const FooterSection: React.FC = () => {
             here.
           </p>
 
-          <div className="space-y-3 text-sm">
-            <div className="flex items-center space-x-3">
-              <Phone className="w-5 h-5 text-white" />
-              <span>+1 (604) 123-4567</span>
+          <div className="flex flex-col gap-2 items-left">
+            <div className="space-y-3 text-sm">
+              <div className="flex items-center space-x-3">
+                <Phone className="w-5 h-5 text-white" />
+                <span>+1 (236) 989-1968</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Mail className="w-5 h-5 text-white" />
+                <span>vanlearnedu@gmail.com</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <MapPin className="w-5 h-5 text-white" />
+                <span>20378 88 Ave Unit 200, Langley</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Clock className="w-5 h-5 text-white" />
+                <span>Mon-Fri: 3PM-7PM | Sat: 9AM-7PM | Sun: Closed</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Image src="/rednote.png" alt="Logo" width={40} height={20} />
+                <span>温学国际教育 26866778516</span>
+              </div>
             </div>
-            <div className="flex items-center space-x-3">
-              <Mail className="w-5 h-5 text-white" />
-              <span>vanlearn@gmail.com</span>
-            </div>
-            <div className="flex items-center space-x-3">
-              <MapPin className="w-5 h-5 text-white" />
-              <span>Vancouver, BC, Canada</span>
-            </div>
-            <div className="flex items-center space-x-3">
-              <Clock className="w-5 h-5 text-white" />
-              <span>Mon-Fri: 9AM-9PM | Sat-Sun: 10AM-6PM</span>
+            <div className="pt-8 flex gap-12">
+              <Image src="/wechat.jpg" alt="Logo" width={120} height={120} />
+              <Image src="/whatsapp.jpg" alt="Logo" width={120} height={120} />
             </div>
           </div>
         </div>

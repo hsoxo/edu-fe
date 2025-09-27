@@ -29,7 +29,7 @@ const HeroSection: React.FC = () => {
           <div className="text-white">
             {/* 标题 */}
             <h1 className="text-4xl md:text-5xl font-bold text-red-500 mb-4">
-              VanLearn International
+              VanLearn Education
             </h1>
 
             {/* 副标题 */}
@@ -59,7 +59,7 @@ const HeroSection: React.FC = () => {
                 Contact Us
               </a>
               <a
-                href="#courses"
+                href="/course-overview"
                 className="border border-rose-500 text-rose-400 hover:bg-rose-600 hover:text-white px-6 py-3 rounded-lg font-semibold transition"
               >
                 View Courses
@@ -71,7 +71,7 @@ const HeroSection: React.FC = () => {
           <div className="grid gap-6 sm:grid-cols-3 text-center lg:text-left">
             <div className="p-6 bg-white/10 rounded-xl shadow-lg backdrop-blur-sm hover:scale-105 transform transition flex flex-col items-center">
               <p className="inline-block pr-2 text-4xl md:text-5xl font-extrabold mb-2 bg-gradient-to-r from-red-400 to-rose-300 bg-clip-text text-transparent">
-                <Counter target={500} suffix="+" />
+                <Counter target={2000} suffix="+" />
               </p>
               <p className="text-white/90 text-base">Students</p>
             </div>
@@ -83,7 +83,7 @@ const HeroSection: React.FC = () => {
             </div>
             <div className="p-6 bg-white/10 rounded-xl shadow-lg backdrop-blur-sm hover:scale-105 transform transition flex flex-col items-center">
               <p className="inline-block pr-2 text-4xl md:text-5xl font-extrabold mb-2 bg-gradient-to-r from-red-400 to-rose-300 bg-clip-text text-transparent">
-                <Counter target={98} suffix="%" />
+                <Counter target={99} suffix="%" />
               </p>
               <p className="text-white/90 text-base">Satisfaction</p>
             </div>

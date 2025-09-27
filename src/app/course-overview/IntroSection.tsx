@@ -51,6 +51,8 @@ const IntroSection: React.FC = () => {
           {/* Right image */}
           <div>
             <Image
+              width={200}
+              height={200}
               src="/classroom.jpg"
               alt="Classroom"
               className="w-full rounded-lg shadow-lg"

@@ -59,6 +59,8 @@ const FeaturesSection: React.FC = () => {
               {/* Image */}
               <div className="h-40 w-full">
                 <Image
+                  width={200}
+              height={200}
                   src={feature.image}
                   alt={feature.title}
                   className="h-full w-full object-cover"

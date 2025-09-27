@@ -40,6 +40,8 @@ const DetailedCourses: React.FC = () => {
           {/* Image */}
           <div className={`${idx % 2 === 1 ? "lg:order-2" : ""}`}>
             <Image
+              width={200}
+              height={200}
               src={course.image}
               alt={course.title}
               className="w-full h-[360px] rounded-xl shadow-lg object-cover"

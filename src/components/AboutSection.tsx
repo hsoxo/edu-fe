@@ -8,7 +8,7 @@ const AboutSection: React.FC = () => {
         {/* Left: Text content */}
         <div>
           <h2 className="text-2xl md:text-3xl font-bold mb-4 text-rose-600">
-            About VanLearn International
+            About VanLearn Education
           </h2>
           <p className="text-gray-700 leading-relaxed mb-8">
             VanLearn International is a professional education institute
@@ -57,22 +57,6 @@ const AboutSection: React.FC = () => {
                 </p>
               </div>
             </div>
-          </div>
-
-          {/* Buttons */}
-          <div className="flex space-x-4">
-            <a
-              href="#more"
-              className="bg-rose-600 hover:bg-rose-700 text-white px-6 py-3 rounded-lg font-semibold shadow transition"
-            >
-              Learn More
-            </a>
-            <a
-              href="#trial"
-              className="border border-rose-600 text-rose-600 hover:bg-rose-600 hover:text-white px-6 py-3 rounded-lg font-semibold transition"
-            >
-              Book a Trial
-            </a>
           </div>
         </div>
 
