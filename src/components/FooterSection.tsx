@@ -8,6 +8,7 @@ const FooterSection: React.FC = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     message: "",
   });
 
@@ -106,6 +107,20 @@ const FooterSection: React.FC = () => {
               />
             </div>
 
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Phone <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="tel"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                required
+                className="w-full border border-gray-300 rounded px-3 py-2 focus:ring-emerald-500 focus:border-emerald-500"
+              />
+            </div>
+
             {/* 留言 */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -131,8 +146,8 @@ const FooterSection: React.FC = () => {
             </div>
           </form>
         </div>
-      </div>
-    </footer>
+      </div >
+    </footer >
   );
 };
 
