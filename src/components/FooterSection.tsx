@@ -75,12 +75,12 @@ const FooterSection: React.FC = () => {
             onSubmit={handleSubmit}
             className="bg-white text-gray-800 rounded-lg shadow p-6 space-y-4"
           >
-            <h2 className="text-lg font-semibold text-gray-900">预约试听</h2>
+            <h2 className="text-lg font-semibold text-gray-900">预约试听 / Book trial</h2>
 
             {/* 姓名 */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
-                姓名 <span className="text-red-500">*</span>
+                Name <span className="text-red-500">*</span>
               </label>
               <input
                 type="text"
@@ -92,10 +92,9 @@ const FooterSection: React.FC = () => {
               />
             </div>
 
-            {/* 邮箱 */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
-                邮箱 <span className="text-red-500">*</span>
+                Email <span className="text-red-500">*</span>
               </label>
               <input
                 type="email"
@@ -110,7 +109,7 @@ const FooterSection: React.FC = () => {
             {/* 留言 */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
-                留言
+                Message
               </label>
               <textarea
                 name="message"
@@ -127,7 +126,7 @@ const FooterSection: React.FC = () => {
                 type="submit"
                 className="w-full bg-rose-600 hover:bg-rose-700 text-white px-6 py-3 rounded-lg font-semibold shadow transition"
               >
-                提交预约
+                Submit
               </button>
             </div>
           </form>
