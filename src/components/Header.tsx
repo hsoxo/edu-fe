@@ -4,21 +4,29 @@ import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 
+const NAV_ITEMS = [
+  { label: "Home", href: "/" },
+  { label: "Courses", href: "/course-overview" },
+  { label: "After-School", href: "/after-school" },
+  { label: "About Us", href: "/about-us" },
+]
+
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
     <header className="bg-white border-b border-gray-100 relative">
-      <div className=" w-full h-10 flex items-center justify-end text-md px-4 bg-slate-100 text-gray-700">
+      <div className=" w-full h-10 flex items-center justify-end text-lg px-4 bg-slate-100 text-gray-700">
         <div className="container mx-auto px-4 flex items-center justify-end h-10">
-          <span className="pr-2 border-r-2 border-gray-300 mr-2 font-medium">
+          <Link className="pr-2 border-r-2 border-gray-300 mr-2 font-bold cursor-pointer"
+            href="/#contact">
             Book a Trial
-          </span>
+          </Link>
           <span className="font-semibold">604-357-8383</span>
         </div>
       </div>
       <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center h-48">
+        <div className="flex justify-between items-center h-40">
           {/* Logo */}
           <div className="flex items-center space-x-4">
             <Image
@@ -38,31 +46,17 @@ const Header = () => {
           </div>
 
           {/* Desktop Nav */}
-          <div className="hidden lg:flex items-center text-gray-600 whitespace-nowrap">
-            <Link
-              href="/course-overview"
-              className="font-semibold px-4 py-2 rounded hover:text-slate-600 hover:bg-slate-100 transition-colors"
-            >
-              Course Overview
-            </Link>
-            <Link
-              href="/after-school"
-              className="font-semibold px-4 py-2 rounded hover:text-slate-600 hover:bg-slate-100 transition-colors"
-            >
-              After School Services
-            </Link>
-            <Link
-              href="/about-us"
-              className="font-semibold px-4 py-2 rounded hover:text-slate-600 hover:bg-slate-100 transition-colors"
-            >
-              About Us
-            </Link>
-            <Link
-              href="#contact"
-              className="ml-2 bg-slate-600 text-white px-6 py-2 rounded-full hover:bg-slate-700 transition-colors"
-            >
-              Book Trial
-            </Link>
+          <div className="hidden lg:flex items-center text-gray-600 whitespace-nowrap text-lg">
+            {NAV_ITEMS.map((item) => (
+              <Link
+                href={item.href}
+                key={item.label}
+                className="font-semibold h-40 px-2 rounded hover:text-slate-600 hover:bg-slate-100 transition-colors flex items-center"
+              >
+                <span>
+                  {item.label}
+                </span>
+              </Link>))}
           </div>
 
           {/* Mobile Right Side (Book Trial + Hamburger) */}

@@ -44,8 +44,8 @@ const CoursesSection: React.FC = () => {
     <section className="py-20 bg-white">
       <div className="max-w-[1120px] mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-extrabold mb-3 text-slate-600">
+        <div className="text-center mb-9">
+          <h2 className="text-3xl md:text-4xl font-extrabold mb-2 text-slate-600">
             Premium Course System
           </h2>
           <p className="text-lg text-gray-600">

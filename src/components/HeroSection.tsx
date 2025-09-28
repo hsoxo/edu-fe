@@ -60,7 +60,7 @@ const HeroSection: React.FC = () => {
               </a>
               <a
                 href="/course-overview"
-                className="border border-slate-500 text-slate-400 hover:bg-slate-600 hover:text-white px-6 py-3 rounded-lg font-semibold transition"
+                className="border border-slate-500 hover:bg-slate-600 hover:text-white px-6 py-3 rounded-lg font-semibold transition"
               >
                 View Courses
               </a>
