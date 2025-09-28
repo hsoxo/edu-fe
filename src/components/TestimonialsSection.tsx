@@ -33,7 +33,7 @@ const reasons = [
 
 const TestimonialsSection: React.FC = () => {
   return (
-    <section className="bg-gradient-to-b from-white to-rose-50 py-20">
+    <section className="bg-gradient-to-b from-white to-slate-50 py-20">
       <div className="max-w-[1120px] mx-auto px-4 grid lg:grid-cols-3 gap-12 items-start">
         {/* Left testimonials */}
         <div className="lg:col-span-2">
@@ -46,7 +46,7 @@ const TestimonialsSection: React.FC = () => {
                 key={i}
                 className="flex items-start space-x-4 p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition"
               >
-                <div className="w-10 h-10 flex items-center justify-center rounded-full bg-rose-100 text-rose-600 flex-shrink-0">
+                <div className="w-10 h-10 flex items-center justify-center rounded-full bg-slate-100 text-slate-600 flex-shrink-0">
                   <User className="w-5 h-5" />
                 </div>
                 <div>
@@ -60,7 +60,7 @@ const TestimonialsSection: React.FC = () => {
 
         {/* Right reasons */}
         <div className="bg-white rounded-lg shadow-md p-8 flex flex-col items-center">
-          <div className="w-14 h-14 flex items-center justify-center rounded-full bg-rose-100 text-rose-600 mb-4">
+          <div className="w-14 h-14 flex items-center justify-center rounded-full bg-slate-100 text-slate-600 mb-4">
             <Star className="w-7 h-7" />
           </div>
           <h3 className="text-xl font-semibold text-gray-800 mb-6">
@@ -69,14 +69,14 @@ const TestimonialsSection: React.FC = () => {
           <ul className="text-gray-700 space-y-3 mb-6">
             {reasons.map((reason, i) => (
               <li key={i} className="flex space-x-2">
-                <span className="text-rose-500">•</span>
+                <span className="text-slate-500">•</span>
                 <span>{reason}</span>
               </li>
             ))}
           </ul>
           <p className="text-gray-600 text-sm leading-relaxed">
             Real families recommend{" "}
-            <span className="font-semibold text-rose-600">VanLearn</span> for
+            <span className="font-semibold text-slate-600">VanLearn</span> for
             steady, measurable improvement in their children’s academic
             performance and confidence.
           </p>

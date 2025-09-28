@@ -8,7 +8,7 @@ const AboutSection: React.FC = () => {
       <div className="max-w-[1120px] mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
         {/* Left: Text content */}
         <div className="pt-6">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-rose-600">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-slate-600">
             About VanLearn Education
           </h2>
           <p className="text-gray-700 leading-relaxed mb-8">
@@ -23,7 +23,7 @@ const AboutSection: React.FC = () => {
           {/* Three strengths */}
           <div className="space-y-6 mb-8">
             <div className="flex items-start space-x-4">
-              <div className="w-10 h-10 flex items-center justify-center rounded bg-rose-100 text-rose-600">
+              <div className="w-10 h-10 flex items-center justify-center rounded bg-slate-100 text-slate-600">
                 <Users className="w-6 h-6" />
               </div>
               <div>
@@ -35,7 +35,7 @@ const AboutSection: React.FC = () => {
               </div>
             </div>
             <div className="flex items-start space-x-4">
-              <div className="w-10 h-10 flex items-center justify-center rounded bg-rose-100 text-rose-600">
+              <div className="w-10 h-10 flex items-center justify-center rounded bg-slate-100 text-slate-600">
                 <Star className="w-6 h-6" />
               </div>
               <div>
@@ -47,7 +47,7 @@ const AboutSection: React.FC = () => {
               </div>
             </div>
             <div className="flex items-start space-x-4">
-              <div className="w-10 h-10 flex items-center justify-center rounded bg-rose-100 text-rose-600">
+              <div className="w-10 h-10 flex items-center justify-center rounded bg-slate-100 text-slate-600">
                 <Trophy className="w-6 h-6" />
               </div>
               <div>

@@ -30,7 +30,7 @@ const courses = [
 
 const DetailedCourses: React.FC = () => {
   return (
-    <section className="py-24 bg-gradient-to-b from-white to-rose-50">
+    <section className="py-24 bg-gradient-to-b from-white to-slate-50">
       <div className="max-w-[1120px] mx-auto px-6 space-y-28">
         {courses.map((course, idx) =>
         (<div
@@ -50,13 +50,13 @@ const DetailedCourses: React.FC = () => {
 
           {/* Text */}
           <div className={`${idx % 2 === 1 ? "lg:order-1 lg:pr-6" : "lg:pl-6"}`}>
-            <h3 className="text-3xl md:text-4xl font-bold text-rose-600 mb-6">
+            <h3 className="text-3xl md:text-4xl font-bold text-slate-600 mb-6">
               {course.title}
             </h3>
             <p className="text-gray-700 leading-relaxed text-lg mb-8">
               {course.desc}
             </p>
-            <div className="bg-rose-100 text-rose-800 px-6 py-4 rounded-md text-base font-medium shadow-sm">
+            <div className="bg-slate-100 text-slate-800 px-6 py-4 rounded-md text-base font-medium shadow-sm">
               {course.highlight}
             </div>
           </div>

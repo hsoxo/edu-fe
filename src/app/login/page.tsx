@@ -59,7 +59,7 @@ export default function LoginPage() {
                 className="w-full px-3 py-2 transition duration-200 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
             </div>
-            {error && <p className="text-red-500 text-sm">{error}</p>}
+            {error && <p className="text-slate-500 text-sm">{error}</p>}
             <Button type="submit" className="w-full" disabled={isLoginLoading}>
               {isLoginLoading ? (
                 <Loader2 className="animate-spin mr-2" size={18} />

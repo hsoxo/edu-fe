@@ -30,7 +30,7 @@ const SimpleBookingForm: React.FC = () => {
       {/* 姓名 */}
       <div>
         <label className="block text-sm font-medium text-gray-700 mb-1">
-          姓名 <span className="text-red-500">*</span>
+          姓名 <span className="text-slate-500">*</span>
         </label>
         <input
           type="text"
@@ -45,7 +45,7 @@ const SimpleBookingForm: React.FC = () => {
       {/* 邮箱 */}
       <div>
         <label className="block text-sm font-medium text-gray-700 mb-1">
-          邮箱 <span className="text-red-500">*</span>
+          邮箱 <span className="text-slate-500">*</span>
         </label>
         <input
           type="email"

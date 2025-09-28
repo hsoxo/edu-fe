@@ -28,7 +28,7 @@ const HeroSection: React.FC = () => {
           {/* 左侧内容 */}
           <div className="text-white">
             {/* 标题 */}
-            <h1 className="text-4xl md:text-5xl font-bold text-red-500 mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold text-slate-200 mb-8">
               VanLearn Education
             </h1>
 
@@ -54,13 +54,13 @@ const HeroSection: React.FC = () => {
             <div className="flex space-x-4">
               <a
                 href="#contact"
-                className="bg-rose-600 hover:bg-rose-700 text-white px-6 py-3 rounded-lg font-semibold shadow-lg transition"
+                className="bg-slate-600 hover:bg-slate-700 text-white px-6 py-3 rounded-lg font-semibold shadow-lg transition"
               >
                 Contact Us
               </a>
               <a
                 href="/course-overview"
-                className="border border-rose-500 text-rose-400 hover:bg-rose-600 hover:text-white px-6 py-3 rounded-lg font-semibold transition"
+                className="border border-slate-500 text-slate-400 hover:bg-slate-600 hover:text-white px-6 py-3 rounded-lg font-semibold transition"
               >
                 View Courses
               </a>
@@ -70,19 +70,19 @@ const HeroSection: React.FC = () => {
           {/* 右侧 fancy 统计数据 */}
           <div className="grid gap-6 sm:grid-cols-3 text-center lg:text-left">
             <div className="p-6 bg-white/10 rounded-xl shadow-lg backdrop-blur-sm hover:scale-105 transform transition flex flex-col items-center">
-              <p className="inline-block pr-2 text-4xl md:text-5xl font-extrabold mb-2 bg-gradient-to-r from-red-400 to-rose-300 bg-clip-text text-transparent">
+              <p className="inline-block pr-2 text-4xl md:text-5xl font-extrabold mb-2 bg-gradient-to-r from-slate-400 to-slate-200 bg-clip-text text-transparent">
                 <Counter target={2000} suffix="+" />
               </p>
               <p className="text-white/90 text-base">Students</p>
             </div>
             <div className="p-6 bg-white/10 rounded-xl shadow-lg backdrop-blur-sm hover:scale-105 transform transition flex flex-col items-center">
-              <p className="inline-block pr-2 text-4xl md:text-5xl font-extrabold mb-2 bg-gradient-to-r from-red-400 to-rose-300 bg-clip-text text-transparent">
+              <p className="inline-block pr-2 text-4xl md:text-5xl font-extrabold mb-2 bg-gradient-to-r from-slate-400 to-slate-200 bg-clip-text text-transparent">
                 <Counter target={15} />
               </p>
               <p className="text-white/90 text-base">Years</p>
             </div>
             <div className="p-6 bg-white/10 rounded-xl shadow-lg backdrop-blur-sm hover:scale-105 transform transition flex flex-col items-center">
-              <p className="inline-block pr-2 text-4xl md:text-5xl font-extrabold mb-2 bg-gradient-to-r from-red-400 to-rose-300 bg-clip-text text-transparent">
+              <p className="inline-block pr-2 text-4xl md:text-5xl font-extrabold mb-2 bg-gradient-to-r from-slate-400 to-slate-200 bg-clip-text text-transparent">
                 <Counter target={99} suffix="%" />
               </p>
               <p className="text-white/90 text-base">Satisfaction</p>

@@ -6,14 +6,14 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       <Header />
-      <section className="py-20 bg-gradient-to-b from-white to-rose-50">
+      <section className="py-20 bg-gradient-to-b from-white to-slate-50">
         <div className="max-w-[1120px] mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Text */}
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-rose-600 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-600 mb-12">
               Founder of Vanlearn Education
             </h2>
-            <p className="text-lg font-semibold text-gray-800 mb-6">
+            <p className="text-lg font-semibold text-gray-800 mb-2">
               Certified IELTS & TOEFL Instructor | CERTESL Qualified
             </p>
 

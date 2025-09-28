@@ -36,11 +36,11 @@ const features = [
 
 const FeaturesSection: React.FC = () => {
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-rose-50">
+    <section className="py-20 bg-gradient-to-b from-white to-slate-50">
       <div className="max-w-[1120px] mx-auto px-4">
         {/* Title */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-rose-600 mb-4">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-600 mb-4">
             Program Features
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -60,7 +60,7 @@ const FeaturesSection: React.FC = () => {
               <div className="h-40 w-full">
                 <Image
                   width={200}
-              height={200}
+                  height={200}
                   src={feature.image}
                   alt={feature.title}
                   className="h-full w-full object-cover"
@@ -69,7 +69,7 @@ const FeaturesSection: React.FC = () => {
 
               {/* Text */}
               <div className="p-6">
-                <h3 className="text-lg font-semibold text-rose-600 mb-3">
+                <h3 className="text-lg font-semibold text-slate-600 mb-3">
                   {feature.title}
                 </h3>
                 <p className="text-gray-700 text-sm leading-relaxed">

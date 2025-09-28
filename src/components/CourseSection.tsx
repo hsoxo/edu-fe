@@ -45,7 +45,7 @@ const CoursesSection: React.FC = () => {
       <div className="max-w-[1120px] mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-extrabold mb-3 text-rose-600">
+          <h2 className="text-3xl md:text-4xl font-extrabold mb-3 text-slate-600">
             Premium Course System
           </h2>
           <p className="text-lg text-gray-600">
@@ -58,15 +58,15 @@ const CoursesSection: React.FC = () => {
           {courses.map((course, idx) => (
             <div
               key={idx}
-              className="group rounded-2xl p-8 flex flex-col shadow-md transition bg-rose-50 hover:bg-rose-100 hover:shadow-lg"
+              className="group rounded-2xl p-8 flex flex-col shadow-md transition bg-slate-50 hover:bg-slate-100 hover:shadow-lg"
             >
               {/* Icon + Title */}
               <div className="flex items-center mb-6">
-                <div className="w-14 h-14 flex items-center justify-center rounded-lg bg-rose-600 text-white mr-4 transform transition-transform duration-300 group-hover:rotate-3 group-hover:-translate-y-0.5 shadow-md">
+                <div className="w-14 h-14 flex items-center justify-center rounded-lg bg-slate-600 text-white mr-4 transform transition-transform duration-300 group-hover:rotate-3 group-hover:-translate-y-0.5 shadow-md">
                   {course.icon}
                 </div>
                 <div>
-                  <h3 className="text-2xl font-semibold text-gray-800 group-hover:text-rose-600 transition">
+                  <h3 className="text-2xl font-semibold text-gray-800 group-hover:text-slate-600 transition">
                     {course.title}
                   </h3>
                   <p className="text-base text-gray-600">{course.desc}</p>
@@ -80,7 +80,7 @@ const CoursesSection: React.FC = () => {
                     key={i}
                     className="flex items-center text-lg text-gray-700"
                   >
-                    <span className="w-2 h-2 rounded-full bg-rose-500 mr-3"></span>
+                    <span className="w-2 h-2 rounded-full bg-slate-500 mr-3"></span>
                     {item}
                   </li>
                 ))}

@@ -1,16 +1,21 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { GraduationCap, Phone, Mail, MapPin, Clock } from "lucide-react";
 import Image from "next/image";
+import ReCAPTCHA from "react-google-recaptcha";
+import { toast } from "sonner";
 
 const FooterSection: React.FC = () => {
+  const [token, setToken] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
     message: "",
   });
+  const [loading, setLoading] = useState(false);
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -19,20 +24,43 @@ const FooterSection: React.FC = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form Submitted:", formData);
-    // TODO: 这里可以调用后端 API
+    setLoading(true);
+
+    try {
+      const res = await fetch("/api/send-contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ token, ...formData }),
+      });
+
+      const data = await res.json();
+      console.log("Server Response:", data);
+
+      // ✅ reset 表单和 captcha
+      setFormData({ name: "", email: "", phone: "", message: "" });
+      setToken(null);
+      recaptchaRef.current?.reset();
+      toast.success("Your message has been submitted!");
+    } catch (error) {
+      console.error("Submission Error:", error);
+      toast.error("Failed to submit. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
-    <footer className="bg-red-600 text-white" id="contact">
+    <footer className="bg-slate-500 text-white" id="contact">
       <div className="max-w-[1120px] mx-auto px-6 py-16 grid lg:grid-cols-2 gap-12">
         {/* 公司信息 */}
         <div className="flex justify-center flex-col">
           <div className="flex items-center space-x-3 mb-4">
             <GraduationCap className="w-8 h-8 text-white" />
-            <h3 className="text-xl font-semibold">VanLearn International Education</h3>
+            <h3 className="text-xl font-semibold">
+              VanLearn International Education
+            </h3>
           </div>
           <p className="text-white/90 text-sm mb-6 leading-relaxed">
             Empowering students through comprehensive academic excellence and
@@ -71,17 +99,23 @@ const FooterSection: React.FC = () => {
         </div>
 
         {/* 简化预约表单 */}
-        <div>
+        <div className="relative">
+          {loading && (
+            <div className="absolute inset-0 bg-white/80 flex items-center justify-center z-10 rounded-lg">
+              <div className="w-10 h-10 border-4 border-slate-600 border-t-transparent rounded-full animate-spin"></div>
+            </div>
+          )}
+
           <form
             onSubmit={handleSubmit}
-            className="bg-white text-gray-800 rounded-lg shadow p-6 space-y-4"
+            className="bg-white text-gray-800 rounded-lg shadow p-6 space-y-4 relative"
           >
             <h2 className="text-lg font-semibold text-gray-900">Book trial</h2>
 
             {/* 姓名 */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
-                Name <span className="text-red-500">*</span>
+                Name <span className="text-slate-500">*</span>
               </label>
               <input
                 type="text"
@@ -95,7 +129,7 @@ const FooterSection: React.FC = () => {
 
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
-                Email <span className="text-red-500">*</span>
+                Email <span className="text-slate-500">*</span>
               </label>
               <input
                 type="email"
@@ -109,14 +143,13 @@ const FooterSection: React.FC = () => {
 
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
-                Phone <span className="text-red-500">*</span>
+                Phone <span className="text-slate-500">*</span>
               </label>
               <input
                 type="tel"
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                required
                 className="w-full border border-gray-300 rounded px-3 py-2 focus:ring-emerald-500 focus:border-emerald-500"
               />
             </div>
@@ -135,19 +168,26 @@ const FooterSection: React.FC = () => {
               />
             </div>
 
+            <ReCAPTCHA
+              ref={recaptchaRef}
+              sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
+              onChange={setToken}
+            />
+
             {/* 提交按钮 */}
             <div>
               <button
                 type="submit"
-                className="w-full bg-rose-600 hover:bg-rose-700 text-white px-6 py-3 rounded-lg font-semibold shadow transition"
+                disabled={loading}
+                className="w-full bg-slate-600 hover:bg-slate-700 disabled:bg-slate-400 text-white px-6 py-3 rounded-lg font-semibold shadow transition"
               >
-                Submit
+                {loading ? "Submitting..." : "Submit"}
               </button>
             </div>
           </form>
         </div>
-      </div >
-    </footer >
+      </div>
+    </footer>
   );
 };
 
