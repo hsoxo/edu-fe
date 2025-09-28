@@ -32,7 +32,7 @@ export async function POST(req: Request) {
         process.env.MAILJET_API_KEY!,
         process.env.MAILJET_SECRET_KEY!
       );
-      const result = await mailjet.post("send", { version: "v3.1" }).request({
+      await mailjet.post("send", { version: "v3.1" }).request({
         Messages: [
           {
             From: {
@@ -146,7 +146,7 @@ export async function POST(req: Request) {
     }
 
     return NextResponse.json({ success: true });
-  } catch (err) {
+  } catch {
     return NextResponse.json({ success: false, error: "❌ Verification failed" }, { status: 500 });
   }
 }
