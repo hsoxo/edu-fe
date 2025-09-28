@@ -4,7 +4,7 @@ import Counter from "./Counter";
 
 const HeroSection: React.FC = () => {
   return (
-    <div className="relative w-full h-[70vh]">
+    <div className="relative w-full min-h-[70vh] lg:h-[70vh]">
       {/* 背景视频 */}
       <video
         autoPlay
@@ -23,24 +23,24 @@ const HeroSection: React.FC = () => {
       <div className="absolute inset-0 bg-black bg-opacity-50"></div>
 
       {/* 内容区域 */}
-      <div className="relative z-10 flex items-center justify-center h-full px-6">
-        <div className="max-w-[1120px] w-full grid lg:grid-cols-2 gap-12 items-center">
+      <div className="relative z-10 flex items-center justify-center h-full px-4 py-6 sm:px-6">
+        <div className="max-w-[1120px] w-full grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           {/* 左侧内容 */}
-          <div className="text-white">
+          <div className="text-white text-center lg:text-left">
             {/* 标题 */}
-            <h1 className="text-4xl md:text-5xl font-bold text-slate-200 mb-8">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-200 mb-6">
               VanLearn Education
             </h1>
 
             {/* 副标题 */}
-            <p className="text-lg md:text-xl mb-4">
+            <p className="text-base sm:text-lg md:text-xl mb-4">
               A professional international education institute dedicated to
               providing students with comprehensive academic support and
               personal growth.
             </p>
 
             {/* Hero 简介 */}
-            <p className="text-white/90 max-w-xl text-base md:text-lg leading-relaxed mb-8">
+            <p className="text-white/90 max-w-xl mx-auto lg:mx-0 text-sm sm:text-base md:text-lg leading-relaxed mb-6">
               At VanLearn International, we are committed to delivering{" "}
               <span className="font-semibold">high-quality international education</span>{" "}
               and <span className="font-semibold">personalized learning support</span>.
@@ -51,16 +51,16 @@ const HeroSection: React.FC = () => {
             </p>
 
             {/* 按钮 */}
-            <div className="flex space-x-4">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <a
                 href="#contact"
-                className="bg-slate-600 hover:bg-slate-700 text-white px-6 py-3 rounded-lg font-semibold shadow-lg transition"
+                className="bg-slate-600 hover:bg-slate-700 text-white px-6 py-3 rounded-lg font-semibold shadow-lg transition text-center"
               >
                 Contact Us
               </a>
               <a
                 href="/course-overview"
-                className="border border-slate-500 hover:bg-slate-600 hover:text-white px-6 py-3 rounded-lg font-semibold transition"
+                className="border border-slate-500 hover:bg-slate-600 hover:text-white px-6 py-3 rounded-lg font-semibold transition text-center"
               >
                 View Courses
               </a>
@@ -68,24 +68,24 @@ const HeroSection: React.FC = () => {
           </div>
 
           {/* 右侧 fancy 统计数据 */}
-          <div className="grid gap-6 sm:grid-cols-3 text-center lg:text-left">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-center">
             <div className="p-6 bg-white/10 rounded-xl shadow-lg backdrop-blur-sm hover:scale-105 transform transition flex flex-col items-center">
-              <p className="inline-block pr-2 text-4xl md:text-5xl font-extrabold mb-2 bg-gradient-to-r from-slate-400 to-slate-200 bg-clip-text text-transparent">
+              <p className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-2 bg-gradient-to-r from-slate-400 to-slate-200 bg-clip-text text-transparent">
                 <Counter target={2000} suffix="+" />
               </p>
-              <p className="text-white/90 text-base">Students</p>
+              <p className="text-white/90 text-sm sm:text-base">Students</p>
             </div>
             <div className="p-6 bg-white/10 rounded-xl shadow-lg backdrop-blur-sm hover:scale-105 transform transition flex flex-col items-center">
-              <p className="inline-block pr-2 text-4xl md:text-5xl font-extrabold mb-2 bg-gradient-to-r from-slate-400 to-slate-200 bg-clip-text text-transparent">
+              <p className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-2 bg-gradient-to-r from-slate-400 to-slate-200 bg-clip-text text-transparent">
                 <Counter target={15} />
               </p>
-              <p className="text-white/90 text-base">Years</p>
+              <p className="text-white/90 text-sm sm:text-base">Years</p>
             </div>
-            <div className="p-6 bg-white/10 rounded-xl shadow-lg backdrop-blur-sm hover:scale-105 transform transition flex flex-col items-center">
-              <p className="inline-block pr-2 text-4xl md:text-5xl font-extrabold mb-2 bg-gradient-to-r from-slate-400 to-slate-200 bg-clip-text text-transparent">
+            <div className="p-6 bg-white/10 rounded-xl shadow-lg backdrop-blur-sm hover:scale-105 transform transition flex flex-col items-center sm:col-span-2 lg:col-span-1">
+              <p className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-2 bg-gradient-to-r from-slate-400 to-slate-200 bg-clip-text text-transparent">
                 <Counter target={99} suffix="%" />
               </p>
-              <p className="text-white/90 text-base">Satisfaction</p>
+              <p className="text-white/90 text-sm sm:text-base">Satisfaction</p>
             </div>
           </div>
         </div>
