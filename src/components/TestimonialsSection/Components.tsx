@@ -108,7 +108,9 @@ export default function TestimonialsSection() {
             {testimonials.map((t, i) => (
               <SwiperSlide key={i}>
                 <div className="bg-white p-4 rounded-lg shadow-sm flex space-x-3">
-                  <img
+                  <Image
+                    width={20}
+                    height={20}
                     src={t.avatar}
                     alt={t.author}
                     className="w-10 h-10 rounded-full"
