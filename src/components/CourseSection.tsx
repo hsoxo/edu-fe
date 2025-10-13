@@ -1,41 +1,41 @@
 import React from "react";
-import { BookOpen, Music, GraduationCap, Clock } from "lucide-react";
+import { BookOpen, Palette, Code, Brain } from "lucide-react";
+import Link from "next/link";
 
 const courses = [
   {
     icon: <BookOpen className="w-7 h-7 text-white" />,
-    title: "Foundation Courses",
+    title: "English Programs",
     desc: "Build strong academic fundamentals and core skills",
     items: [
+      "WORDLY WISE 3000 & Grammar",
       "English Reading & Writing",
-      "Public Speaking",
-      "BC K-12 Tutoring",
-      "Singapore Math",
-      "Math Olympiad Training",
+      "Public Speaking & Debate",
+      "IELTS Intensive Course",
+      "TOEFL & SSAT Prep",
     ],
   },
   {
-    icon: <Music className="w-7 h-7 text-white" />,
-    title: "Arts & Languages",
+    icon: <Brain className="w-7 h-7 text-white" />,
+    title: "Other Languages",
     desc: "Enhance artistic literacy and broaden language skills",
-    items: ["Fine Arts", "Guzheng / Piano", "Chinese / French / Japanese", "Chess"],
+    items: ["Chinese Language", "French Language", "Japanese Language"],
   },
   {
-    icon: <GraduationCap className="w-7 h-7 text-white" />,
-    title: "International Programs",
+    icon: <Code className="w-7 h-7 text-white" />,
+    title: "STEM Programs",
     desc: "Prepare for top universities and study abroad success",
     items: [
-      "IELTS / TOEFL / SSAT",
-      "AP / IB Courses",
-      "1-on-1 with Native Teachers",
-      "University Application Guidance",
+      "Mathematics Tutoring",
+      "Singapore Math",
+      "Computer Programming",
     ],
   },
   {
-    icon: <Clock className="w-7 h-7 text-white" />,
-    title: "After School Support",
+    icon: <Palette className="w-7 h-7 text-white" />,
+    title: "Arts & Chess",
     desc: "Comprehensive after-school services and guidance",
-    items: ["Homework Tutoring", "Reading Support", "Fun Math Activities", "Pick-up & Drop-off Service"],
+    items: ["Piano & Guzheng", "Chess", "Creative Art for Kids", "Sketching (Children & Adults)"],
   },
 ];
 
@@ -89,6 +89,14 @@ const CoursesSection: React.FC = () => {
           ))}
         </div>
       </div>
+          <div className="text-center mt-4">
+            <Link
+              href="/course-overview"
+              className="text-sm font-medium text-rose-600 hover:underline"
+            >
+              Learn More →
+            </Link>
+          </div>
     </section>
   );
 };

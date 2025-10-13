@@ -1,71 +1,168 @@
-import React from "react";
-import Image from "next/image";
+'use client';
+import Image from 'next/image';
+import { BookOpen, Brain, Code, Palette } from 'lucide-react'; // 图标库
 
 const courses = [
   {
-    title: "Foundation Courses",
-    desc: "Our foundation courses build solid academic fundamentals for primary through secondary learners. Programs include English Reading & Writing, Public Speaking, full-subject BC curriculum tutoring, Singapore Math, and Math Olympiad preparation. Students gain measurable progress through assessment-driven learning and personalized instruction.",
-    highlight: "Solid fundamentals, steady progress, and measurable skill gains.",
-    image: "/foundation.jpg",
+    category: 'English Programs',
+    subtitle: 'Enhance English reading, writing and communication skills.',
+    icon: <BookOpen className="text-red-600" size={52} />,
+    color: 'from-orange-100 to-orange-50',
+    items: [
+      {
+        title: 'WORDLY WISE 3000 & Grammar',
+        image: '/images/woldlywise3000.png',
+        link: '/course/wordlywise3000'
+      },
+      {
+        title: 'English Reading & Writing',
+        image: '/images/englishreadingwriting.png',
+        link: '/course/englishreadingwriting'
+      },
+      {
+        title: 'Public Speaking & Debate',
+        image: '/images/publicspeaking.png',
+        link: '/course/publicspeaking'
+      },
+      {
+        title: 'IELTS Course',
+        image: '/images/ielts.png',
+        link: '/course/ielts'
+      },
+      {
+        title: 'TOEFL & SSAT Prep',
+        image: '/images/toefl.png',
+        link: '/course/toefl'
+      }
+    ]
   },
   {
-    title: "Arts & Languages",
-    desc: "Creative and cultural development courses designed for all ages. Students can explore Visual Arts, Guzheng & Piano, as well as language programs in Chinese, French, and Japanese. We emphasize artistic technique, language fluency, and cognitive enrichment that supports academic performance and personal growth.",
-    highlight: "Artistic technique, language fluency, and cultural enrichment.",
-    image: "/arts.jpg",
+    category: 'Secondary Languages',
+    subtitle: 'Build global communication skills through multilingual learning.',
+    icon: <Brain className="text-red-600" size={52} />,
+    color: 'from-blue-100 to-blue-50',
+    items: [
+      {
+        title: 'Chinese Language',
+        image: '/images/chinese.png',
+        link: '/course/chinese'
+      },
+      {
+        title: 'French Language',
+        image: '/images/french.png',
+        link: '/course/french'
+      },
+      {
+        title: 'Japanese Language',
+        image: '/images/japanese.png',
+        link: '/course/japanese'
+      }
+    ]
   },
   {
-    title: "International Curriculum",
-    desc: "For globally minded learners aiming for top universities. Courses include IELTS, TOEFL, SSAT preparation, AP and IB subject coaching, and one-on-one sessions with experienced foreign-language instructors. Our proven methodology helps students master international standards and competitive admissions strategies.",
-    highlight: "Exam strategy, international standards, and admissions success.",
-    image: "/international.jpg",
+    category: 'STEM Programs',
+    subtitle: 'Foster logical thinking and problem-solving through STEM courses.',
+    icon: <Code className="text-red-600" size={52} />,
+    color: 'from-green-100 to-green-50',
+    items: [
+      {
+        title: 'Mathematics Tutoring',
+        image: '/images/mathematicstutor.png',
+        link: '/course/mathematicstutor'
+      },
+      {
+        title: 'Singapore Math',
+        image: '/images/singaporemath.png',
+        link: '/course/singaporemath'
+      },
+      {
+        title: 'Computer Programming',
+        image: '/images/computerprogramming.png',
+        link: '/course/computerprogramming'
+      }
+    ]
   },
   {
-    title: "After-School Support",
-    desc: "Reliable after-school programs designed to extend learning beyond the classroom. Services include homework supervision, guided reading, math enrichment activities, and safe pick-up/drop-off arrangements. We ensure continuity, convenience, and reinforcement of daytime learning in a supportive environment.",
-    highlight: "Convenience, continuity, and reinforcement of daily learning.",
-    image: "/afterschool.jpg",
-  },
+    category: 'Arts & Chess',
+    subtitle: 'Cultivate creativity, music appreciation, and strategic thinking.',
+    icon: <Palette className="text-red-600" size={52} />,
+    color: 'from-purple-100 to-purple-50',
+    items: [
+      {
+        title: 'Piano & Guzheng',
+        image: '/images/piano.png',
+        link: '/course/piano'
+      },
+      {
+        title: 'Chess',
+        image: '/images/chess.png',
+        link: '/course/chess'
+      },
+      {
+        title: 'Creative Art for Kids',
+        image: '/images/creativearts.png',
+        link: '/course/creativearts'
+      },
+      {
+        title: 'Sketching (Children & Adults)',
+        image: '/images/sketching.png',
+        link: '/course/sketching'
+      }
+    ]
+  }
 ];
 
-const DetailedCourses: React.FC = () => {
+export default function CoursesSection() {
   return (
-    <section className="py-24 bg-gradient-to-b from-white to-slate-50">
-      <div className="max-w-[1120px] mx-auto px-6 space-y-28">
-        {courses.map((course, idx) =>
-        (<div
-          key={idx}
-          className="grid lg:grid-cols-2 gap-16 items-center py-12"
-        >
-          {/* Image */}
-          <div className={`${idx % 2 === 1 ? "lg:order-2" : ""}`}>
-            <Image
-              width={200}
-              height={200}
-              src={course.image}
-              alt={course.title}
-              className="w-full h-[360px] rounded-xl shadow-lg object-cover"
-            />
-          </div>
+    <section className="bg-gray-50 py-16 text-gray-800">
+      <div className="max-w-7xl mx-auto px-6 space-y-20">
+        {courses.map((section, idx) => (
+          <div key={idx} className="space-y-6">
+            {/* === Section Header === */}
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+              <div className="flex items-center gap-3">
+                <div className="flex items-center gap-2">
+                  <div>{section.icon}</div>
+                  <div className="flex flex-col">
+                    <h2 className="text-2xl md:text-3xl font-bold text-gray-800">{section.category}</h2>
+                    <p className="text-sm text-gray-500 mt-1">{section.subtitle}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-          {/* Text */}
-          <div className={`${idx % 2 === 1 ? "lg:order-1 lg:pr-6" : "lg:pl-6"}`}>
-            <h3 className="text-3xl md:text-4xl font-bold text-slate-600 mb-6">
-              {course.title}
-            </h3>
-            <p className="text-gray-700 leading-relaxed text-lg mb-8">
-              {course.desc}
-            </p>
-            <div className="bg-slate-100 text-slate-800 px-6 py-4 rounded-md text-base font-medium shadow-sm">
-              {course.highlight}
+            {/* === Course Cards === */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {section.items.map((item, i) => (
+                <div
+                  key={i}
+                  className="relative rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group"
+                >
+                  {/* 背景图片 */}
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    width={600}
+                    height={400}
+                    className="object-cover w-full h-56 transform group-hover:scale-105 transition-transform duration-500 ease-out"
+                  />
+
+                  {/* 遮罩层（保证文字可读） */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+
+                  {/* 内容层 */}
+                  <div className="absolute bottom-0 left-0 right-0 p-5 text-white z-10">
+                    <h3 className="text-lg font-semibold mb-1">{item.title}</h3>
+                    <a href={item.link} className="text-sm font-medium text-[#FFD7C2] hover:underline">
+                      Learn More →
+                    </a>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
-        </div>
-
         ))}
       </div>
     </section>
   );
-};
-
-export default DetailedCourses;
+}

@@ -1,31 +1,28 @@
-"use client"
+'use client';
 
-import { useState } from "react"
-import Image from "next/image"
-import Link from "next/link"
+import { useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 
 const NAV_ITEMS = [
-  { label: "Home", href: "/" },
-  { label: "Courses", href: "/course-overview" },
-  { label: "After-School", href: "/after-school" },
-  { label: "About Us", href: "/about-us" },
-]
+  { label: 'Home', href: '/' },
+  { label: 'Courses', href: '/course-overview' },
+  { label: 'After-School', href: '/after-school' },
+  { label: 'About Us', href: '/about-us' }
+];
 
 const Header = () => {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <header className="bg-white border-b border-gray-100 relative">
       {/* Top bar */}
       <div className="w-full h-10 flex items-center justify-end text-lg px-4 bg-slate-100 text-gray-700">
         <div className="container mx-auto px-4 flex items-center justify-end h-10">
-          <Link
-            className="pr-2 border-r-2 border-gray-300 mr-2 font-bold cursor-pointer"
-            href="/#contact"
-          >
+          <Link className="pr-2 border-r-2 border-gray-300 mr-2 font-bold cursor-pointer" href="/#contact">
             Book a Trial
           </Link>
-          <span className="font-semibold">604-357-8383</span>
+          <span className="font-semibold">236-989-1968</span>
         </div>
       </div>
 
@@ -45,15 +42,13 @@ const Header = () => {
               <div className="text-2xl sm:text-3xl lg:text-[36px] text-rose-600 font-semibold pb-2 sm:pb-3">
                 温 学 国 际
               </div>
-              <div className="text-base sm:text-lg lg:text-[24px] text-gray-500 -mt-1">
-                VanLearn Education
-              </div>
+              <div className="text-base sm:text-lg lg:text-[24px] text-gray-500 -mt-1">VanLearn Education</div>
             </Link>
           </div>
 
           {/* Desktop Nav */}
           <div className="hidden lg:flex items-center text-gray-600 whitespace-nowrap text-lg">
-            {NAV_ITEMS.map((item) => (
+            {NAV_ITEMS.map(item => (
               <Link
                 href={item.href}
                 key={item.label}
@@ -70,26 +65,29 @@ const Header = () => {
             onClick={() => setIsOpen(!isOpen)}
           >
             <span
-              className={`absolute block w-6 h-0.5 bg-gray-800 rounded-sm transition-all duration-300 ${isOpen ? "rotate-45" : "-translate-y-2"
-                }`}
+              className={`absolute block w-6 h-0.5 bg-gray-800 rounded-sm transition-all duration-300 ${
+                isOpen ? 'rotate-45' : '-translate-y-2'
+              }`}
             />
             <span
-              className={`absolute block w-6 h-0.5 bg-gray-800 rounded-sm transition-all duration-300 ${isOpen ? "opacity-0" : "opacity-100"
-                }`}
+              className={`absolute block w-6 h-0.5 bg-gray-800 rounded-sm transition-all duration-300 ${
+                isOpen ? 'opacity-0' : 'opacity-100'
+              }`}
             />
             <span
-              className={`absolute block w-6 h-0.5 bg-gray-800 rounded-sm transition-all duration-300 ${isOpen ? "-rotate-45" : "translate-y-2"
-                }`}
+              className={`absolute block w-6 h-0.5 bg-gray-800 rounded-sm transition-all duration-300 ${
+                isOpen ? '-rotate-45' : 'translate-y-2'
+              }`}
             />
           </button>
-
         </div>
       </div>
 
       {/* Mobile Menu */}
       <div
-        className={`absolute top-40 left-0 w-full bg-white shadow-lg z-40 overflow-hidden transform transition-all duration-300 ${isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-          }`}
+        className={`absolute top-40 left-0 w-full bg-white shadow-lg z-40 overflow-hidden transform transition-all duration-300 ${
+          isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+        }`}
       >
         <div className="flex flex-col divide-y divide-gray-200 px-4">
           <Link
@@ -116,7 +114,7 @@ const Header = () => {
         </div>
       </div>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
