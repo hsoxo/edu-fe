@@ -1,7 +1,7 @@
 import FooterSection from '@/components/FooterSection';
 import Header from '@/components/Header';
 import Image from 'next/image';
-import { BookOpen, Heart, Lightbulb, Link, Palette, Users } from 'lucide-react';
+import { BookOpen, Heart, Lightbulb, Palette, Users } from 'lucide-react';
 import { PenTool, Brain, Calculator, Bus } from 'lucide-react';
 
 export default function Home() {
@@ -29,7 +29,7 @@ export default function Home() {
         <section className="max-w-6xl mx-auto py-16 px-6 bg-gray-50">
           {/* Section 标题 */}
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-[#E23E3E] mb-3">Comprehensive After School Learning</h2>
+            <h2 className="text-3xl font-bold text-slate-600 mb-3">Comprehensive After School Learning</h2>
             <p className="text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Our after-school programs help students grow in a supportive, structured, and fun environment beyond
               regular school hours.
@@ -40,34 +40,34 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pb-8">
             {[
               {
-                icon: <BookOpen className="text-[#E23E3E]" size={28} />,
+                icon: <BookOpen className="text-slate-600" size={28} />,
                 title: 'Homework Tutoring'
               },
               {
-                icon: <PenTool className="text-[#E23E3E]" size={28} />,
+                icon: <PenTool className="text-slate-600" size={28} />,
                 title: 'Reading Support'
               },
               {
-                icon: <Brain className="text-[#E23E3E]" size={28} />,
+                icon: <Brain className="text-slate-600" size={28} />,
                 title: 'Chinese Learning'
               },
               {
-                icon: <Calculator className="text-[#E23E3E]" size={28} />,
+                icon: <Calculator className="text-slate-600" size={28} />,
                 title: 'Fun Math Activities'
               },
               {
-                icon: <Palette className="text-[#E23E3E]" size={28} />,
+                icon: <Palette className="text-slate-600" size={28} />,
                 title: 'Arts'
               },
               {
-                icon: <Bus className="text-[#E23E3E]" size={28} />,
-                title: 'Pick-up & Drop-off'
+                icon: <Bus className="text-slate-600" size={28} />,
+                title: 'Pick-up'
               }
             ].map((item, i) => (
               <div key={i} className="flex items-center gap-4 pl-2">
-                <div className="flex-shrink-0 bg-[#E23E3E]/10 p-3 rounded-xl">{item.icon}</div>
+                <div className="flex-shrink-0 bg-slate-600/10 p-3 rounded-xl">{item.icon}</div>
                 <div>
-                  <h3 className="text-lg font-semibold text-[#E23E3E]">{item.title}</h3>
+                  <h3 className="text-lg font-semibold text-slate-600">{item.title}</h3>
                 </div>
               </div>
             ))}
@@ -85,12 +85,15 @@ export default function Home() {
             ].map((src, i) => (
               <div
                 key={i}
-                className="rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
+                className="relative rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 aspect-[4/3]"
               >
-                <img
+                <Image
                   src={src}
                   alt={`After school classroom ${i + 1}`}
-                  className="object-cover w-full h-56 transform hover:scale-105 transition-transform duration-700 ease-out"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover hover:scale-105 transition-transform duration-700 ease-out"
+                  priority={i < 2} // ✅ 优先加载前两张图
                 />
               </div>
             ))}
@@ -99,26 +102,26 @@ export default function Home() {
 
         <section id="benefits" className="bg-white py-16">
           <div className="max-w-6xl mx-auto px-6 text-center">
-            <h2 className="text-3xl font-bold text-[#E23E3E] mb-10">Why Choose VanLearn After School?</h2>
+            <h2 className="text-3xl font-bold text-slate-600 mb-10">Why Choose VanLearn After School?</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {[
                 {
-                  icon: <BookOpen size={36} className="text-[#E23E3E]" />,
+                  icon: <BookOpen size={36} className="text-slate-600" />,
                   title: 'Academic Growth',
                   desc: 'Reinforce classroom learning with personalized tutoring and structured study time.'
                 },
                 {
-                  icon: <Heart size={36} className="text-[#E23E3E]" />,
+                  icon: <Heart size={36} className="text-slate-600" />,
                   title: 'Safe & Caring Environment',
                   desc: 'Students thrive in a supervised, positive, and nurturing setting.'
                 },
                 {
-                  icon: <Lightbulb size={36} className="text-[#E23E3E]" />,
+                  icon: <Lightbulb size={36} className="text-slate-600" />,
                   title: 'Lifelong Study Habits',
                   desc: 'We help children build independence, discipline, and a love for learning.'
                 },
                 {
-                  icon: <Users size={36} className="text-[#E23E3E]" />,
+                  icon: <Users size={36} className="text-slate-600" />,
                   title: 'Peace of Mind for Parents',
                   desc: 'Reliable pickup and drop-off make your after-school logistics worry-free.'
                 }
@@ -141,7 +144,7 @@ export default function Home() {
         {/* ===== Teachers Section ===== */}
         <section className="bg-gray-50 py-16">
           <div className="max-w-6xl mx-auto px-6 text-center">
-            <h2 className="text-3xl font-bold text-[#E23E3E] mb-4">Meet Our Teachers</h2>
+            <h2 className="text-3xl font-bold text-slate-600 mb-4">Meet Our Teachers</h2>
             <p className="text-gray-600 max-w-3xl mx-auto mb-12">
               Our dedicated and experienced educators provide personalized guidance, ensuring every student feels
               supported, confident, and motivated to learn beyond the classroom.
@@ -171,7 +174,7 @@ export default function Home() {
                   </div>
                   <div className="p-6 text-left">
                     <h3 className="text-lg font-semibold text-gray-800">{t.name}</h3>
-                    {/* <p className="text-sm text-[#E23E3E] font-medium mb-2">{t.title}</p> */}
+                    {/* <p className="text-sm text-slate-600 font-medium mb-2">{t.title}</p> */}
                     <p className="text-sm text-gray-600 leading-relaxed">{t.desc}</p>
                   </div>
                 </div>

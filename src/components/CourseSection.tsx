@@ -1,42 +1,38 @@
-import React from "react";
-import { BookOpen, Palette, Code, Brain } from "lucide-react";
-import Link from "next/link";
+import React from 'react';
+import { BookOpen, Palette, Sigma, Languages } from 'lucide-react';
+import Link from 'next/link';
 
 const courses = [
   {
     icon: <BookOpen className="w-7 h-7 text-white" />,
-    title: "English Programs",
-    desc: "Build strong academic fundamentals and core skills",
+    title: 'English Programs',
+    desc: 'Build strong academic fundamentals and core skills',
     items: [
-      "WORDLY WISE 3000 & Grammar",
-      "English Reading & Writing",
-      "Public Speaking & Debate",
-      "IELTS Intensive Course",
-      "TOEFL & SSAT Prep",
-    ],
+      'WORDLY WISE 3000 & Grammar',
+      'English Reading & Writing',
+      'Public Speaking & Debate',
+      'IELTS Intensive Course',
+      'TOEFL & SSAT Prep'
+    ]
   },
   {
-    icon: <Brain className="w-7 h-7 text-white" />,
-    title: "Other Languages",
-    desc: "Enhance artistic literacy and broaden language skills",
-    items: ["Chinese Language", "French Language", "Japanese Language"],
+    icon: <Languages className="w-7 h-7 text-white" />,
+    title: 'Other Languages',
+    desc: 'Enhance artistic literacy and broaden language skills',
+    items: ['Chinese Language', 'French Language', 'Japanese Language']
   },
   {
-    icon: <Code className="w-7 h-7 text-white" />,
-    title: "STEM Programs",
-    desc: "Prepare for top universities and study abroad success",
-    items: [
-      "Mathematics Tutoring",
-      "Singapore Math",
-      "Computer Programming",
-    ],
+    icon: <Sigma className="w-7 h-7 text-white" />,
+    title: 'Math & Science Programs (AP/IB)',
+    desc: 'Prepare for top universities and study abroad success',
+    items: ['Mathematics Tutoring', 'Singapore Math', 'Computer Programming']
   },
   {
     icon: <Palette className="w-7 h-7 text-white" />,
-    title: "Arts & Chess",
-    desc: "Comprehensive after-school services and guidance",
-    items: ["Piano & Guzheng", "Chess", "Creative Art for Kids", "Sketching (Children & Adults)"],
-  },
+    title: 'Arts & Chess',
+    desc: 'Comprehensive after-school services and guidance',
+    items: ['Piano & Guzheng', 'Chess', 'Creative Art for Kids', 'Sketching (Children & Adults)']
+  }
 ];
 
 const CoursesSection: React.FC = () => {
@@ -45,12 +41,8 @@ const CoursesSection: React.FC = () => {
       <div className="max-w-[1120px] mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-9">
-          <h2 className="text-3xl md:text-4xl font-extrabold mb-2 text-slate-600">
-            Premium Course System
-          </h2>
-          <p className="text-lg text-gray-600">
-            Four core domains designed to enhance students’ all-round abilities
-          </p>
+          <h2 className="text-3xl md:text-4xl font-extrabold mb-2 text-slate-600">Premium Course System</h2>
+          <p className="text-lg text-gray-600">Four core domains designed to enhance students’ all-round abilities</p>
         </div>
 
         {/* Grid - 2 columns on desktop */}
@@ -76,10 +68,7 @@ const CoursesSection: React.FC = () => {
               {/* Course Items */}
               <ul className="space-y-3 mt-2">
                 {course.items.map((item, i) => (
-                  <li
-                    key={i}
-                    className="flex items-center text-lg text-gray-700"
-                  >
+                  <li key={i} className="flex items-center text-lg text-gray-700">
                     <span className="w-2 h-2 rounded-full bg-slate-500 mr-3"></span>
                     {item}
                   </li>
@@ -89,14 +78,11 @@ const CoursesSection: React.FC = () => {
           ))}
         </div>
       </div>
-          <div className="text-center mt-4">
-            <Link
-              href="/course-overview"
-              className="text-sm font-medium text-rose-600 hover:underline"
-            >
-              Learn More →
-            </Link>
-          </div>
+      <div className="max-w-[1120px] mx-auto px-4 text-right mt-4">
+        <Link href="/course-overview" className="text-md font-semibold text-rose-600 hover:underline">
+          <i>View More →</i>
+        </Link>
+      </div>
     </section>
   );
 };

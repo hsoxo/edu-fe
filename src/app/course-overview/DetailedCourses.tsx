@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/image';
-import { BookOpen, Brain, Code, Palette } from 'lucide-react'; // 图标库
+import { BookOpen, Languages, Sigma, Palette } from 'lucide-react'; // 图标库
 
 const courses = [
   {
@@ -39,7 +39,7 @@ const courses = [
   {
     category: 'Secondary Languages',
     subtitle: 'Build global communication skills through multilingual learning.',
-    icon: <Brain className="text-red-600" size={52} />,
+    icon: <Languages className="text-red-600" size={52} />,
     color: 'from-blue-100 to-blue-50',
     items: [
       {
@@ -60,9 +60,9 @@ const courses = [
     ]
   },
   {
-    category: 'STEM Programs',
-    subtitle: 'Foster logical thinking and problem-solving through STEM courses.',
-    icon: <Code className="text-red-600" size={52} />,
+    category: 'Math & Science Programs (AP/IB)',
+    subtitle: 'Foster logical thinking and problem-solving through math and science courses.',
+    icon: <Sigma className="text-red-600" size={52} />,
     color: 'from-green-100 to-green-50',
     items: [
       {
@@ -114,7 +114,7 @@ const courses = [
 
 export default function CoursesSection() {
   return (
-    <section className="bg-gray-50 py-16 text-gray-800">
+    <section className="bg-gray-50 pt-8 pb-16 text-gray-800">
       <div className="max-w-7xl mx-auto px-6 space-y-20">
         {courses.map((section, idx) => (
           <div key={idx} className="space-y-6">
@@ -124,7 +124,7 @@ export default function CoursesSection() {
                 <div className="flex items-center gap-2">
                   <div>{section.icon}</div>
                   <div className="flex flex-col">
-                    <h2 className="text-2xl md:text-3xl font-bold text-gray-800">{section.category}</h2>
+                    <h2 className="text-2xl md:text-3xl font-bold text-slate-700">{section.category}</h2>
                     <p className="text-sm text-gray-500 mt-1">{section.subtitle}</p>
                   </div>
                 </div>

@@ -8,6 +8,7 @@ const NAV_ITEMS = [
   { label: 'Home', href: '/' },
   { label: 'Courses', href: '/course-overview' },
   { label: 'After-School', href: '/after-school' },
+  { label: 'Education Planning', href: '/education-planning' },
   { label: 'About Us', href: '/about-us' }
 ];
 

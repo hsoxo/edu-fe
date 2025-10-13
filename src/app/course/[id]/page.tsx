@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Header from '@/components/Header';
 import FooterSection from '@/components/FooterSection';
+import courses from '@/data/courses.json';
 
 interface CourseData {
   course: {
@@ -9,32 +10,35 @@ interface CourseData {
     overviewTitle: string;
     overviewText: string;
   };
-  teacher: {
+  teachers: {
     name: string;
     photo: string;
     education: string;
     description: string | string[];
-  };
+  }[];
   gallery?: string[];
 }
 
-// ✅ 这行是关键 —— 等价于 getServerSideProps，每次请求都重新渲染
+interface CoursePageProps {
+  params: Promise<{ id: string }>;
+}
+
 export const dynamic = 'force-dynamic';
 
-export default async function CourseDetailPage({ params }: { params: { id: string } }) {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+export async function generateStaticParams() {
+  return courses.map(course => ({
+    id: course.id
+  }));
+}
 
-  // 关键点：`cache: 'no-store'` 表示不缓存 → SSR
-  const res = await fetch(`${baseUrl}/api/courses?id=${params.id}`, {
-    cache: 'no-store'
-  });
+export default async function CourseDetailPage({ params }: CoursePageProps) {
+  const id = (await params).id;
+  const data = courses.find(c => c.id === id) as CourseData;
 
-  if (!res.ok) {
+  if (!data) {
     return <div className="min-h-screen flex items-center justify-center text-gray-500">Course not found.</div>;
   }
-
-  const data: CourseData = await res.json();
-  const { course, teacher, gallery } = data;
+  const { course, teachers, gallery } = data;
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
@@ -66,25 +70,45 @@ export default async function CourseDetailPage({ params }: { params: { id: strin
         </section>
 
         {/* === 教师介绍 === */}
-        <section className="bg-white shadow-lg rounded-2xl p-8 flex flex-col md:flex-row items-center gap-8">
-          <div className="relative w-40 h-40 flex-shrink-0 rounded-full overflow-hidden shadow-md">
-            <Image src={teacher.photo} alt={teacher.name} fill className="object-cover" />
+        <section className="bg-white py-16 px-6">
+          <div className="max-w-6xl mx-auto text-center mb-12">
+            <h2 className="text-3xl font-bold text-slate-700">Our Instructors</h2>
+            <p className="text-gray-600 mt-3">
+              Meet our experienced and passionate teachers who guide students toward academic and creative success.
+            </p>
           </div>
-          <div className="flex-1 text-center md:text-left">
-            <h3 className="text-2xl font-semibold text-gray-800 mb-1">{teacher.name}</h3>
-            <p className="text-gray-500 italic mb-4">{teacher.education}</p>
-            {Array.isArray(teacher.description) ? (
-              <p className="text-gray-600 leading-relaxed">{teacher.description.join(' - ')}</p>
-            ) : (
-              <p className="text-gray-600 leading-relaxed">{teacher.description}</p>
-            )}
+
+          <div className="flex flex-col gap-10">
+            {teachers.map(t => (
+              <div
+                key={t.name}
+                className="bg-white shadow-md rounded-2xl p-8 flex flex-col md:flex-row items-center gap-8 border border-gray-100 hover:shadow-lg transition-shadow"
+              >
+                <div className="relative w-40 h-40 flex-shrink-0 rounded-full overflow-hidden shadow-md">
+                  <Image src={t.photo} alt={t.name} fill className="object-cover" />
+                </div>
+
+                <div className="flex-1 text-center md:text-left">
+                  <h3 className="text-2xl font-semibold text-gray-800 mb-1">{t.name}</h3>
+                  <p className="text-gray-500 italic mb-4">{t.education}</p>
+                  {Array.isArray(t.description) ? (
+                    <ul className="text-gray-600 leading-relaxed space-y-1 list-disc list-inside text-left">
+                      {t.description.map((line, idx) => (
+                        <li key={idx}>{line}</li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p className="text-gray-600 leading-relaxed">{t.description}</p>
+                  )}
+                </div>
+              </div>
+            ))}
           </div>
         </section>
 
         {/* === 图片展示 === */}
         {gallery && gallery.length > 0 && (
           <section>
-            <h2 className="text-2xl font-semibold mb-8 text-gray-800 text-center">Class Moments</h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {gallery.map(img => (
                 <div
