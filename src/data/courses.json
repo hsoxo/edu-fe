@@ -145,7 +145,6 @@
     "id": "japanese",
     "course": {
       "title": "Japanese Language Course",
-      "coverImage": "/images/course-japanese.jpg",
       "overviewTitle": "Course Overview",
       "overviewText": "Japanese courses focus on developing comprehensive language skills in listening, speaking, reading, and writing. Students not only learn practical communication for daily and academic use but also explore Japanese culture, traditions, and modern society. Through interactive lessons, cultural projects, and real-life language practice, learners gain both linguistic proficiency and cross-cultural understanding, building confidence to connect with the world in Japanese."
     },
@@ -162,7 +161,6 @@
     "id": "mathematicstutor",
     "course": {
       "title": "Mathematics Tutoring",
-      "coverImage": "/images/course-mathematics.jpg",
       "overviewTitle": "Course Overview",
       "overviewText": "Mathematics courses are designed to develop listening, speaking, reading, and writing abilities in Chinese, French, and Japanese. Emphasis is placed on both linguistic proficiency and cultural literacy, helping students become confident communicators and global citizens."
     },
@@ -195,7 +193,6 @@
     "id": "computerprogramming",
     "course": {
       "title": "Computer Programming",
-      "coverImage": "/images/course-computerprogramming.jpg",
       "overviewTitle": "Course Overview",
       "overviewText": "Our computer programming course introduces students to coding through Python, Scratch, and creative projects. With a project-based learning approach, students learn to design games, animations, and AI models while developing problem-solving and logical thinking skills. Guided by experienced instructors, this course builds a solid foundation for future study in computer science and technology."
     },
@@ -294,7 +291,6 @@
     "id": "animation",
     "course": {
       "title": "Animation",
-      "coverImage": "/images/animationclass.jpg",
       "overviewTitle": "Course Overview",
       "overviewText": [
         "Bring imagination to life through the art of animation!",
