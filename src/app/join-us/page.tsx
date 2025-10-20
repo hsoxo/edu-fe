@@ -85,15 +85,24 @@ export default function JoinUsPage() {
 
         {/* --- Culture Section --- */}
         <section className="max-w-6xl mx-auto px-6 py-20">
-          <div className="text-center mb-14">
+          <div className="text-center mb-10">
             <h2 className="text-3xl font-bold text-[#B71C1C] mb-3">Our Culture</h2>
-            <p className="text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              A workplace built on collaboration, purpose, and continuous improvement — where education professionals
-              thrive and students succeed.
+            <p className="text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              We are more than instructors; we are architects of confidence and guides on the path to excellence.
+              <br /> Our culture is built on a foundation of Collaborative Excellence. We see parents as essential
+              allies. We communicate with transparency and empathy, ensuring the learning journey is a true partnership
+              built on trust. We actively support and encourage our colleagues.
+            </p>
+          </div>
+          <div className="text-center mb-14">
+            <h2 className="text-3xl font-bold text-[#B71C1C] mb-3">Our Promise</h2>
+            <p className="text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              To create a vibrant ecosystem where students are known, supported, and inspired to reach their full
+              potential.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-14">
             {culture.map((c, i) => (
               <div
                 key={i}
