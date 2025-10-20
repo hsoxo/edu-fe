@@ -53,14 +53,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_CA',
-    url: 'https://www.vanlearn.ca',
+    url: 'https://vanlearn.com',
     siteName: 'VanLearn Education',
     title: 'VanLearn Education | Academic, Language & After-School Programs',
     description:
       'Empowering students in Langley and Burnaby through English, Math, Science, and Language programs. Certified teachers. Proven results.',
     images: [
       {
-        url: '/images/og-main.jpg',
+        url: '/images/logo.png',
         width: 1200,
         height: 630,
         alt: 'VanLearn Education classroom and students'
@@ -73,11 +73,11 @@ export const metadata: Metadata = {
     title: 'VanLearn Education | Academic & Language Excellence',
     description:
       'High-quality tutoring and after-school programs in Langley and Burnaby. Join VanLearn to learn English, Math, Science, and Arts.',
-    images: ['/images/og-main.jpg']
+    images: ['/images/logo.png']
   },
 
   alternates: {
-    canonical: 'https://www.vanlearn.ca'
+    canonical: 'https://vanlearn.com'
   },
 
   robots: {
@@ -90,8 +90,8 @@ export const metadata: Metadata = {
   },
 
   icons: {
-    icon: '/favicon.ico',
-    apple: '/apple-touch-icon.png'
+    icon: '/images/logo.ico',
+    apple: '/images/logo.png'
   }
 };
 
@@ -103,7 +103,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/images/logo.ico" />
         <meta name="theme-color" content="#ffffff" />
         <meta name="author" content="VanLearn International Education" />
         <script type="application/ld+json">
