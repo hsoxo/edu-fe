@@ -18,27 +18,28 @@ export const metadata: Metadata = {
   keywords: [
     'after school program langley',
     'after school willoughby',
-    'after school walnut grove',
     'after school josette dandurand elementary',
     'after school donna gabriel robins elementary',
     'after school lynn fripps elementary',
     'homework tutoring langley',
     'english and math after school',
     'after school tutoring willoughby',
-    'after school tutoring walnut grove',
     'after school near josette dandurand',
     'after school near donna gabriel robins',
     'after school near lynn fripps',
-    'after school pickup langley',
     'after school activities for kids',
     'vanlearn after school program',
-    'tutoring center langley willoughby'
+    'tutoring center langley willoughby',
+    'after school care near willoughby town centre',
+    'langley after school tutoring for elementary students',
+    'after school pickup and homework support langley',
+    'chinese and french language tutoring willoughby'
   ],
 
   openGraph: {
     type: 'website',
     locale: 'en_CA',
-    url: 'https://www.vanlearn.ca/after-school',
+    url: 'https://vanlearn.com/after-school',
     siteName: 'VanLearn Education',
     title:
       'After School Programs Near Josette Dandurand, Donna Gabriel Robins & Lynn Fripps Schools | VanLearn Education',
@@ -63,7 +64,7 @@ export const metadata: Metadata = {
   },
 
   alternates: {
-    canonical: 'https://www.vanlearn.ca/after-school'
+    canonical: 'https://vanlearn.com/after-school'
   },
 
   robots: {
@@ -82,6 +83,8 @@ export const metadata: Metadata = {
 export default function AfterSchool() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+      <title>After School Programs in Willoughby & Langley | VanLearn Education</title>
+
       <Header />
 
       <div className="bg-gray-50 text-gray-800">
@@ -89,7 +92,7 @@ export default function AfterSchool() {
         <section className="relative h-[520px] w-full">
           <Image
             src="/images/afterschool-banner.jpg"
-            alt="After School Programs in Langley, Willoughby, and Walnut Grove"
+            alt="After School Programs in Langley, Willoughby"
             fill
             className="object-cover"
             priority
@@ -98,8 +101,7 @@ export default function AfterSchool() {
             <h1 className="text-5xl md:text-6xl font-bold mb-4 drop-shadow-lg">After School Programs in Langley</h1>
 
             <p className="max-w-3xl text-lg md:text-xl text-gray-100 mb-6 leading-relaxed">
-              Proudly serving families in <strong>Willoughby</strong> and <strong>Walnut Grove</strong> — supporting
-              students from nearby schools like
+              Proudly serving families in <strong>Willoughby</strong> — supporting students from nearby schools like
               <strong> Josette Dandurand</strong>, <strong>Donna Gabriel Robins</strong>, and
               <strong> Lynn Fripps Elementary</strong> with structured learning, homework tutoring, and enrichment
               activities.
@@ -321,10 +323,9 @@ export default function AfterSchool() {
           url: 'https://vanlearn.com/after-school',
           logo: 'https://vanlearn.com/images/logo.png',
           description:
-            'After-school tutoring and enrichment programs serving families near Josette Dandurand, Donna Gabriel Robins, and Lynn Fripps Elementary Schools in Willoughby and Walnut Grove, Langley.',
+            'After-school tutoring and enrichment programs serving families near Josette Dandurand, Donna Gabriel Robins, and Lynn Fripps Elementary Schools in Willoughby, Langley.',
           areaServed: [
             { '@type': 'Place', name: 'Willoughby, Langley, BC' },
-            { '@type': 'Place', name: 'Walnut Grove, Langley, BC' },
             { '@type': 'Place', name: 'Josette Dandurand Elementary School' },
             { '@type': 'Place', name: 'Donna Gabriel Robins Elementary School' },
             { '@type': 'Place', name: 'Lynn Fripps Elementary School' }
