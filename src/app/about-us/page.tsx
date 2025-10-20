@@ -24,7 +24,7 @@ export default function Home() {
 
           <div>
             {/* 姓名 + 职位 */}
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-700 mb-1">Judy Wang</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-700 mb-1">Jody Wang</h2>
             <p className="text-lg text-gray-600 font-medium mb-8">Founder</p>
 
             {/* 简介条目（列表形式） */}
