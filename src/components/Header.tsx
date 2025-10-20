@@ -126,27 +126,16 @@ const Header = () => {
         }`}
       >
         <div className="flex flex-col divide-y divide-gray-200 px-4">
-          <Link
-            href="/course-overview"
-            className="block px-2 py-4 text-lg sm:text-xl font-semibold text-gray-700 hover:bg-slate-100 hover:text-slate-600 transition-colors"
-            onClick={() => setIsOpen(false)}
-          >
-            Course Overview
-          </Link>
-          <Link
-            href="/after-school"
-            className="block px-2 py-4 text-lg sm:text-xl font-semibold text-gray-700 hover:bg-slate-100 hover:text-slate-600 transition-colors"
-            onClick={() => setIsOpen(false)}
-          >
-            After School Services
-          </Link>
-          <Link
-            href="/about-us"
-            className="block px-2 py-4 text-lg sm:text-xl font-semibold text-gray-700 hover:bg-slate-100 hover:text-slate-600 transition-colors"
-            onClick={() => setIsOpen(false)}
-          >
-            About Us
-          </Link>
+          {NAV_ITEMS.map(item => (
+            <Link
+              key={item.label}
+              href={item.href}
+              className="block px-2 py-4 text-lg sm:text-xl font-semibold text-gray-700 hover:bg-slate-100 hover:text-slate-600 transition-colors"
+              onClick={() => setIsOpen(false)}
+            >
+              {item.label}
+            </Link>
+          ))}
         </div>
       </div>
     </header>
