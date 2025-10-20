@@ -137,6 +137,7 @@ export default function RootLayout({
             }
           })}
         </script>
+        <meta name="google-site-verification" content="2EWT4Y55LmBkyM92LoaGXjbjq7h01o-OP6LWD8m2yzk" />
       </head>
 
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
