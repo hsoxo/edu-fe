@@ -9,7 +9,14 @@ const NAV_ITEMS = [
   { label: 'Courses', href: '/course-overview' },
   { label: 'After-School', href: '/after-school' },
   { label: 'Education Planning', href: '/education-planning' },
-  { label: 'About Us', href: '/about-us' }
+  {
+    label: 'About Us',
+    href: '/about-us',
+    subItems: [
+      { label: 'About Us', href: '/about-us' },
+      { label: 'Join Us', href: '/join-us' }
+    ]
+  }
 ];
 
 const Header = () => {
@@ -50,13 +57,41 @@ const Header = () => {
           {/* Desktop Nav */}
           <div className="hidden lg:flex items-center text-gray-600 whitespace-nowrap text-lg">
             {NAV_ITEMS.map(item => (
-              <Link
-                href={item.href}
-                key={item.label}
-                className="font-semibold h-40 px-2 rounded hover:text-slate-600 hover:bg-slate-100 transition-colors flex items-center"
-              >
-                <span>{item.label}</span>
-              </Link>
+              <div key={item.label} className="relative group">
+                <Link
+                  href={item.href}
+                  className="relative font-semibold h-40 px-3 flex items-center text-gray-700 hover:text-[#E53935] transition-colors"
+                >
+                  <span>{item.label}</span>
+                  {/* 下划线 hover 动效 */}
+                  <span
+                    className={
+                      'absolute bottom-[56px] left-1/2 h-[2px] w-0 bg-[#E53935] rounded-full ' +
+                      'transition-all duration-300 ease-out transform -translate-x-1/2 group-hover:w-full group-hover:scale-x-100'
+                    }
+                  />
+                </Link>
+
+                {/* 下拉菜单 */}
+                {item.subItems && item.subItems.length > 0 && (
+                  <div
+                    className={
+                      'absolute left-0 top-full w-full bg-white shadow-md border border-gray-100 opacity-0 scale-y-0 origin-top z-50 ' +
+                      'group-hover:opacity-100 group-hover:scale-y-100 transition-all duration-200 ease-out'
+                    }
+                  >
+                    {item.subItems.map(sub => (
+                      <Link
+                        key={sub.label}
+                        href={sub.href}
+                        className="block px-4 py-3 text-gray-700 hover:bg-[#FFF3F3] hover:text-[#E53935] transition-colors"
+                      >
+                        {sub.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
             ))}
           </div>
 

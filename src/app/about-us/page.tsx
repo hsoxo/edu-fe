@@ -10,7 +10,7 @@ export default function Home() {
         <div className="max-w-[1120px] mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
           {/* Right Image */}
           <div className="flex justify-center">
-            <div className="relative w-[85%] max-w-md lg:max-w-lg">
+            <div className="relative w-full max-w-md lg:max-w-lg">
               <Image
                 src="/images/judy.jpg"
                 alt="Founder of Vanlearn International Education"
@@ -22,33 +22,30 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Left Text */}
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-600 mb-12">Founder of Vanlearn Education</h2>
+            {/* 姓名 + 职位 */}
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-700 mb-1">Judy Wang</h2>
+            <p className="text-lg text-gray-600 font-medium mb-8">Founder</p>
 
-            <p className="text-lg font-semibold text-gray-800 mb-2">
-              Master’s Degrees in TESOL (China & Canada) | Certified TESOL Instructor
-            </p>
-
-            <p className="text-gray-700 leading-relaxed mb-6">
-              <span className="font-medium">Jody</span> is the founder and director of
-              <span className="font-medium"> Vanlearn International Education</span>, an institution dedicated to
-              high-quality language and academic learning. With over 15 years of English teaching experience, Jody holds
-              Master’s degrees in TESOL from both China and Canada, as well as a certificate in Teaching English to
-              Speakers of Other Languages.
-            </p>
-
-            <p className="text-gray-700 leading-relaxed mb-6">
-              Guided by the philosophy of <span className="italic">“student-centered learning,”</span>
-              Jody is committed to creating a supportive and engaging environment where every student can thrive. She
-              focuses on helping learners build confidence, develop critical thinking, and achieve academic success.
-            </p>
-
-            <p className="text-gray-700 leading-relaxed">
-              Over the years, her professional expertise and caring approach have earned the trust of students and
-              parents alike, making
-              <span className="font-medium"> Vanlearn International Education</span>a respected name in the community.
-            </p>
+            {/* 简介条目（列表形式） */}
+            <ul className="list-disc list-outside pl-6 space-y-3 text-[18px] text-gray-800 leading-[1.6]">
+              <li>Master’s Degrees in TESOL from China and the University of Saskatchewan, Canada</li>
+              <li>
+                Certified TESOL Instructor with over 15 years of international teaching and academic leadership
+                experience
+              </li>
+              <li>
+                Founder and Director of
+                <span className="font-semibold text-slate-900"> Vanlearn International Education</span>, recognized for
+                excellence in language and academic programs
+              </li>
+              <li>
+                Dedicated to
+                <span className="italic"> student-centered learning</span> and helping students build confidence and
+                global perspectives
+              </li>
+              <li>Trusted by families for her expertise, innovative teaching, and genuine care for every learner</li>
+            </ul>
           </div>
         </div>
       </section>
@@ -56,38 +53,31 @@ export default function Home() {
       <section className="py-20 bg-gradient-to-b from-white to-slate-50">
         <div className="max-w-[1120px] mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Text */}
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-600 mb-12">Founder of Vanlearn Education</h2>
-            <p className="text-lg font-semibold text-gray-800 mb-2">
-              Certified IELTS & TOEFL Instructor | CERTESL Qualified
-            </p>
+          <div className="max-w-[600px]">
+            <h2 className="text-4xl font-bold text-slate-800 mb-1 tracking-tight">Stephen Ni</h2>
+            <p className="text-lg text-gray-500 font-medium mb-6">Founder</p>
 
-            <p className="text-gray-700 leading-relaxed mb-6">
-              With extensive teaching and training experience, our founder has served as a lead Reading & Writing
-              instructor at renowned institutions such as{' '}
-              <span className="font-medium">New Oriental Education and Longre Training School in China</span>.
-            </p>
-
-            <p className="text-gray-700 leading-relaxed mb-6">He specializes in:</p>
-
-            <ul className="list-disc list-inside space-y-2 text-gray-700 mb-6">
+            <ul className="list-disc list-outside pl-6 space-y-3 text-[18px] text-gray-800 leading-[1.6] mb-6">
+              <li>Certified IELTS & TOEFL Instructor | CERTESL</li>
               <li>
-                <span className="font-semibold">IELTS & TOEFL:</span> Foundation, Intensive, and Advanced preparation
+                Former Lead Reading & Writing Instructor at New Oriental Education and Longre Training School, two of
+                China’s most prestigious language institutions
               </li>
               <li>
-                <span className="font-semibold">Adult ESL and Young Learner EAL</span>
-              </li>
-              <li>
-                <span className="font-semibold">English Reading & Writing:</span> Academic and creative development
+                Extensive experience in English language teaching and teacher training, with a proven record of student
+                success
               </li>
             </ul>
 
-            <p className="text-gray-700 leading-relaxed">
-              Passionate about education and research, he is dedicated to helping students at all levels achieve their
-              goals with clear strategies, engaging lessons, and proven results.
-            </p>
+            <div>
+              <h3 className="text-lg font-semibold text-slate-700 mb-2">Specialties:</h3>
+              <ul className="list-disc list-outside pl-6 space-y-2 text-[17px] text-gray-700 leading-[1.6]">
+                <li>IELTS & TOEFL — Foundation, Intensive, and Advanced Preparation</li>
+                <li>Adult ESL and Young Learner EAL Programs</li>
+                <li>Academic and Creative English Reading & Writing Development</li>
+              </ul>
+            </div>
           </div>
-
           {/* Right Image */}
           <div className="flex justify-center lg:justify-end">
             <div className="relative w-[70%] md:w-[60%] lg:w-[75%] max-w-sm">
@@ -100,6 +90,65 @@ export default function Home() {
                 priority
               />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Awards Section */}
+      <section className="py-20 bg-gradient-to-b from-[#FFF8F7] via-white to-[#F9FBFF]">
+        <div className="max-w-[1120px] mx-auto px-6 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#B71C1C] mb-4">Our Awards & Achievements</h2>
+          <p className="text-gray-700 max-w-2xl mx-auto mb-12">
+            Vanlearn International has been recognized for excellence in education, innovation, and community service.
+            Each award represents our commitment to helping students reach their full potential.
+          </p>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+            {[
+              {
+                image: '/images/organization-award.jpg',
+                title: 'Vancouver Stone Painting Contest',
+                desc: 'We received the Organization Award, and our students received the 2nd, 5th, and 7th place prizes.'
+              },
+              {
+                image: '/images/award2.jpg',
+                title: 'Fish Art Contest',
+                desc: 'One of our students won 1st place in the Fish Art Contest.'
+              },
+              {
+                image: '/images/award3.jpg',
+                title: 'Canada Youth Visual Art Contest',
+                desc: 'One of our students received the Outstanding Artwork Award in the Canada Youth Visual Art Contest.'
+              },
+              {
+                image: '/images/award4.jpg',
+                title: 'Power Speaking Contest',
+                desc: 'Our students achieved 1st, 2nd, and 3rd place in the Power Speaking Contest.'
+              },
+              {
+                image: '/images/award5.jpg',
+                title: 'Leaders of Tomorrow: Impromptu Speech Competition',
+                desc: 'One of our students from our program won 1st place. One of our students was invited to speak at the TEDx Youth event.'
+              },
+              {
+                image: '/images/award6.png',
+                title: 'IELTS',
+                desc: 'Our students made significant progress after studying for 10-20 lessons.'
+              }
+            ].map((award, idx) => (
+              <div
+                key={idx}
+                className="bg-white rounded-xl shadow-sm hover:shadow-md border border-[#FFE5E5] overflow-hidden transition-all"
+              >
+                <div className="relative w-full h-56 bg-gray-100">
+                  <Image src={award.image} alt={award.title} fill className="object-cover" />
+                </div>
+                <div className="p-6 text-left">
+                  <h3 className="text-lg font-semibold text-[#B71C1C] mb-2">{award.title}</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">{award.desc}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

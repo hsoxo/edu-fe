@@ -1,6 +1,7 @@
 'use client';
 import Image from 'next/image';
 import { BookOpen, Languages, Sigma, Palette } from 'lucide-react'; // 图标库
+import { useRouter } from 'next/navigation';
 
 const courses = [
   {
@@ -107,12 +108,23 @@ const courses = [
         title: 'Sketching (Children & Adults)',
         image: '/images/sketching.png',
         link: '/course/sketching'
+      },
+      {
+        title: 'Animation',
+        image: '/images/animation.png',
+        link: '/course/animation'
+      },
+      {
+        title: 'Little Fashion Designer',
+        image: '/images/fashiondesigner.png',
+        link: '/course/fashiondesigner'
       }
     ]
   }
 ];
 
 export default function CoursesSection() {
+  const router = useRouter();
   return (
     <section className="bg-gray-50 pt-8 pb-16 text-gray-800">
       <div className="max-w-7xl mx-auto px-6 space-y-20">
@@ -121,7 +133,7 @@ export default function CoursesSection() {
             {/* === Section Header === */}
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
               <div className="flex items-center gap-3">
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-4">
                   <div>{section.icon}</div>
                   <div className="flex flex-col">
                     <h2 className="text-2xl md:text-3xl font-bold text-slate-700">{section.category}</h2>
@@ -136,7 +148,8 @@ export default function CoursesSection() {
               {section.items.map((item, i) => (
                 <div
                   key={i}
-                  className="relative rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group"
+                  className="relative rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group cursor-pointer"
+                  onClick={() => router.push(item.link)}
                 >
                   {/* 背景图片 */}
                   <Image

@@ -30,6 +30,18 @@
         "photo": "/images/jillian.jpg",
         "education": "UBC Engineering",
         "description": "UBC Engineering graduate and a TEFL certified tutor. 5+ years of experience tutoring in math, the sciences, and English to students aged 5-40 from all different backgrounds.2 years of experience teaching English in public schools overseas. My experience, patience, and dedication have helped me build meaningful connections with my students and to work with them to develop lessons that best meet their needs."
+      },
+      {
+        "name": "Ms. Jessica Wendland",
+        "photo": "/images/jessica.jpg",
+        "education": "",
+        "description": "After achieving a bachelor’s degree in linguistics, I found that I enjoy working with languages. I teach English as a second language to students anywhere between kindergarten age to adults. I cover all aspects of language; speaking, reading, writing and listening. However, I can focus on one more than another if that is preferred. I like working with people and being a part of their learning journeys. I strongly believe one can go or do anything having the ability to use another language, especially English with its growing popularity."
+      },
+      {
+        "name": "Ms. Brianne Arsenault",
+        "photo": "/images/brianne.jpg",
+        "education": "",
+        "description": "I graduated from the University of Saskatchewan in 2020 with my Bachelor of Education and began my teaching career that same year. Since then, I have gained experience working with students across all grade levels. I am especially passionate about literacy and helping students strengthen their English language skills. I work to design individualized and engaging lessons that support each learner’s unique needs and goals. My aim is to help students build confidence, curiosity, and a lasting love of learning."
       }
     ]
   },
@@ -100,10 +112,16 @@
         "description": "As a respected Chinese instructor in Canada, Bai Jingbo brings a rich background in media and writing to his teaching. His diverse experience—from university lecturing and journalism at CCTV to professional scriptwriting—has honed his deep expertise in Chinese language and literature. In the classroom, he leverages this unique perspective to help students appreciate linguistic nuances and cultural depth, fostering a learning environment that is both intellectually stimulating and culturally enriching."
       },
       {
-        "name": "Mr. Jing",
+        "name": "Ms. Jing",
         "photo": "/images/jing.jpg",
         "education": "",
         "description": "I am a dedicated Chinese language educator with over 20 years of teaching experience in Canada and China. I am highly familiar with a wide range of Mandarin curricula and teaching methods and specialize in tailoring lessons to meet each student’s individual needs. I believe language learning should be meaningful and enjoyable, so I integrate cultural stories, traditions, and values into my teaching to create engaging and effective learning experiences. My goal is to build students’ confidence and help them develop strong practical communication skills in Mandarin while fostering an appreciation for Chinese culture."
+      },
+      {
+        "name": "Ms. Wu",
+        "photo": "/images/wu.jpg",
+        "education": "",
+        "description": "A passionate Mandarin teacher with years of experience working with children and youth. I also hold a BC Education Assistant Certificate. Learning Mandarin should be a joyful journey! My classes focus on communication, creativity, and connection. Students learn through stories, games, and projects that link new vocabulary to real-life situations. Whether we’re talking about favorite foods or celebrating a festival, I make sure every lesson sparks curiosity and builds confidence. My goal is for every student to develop not only language skills but also a love for Chinese culture."
       }
     ]
   },
@@ -111,16 +129,15 @@
     "id": "french",
     "course": {
       "title": "French Language Course",
-      "coverImage": "/images/course-french.jpg",
+      "coverImage": "",
       "overviewTitle": "Course Overview",
       "overviewText": "French courses focus on building students’ communication skills through practical listening, speaking, reading, and writing activities. Lessons integrate cultural exploration—such as French traditions, art, and daily life—to deepen understanding of the language in context. Through interactive projects and authentic materials, students develop confidence in expressing themselves and gain a global perspective rooted in Francophone culture."
     },
     "teachers": [
       {
-        "name": "Ms. Yu",
-        "photo": "/images/teacher-yu.jpg",
-        "education": "Graduate of the Academy of Fine Arts, Liaoning Normal University",
-        "description": "With over 10 years of teaching experience, Ms. Yu specializes in watercolor, illustration, and creative design. She inspires young learners to develop artistic expression and cultural understanding through interactive and personalized lessons."
+        "name": "Ms. Zohra",
+        "photo": "/images/zohra.jpg",
+        "description": "Zohra is a certified teacher with over 25 years of experience teaching French. She began her teaching career in 1992 and has worked with children and adults in a variety of educational settings. Zohra is passionate about helping students develop strong communication skills and an appreciation for language and culture. Her teaching approach emphasizes engagement, clarity, and individualized support to meet each learner’s unique needs. Since joining our center last year, she has continued to inspire students to achieve excellence and confidence in their language learning journey."
       }
     ]
   },
@@ -162,7 +179,6 @@
     "id": "singaporemath",
     "course": {
       "title": "Singapore Math",
-      "coverImage": "/images/course-singaporemath.jpg",
       "overviewTitle": "Course Overview",
       "overviewText": "Known globally for its structured and problem-solving approach, Singapore Math equips students with strong numerical fluency, logical reasoning, and conceptual understanding. Students are encouraged to think mathematically and apply multiple strategies to solve real-world problems."
     },
@@ -270,6 +286,62 @@
           "Graduated from Shandong University of Art & Design with a major in Modeling Arts. In 2022, she completed watercolor and oil painting courses at AUArts . Member of the Alberta Society of Artists.",
           "She has been working in art education since 2011 and has extensive teaching experience. Passionate about painting, she patiently guides her students, many of whom have won awards in North American and Canadian art competitions. She has also been recognized multiple times as an outstanding art instructor"
         ]
+      }
+    ],
+    "gallery": ["/images/sketching-1.jpg", "/images/sketching-2.jpg", "/images/sketching-3.jpg"]
+  },
+  {
+    "id": "animation",
+    "course": {
+      "title": "Animation",
+      "coverImage": "/images/animationclass.jpg",
+      "overviewTitle": "Course Overview",
+      "overviewText": [
+        "Bring imagination to life through the art of animation!",
+        "In this engaging and creative course, students will:",
+        "🎬 Learn the fundamentals of animation and storytelling",
+        "🎨 Explore character design, movement, and visual expression",
+        "💻 Use beginner-friendly digital tools to create short animations",
+        "🧠 Develop creative thinking, problem-solving, and teamwork skills",
+        "🌟 Turn their ideas into fun, animated stories step by step",
+        "Age Group: 7 years and above",
+        "Goal: To inspire students to express their imagination through digital art and animation creation."
+      ]
+    },
+    "teachers": [
+      {
+        "name": "Ms. Eric Hu",
+        "photo": "/images/eric.jpg",
+        "education": "",
+        "description": "Chinese-Canadian animation artist with a strong background in both traditional and digital arts. A graduate of Beijing Film Academy and Vancouver Film School, he has contributed to several North American TV productions, bringing creative vision and technical expertise to animation storytelling."
+      }
+    ],
+    "gallery": ["/images/sketching-1.jpg", "/images/sketching-2.jpg", "/images/sketching-3.jpg"]
+  },
+  {
+    "id": "fashiondesigner",
+    "course": {
+      "title": "Fashion Designer",
+      "coverImage": "/images/fashiondesignerclass.jpg",
+      "overviewTitle": "Course Overview",
+      "overviewText": [
+        "Let your child step into the world of fashion through creativity!",
+        "In this fun and inspiring course, students will:",
+        "👗 Learn the basics of fashion design and color coordination",
+        "🎨 Explore fabrics, patterns, and simple sewing techniques",
+        "🧵 Create their own stylish and unique fashion pieces",
+        "🌟 Experience a new creative theme in every class",
+        "💫 Build confidence, imagination, and a sense of style",
+        "Age Group: 7 years and above",
+        "Goal: To nurture children’s creativity and help them express their fashion dreams through hands-on design projects."
+      ]
+    },
+    "teachers": [
+      {
+        "name": "Ms. Hera Yu",
+        "photo": "/images/hera-2.jpg",
+        "education": "Graduate of the Academy of Fine Arts, Liaoning Normal University",
+        "description": "With over 10 years of experience, Ms. Yu specializes in watercolor, anime illustration, and creative design. She teaches children aged 4–15 and leads the After School Program, inspiring young artists to explore creativity and confidence through art."
       }
     ],
     "gallery": ["/images/sketching-1.jpg", "/images/sketching-2.jpg", "/images/sketching-3.jpg"]

@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://vanlearn.com
+
+# Sitemaps
+Sitemap: https://vanlearn.com/sitemap.xml

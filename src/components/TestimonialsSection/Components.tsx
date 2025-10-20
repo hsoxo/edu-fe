@@ -5,6 +5,7 @@ import 'swiper/css';
 import { Autoplay } from 'swiper/modules';
 import Image from 'next/image';
 import { Star } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const testimonials = [
   {
@@ -76,89 +77,118 @@ const testimonials = [
     author: 'John Bai'
   }
 ];
-
-const reasons = ['Proven outcomes', 'Professional educators', 'Tailored plans', 'Dependable logistics'];
+const reasons = ['Proven outcomes', 'Professional educators', 'Tailored plans', 'Peace of Mind for Parents'];
 
 const googleLink =
   'https://www.google.com/maps/place/Vanlearn+Education.CCS+Langley.+Penny+Chess+Club+Langley/@49.1626561,-122.6579336,17z/data=!4m8!3m7!1s0x5485d1f1d78da4ad:0xec15e51bd7f77016!8m2!3d49.1623493!4d-122.6579909!9m1!1b1!16s%2Fg%2F11tbzt6_78?entry=ttu&g_ep=EgoyMDI1MDkyNC4wIKXMDSoASAFQAw%3D%3D';
 
 export default function TestimonialsSection() {
   return (
-    <section className="bg-gradient-to-b from-white to-slate-50 py-20">
-      <div className="max-w-[1120px] mx-auto px-4 grid lg:grid-cols-3 gap-12 items-start">
+    <section className="bg-gradient-to-b from-white to-[#FFF8F7] py-20 relative overflow-hidden">
+      {/* 背景柔光 */}
+      <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[70%] h-40 bg-[radial-gradient(ellipse_at_center,_rgba(229,57,53,0.05)_0%,_transparent_70%)]" />
+
+      <motion.div
+        className="max-w-[1120px] mx-auto px-4 grid lg:grid-cols-3 gap-12 items-start relative z-10"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+        viewport={{ once: true, amount: 0.2 }}
+      >
         {/* 左边 Google Reviews */}
         <div className="lg:col-span-2">
-          {/* 标题 + Google 评分 */}
-          <div className="flex items-center justify-between mb-8">
-            <div className="flex items-center space-x-3">
-              <h2 className="text-2xl font-bold text-gray-800">
-                What Families Say on <span className="text-rose-600">Google Reviews</span>
-              </h2>
-            </div>
-            <div className="flex items-center space-x-1 text-rose-500">
+          {/* 标题 + 星级 */}
+          <div className="flex items-center justify-between mb-8 flex-wrap gap-3">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-800">
+              What Families Say on{' '}
+              <span className="text-[#B71C1C] underline underline-offset-4 decoration-[#E57373]/40">
+                Google Reviews
+              </span>
+            </h2>
+            <div className="flex items-center space-x-1 text-[#E53935]">
               {Array.from({ length: 5 }).map((_, i) => (
-                <Star key={i} className="w-5 h-5 fill-rose-500" />
+                <Star key={i} className="w-5 h-5 fill-[#E53935]" />
               ))}
               <span className="ml-2 text-gray-700 font-semibold">5.0</span>
             </div>
           </div>
 
-          {/* Review Carousel */}
+          {/* Swiper */}
           <Swiper
             direction="vertical"
             slidesPerView={3}
-            spaceBetween={12}
-            loop={true}
-            autoplay={{ delay: 2500, disableOnInteraction: false }}
+            spaceBetween={14}
+            loop
+            autoplay={{ delay: 2800, disableOnInteraction: false }}
             modules={[Autoplay]}
             className="h-[450px]"
           >
             {testimonials.map((t, i) => (
               <SwiperSlide key={i}>
-                <div className="bg-white p-4 rounded-lg shadow-sm flex space-x-3">
-                  <Image width={20} height={20} src={t.avatar} alt={t.author} className="w-10 h-10 rounded-full" />
+                <motion.div
+                  className="bg-white/90 p-4 rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.05)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)] transition-all duration-300 flex space-x-3"
+                  whileHover={{ scale: 1.02 }}
+                >
+                  <Image
+                    width={40}
+                    height={40}
+                    src={t.avatar}
+                    alt={t.author}
+                    className="w-10 h-10 rounded-full border border-gray-100 object-cover"
+                  />
                   <div>
-                    <p className="text-gray-700 italic text-sm">“{t.quote}”</p>
-                    <p className="text-xs text-gray-500 mt-1">— {t.author}</p>
+                    <p className="text-gray-700 italic text-sm leading-relaxed">“{t.quote}”</p>
+                    <p className="text-xs text-gray-500 mt-1 font-medium">— {t.author}</p>
                   </div>
-                </div>
+                </motion.div>
               </SwiperSlide>
             ))}
           </Swiper>
 
-          {/* Google 查看按钮 */}
-          <div className="text-right mt-4">
+          {/* Google 链接 */}
+          <div className="text-right mt-5">
             <a
               href={googleLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-md font-semibold text-rose-600 hover:underline"
+              className="text-md font-semibold text-[#E53935] hover:text-[#B71C1C] transition-colors"
             >
               <i>See all reviews on Google →</i>
             </a>
           </div>
         </div>
 
-        {/* 右边 Why Families Trust VanLearn */}
-        <div className="bg-white rounded-lg shadow-md p-8 flex flex-col items-center">
-          <div className="w-14 h-14 flex items-center justify-center rounded-full bg-slate-100 text-slate-600 mb-4">
+        {/* 右边 Why Families Trust */}
+        <motion.div
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+          viewport={{ once: true, amount: 0.3 }}
+          className="bg-white rounded-2xl shadow-[0_4px_14px_rgba(0,0,0,0.06)] p-8 flex flex-col items-center text-center will-change-transform will-change-opacity"
+        >
+          <div className="w-14 h-14 flex items-center justify-center rounded-full bg-[#FFF4F4] text-[#B71C1C] mb-4">
             <Star className="w-7 h-7" />
           </div>
-          <h3 className="text-xl font-semibold text-gray-800 mb-6">Why Families Trust VanLearn</h3>
-          <ul className="text-gray-700 space-y-3 mb-6">
+          <h3 className="text-xl font-semibold text-gray-800 mb-6">
+            Why Families Trust <span className="text-[#B71C1C]">VanLearn</span>
+          </h3>
+          <ul className="text-gray-700 space-y-3 mb-6 text-base">
             {reasons.map((reason, i) => (
-              <li key={i} className="flex space-x-2">
-                <span className="text-slate-500">•</span>
-                <span>{reason}</span>
+              <li
+                key={i}
+                className="flex items-center justify-center gap-2 text-gray-700 hover:text-[#E53935] transition-colors"
+              >
+                <span className="w-2 h-2 bg-[#E57373] rounded-full"></span>
+                {reason}
               </li>
             ))}
           </ul>
-          <p className="text-gray-600 text-sm leading-relaxed text-center">
-            Real families recommend <span className="font-semibold text-slate-600">VanLearn</span> for steady,
+          <p className="text-gray-600 text-sm leading-relaxed">
+            Real families recommend <span className="font-semibold text-[#B71C1C]">VanLearn</span> for steady,
             measurable improvement in their children’s academic performance and confidence.
           </p>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }

@@ -2,13 +2,15 @@ import Image from 'next/image';
 import Header from '@/components/Header';
 import FooterSection from '@/components/FooterSection';
 import courses from '@/data/courses.json';
+import Gallery from '@/components/Gallery';
+import { Metadata } from 'next';
 
 interface CourseData {
   course: {
     title: string;
     coverImage: string;
     overviewTitle: string;
-    overviewText: string;
+    overviewText: string | string[];
   };
   teachers: {
     name: string;
@@ -31,6 +33,59 @@ export async function generateStaticParams() {
   }));
 }
 
+export async function generateMetadata({ params }: CoursePageProps): Promise<Metadata> {
+  const id = (await params).id;
+  const c = courses.find(c => c.id === id);
+
+  if (!c) {
+    return {
+      title: 'Course Not Found | VanLearn Education',
+      description: 'The requested course could not be found at VanLearn Education.'
+    };
+  }
+
+  const { course } = c;
+
+  const title = `${course.title} | VanLearn Education`;
+  const description =
+    typeof course.overviewText === 'string'
+      ? course.overviewText.slice(0, 160)
+      : course.overviewText?.join(' ').slice(0, 160);
+
+  // Optional: derive keywords from course title
+  const keywords = [course.title, `${course.title} Langley`, 'VanLearn Education', 'tutoring', 'after school program'];
+
+  return {
+    title,
+    description,
+    keywords,
+    alternates: {
+      canonical: `https://vanlearn.com/course/${id}`
+    },
+    openGraph: {
+      type: 'article',
+      title,
+      description,
+      url: `https://vanlearn.com/course/${id}`,
+      siteName: 'VanLearn Education',
+      images: [
+        {
+          url: course.coverImage || '/images/logo.png',
+          width: 1200,
+          height: 630,
+          alt: `${course.title} - VanLearn Education`
+        }
+      ]
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [course.coverImage || '/images/logo.png']
+    }
+  };
+}
+
 export default async function CourseDetailPage({ params }: CoursePageProps) {
   const id = (await params).id;
   const data = courses.find(c => c.id === id) as CourseData;
@@ -48,29 +103,54 @@ export default async function CourseDetailPage({ params }: CoursePageProps) {
         {/* === 课程标题 === */}
         <section className="text-center">
           <h1 className="text-4xl font-bold text-gray-800 mb-6">{course.title}</h1>
-          <p className="text-gray-500 text-lg max-w-3xl mx-auto">
-            Explore this program’s highlights and meet our experienced instructors.
-          </p>
+          {course.coverImage ? (
+            <p className="text-gray-500 text-lg max-w-3xl mx-auto">
+              Explore this program’s highlights and meet our experienced instructors.
+            </p>
+          ) : null}
         </section>
 
         {/* === 课程介绍 === */}
-        <section className="grid md:grid-cols-[45%_55%] gap-10 items-center">
-          <div className="relative w-full h-72 md:h-96 rounded-2xl overflow-hidden shadow-lg">
-            <Image
-              src={course.coverImage}
-              alt={course.title}
-              fill
-              className="object-cover transition-transform duration-300 hover:scale-105"
-            />
-          </div>
-          <div>
-            <h2 className="text-2xl font-semibold mb-5 text-gray-800">{course.overviewTitle}</h2>
-            <p className="text-gray-600 leading-relaxed text-lg">{course.overviewText}</p>
-          </div>
-        </section>
+        {course.coverImage ? (
+          <section className="grid md:grid-cols-[45%_55%] gap-10 items-center">
+            <div className="relative w-full h-72 md:h-96 rounded-2xl overflow-hidden shadow-lg">
+              <Image
+                src={course.coverImage}
+                alt={course.title}
+                fill
+                className="object-cover transition-transform duration-300 hover:scale-105"
+              />
+            </div>
+            <div>
+              <h2 className="text-2xl font-semibold mb-5 text-gray-800">{course.overviewTitle}</h2>
+
+              {Array.isArray(course.overviewText) ? (
+                <div className="text-gray-600 leading-relaxed space-y-1 list-disc list-inside text-left">
+                  {course.overviewText.map((line, idx) => (
+                    <div key={idx}>{line}</div>
+                  ))}
+                </div>
+              ) : (
+                <p className="text-gray-600 leading-relaxed text-lg">{course.overviewText}</p>
+              )}
+            </div>
+          </section>
+        ) : (
+          <section className="flex flex-col gap-10 items-center justify-center">
+            {Array.isArray(course.overviewText) ? (
+              <div className="text-gray-600 leading-relaxed space-y-1 list-disc list-inside text-left">
+                {course.overviewText.map((line, idx) => (
+                  <div key={idx}>{line}</div>
+                ))}
+              </div>
+            ) : (
+              <p className="text-gray-600 leading-relaxed text-lg">{course.overviewText}</p>
+            )}{' '}
+          </section>
+        )}
 
         {/* === 教师介绍 === */}
-        <section className="bg-white py-16 px-6">
+        <section className="py-16 px-6">
           <div className="max-w-6xl mx-auto text-center mb-12">
             <h2 className="text-3xl font-bold text-slate-700">Our Instructors</h2>
             <p className="text-gray-600 mt-3">
@@ -107,20 +187,7 @@ export default async function CourseDetailPage({ params }: CoursePageProps) {
         </section>
 
         {/* === 图片展示 === */}
-        {gallery && gallery.length > 0 && (
-          <section>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {gallery.map(img => (
-                <div
-                  key={img}
-                  className="relative w-full aspect-[4/3] rounded-xl overflow-hidden shadow-md hover:scale-[1.02] transition-transform"
-                >
-                  <Image src={img} alt={img} fill className="object-cover" />
-                </div>
-              ))}
-            </div>
-          </section>
-        )}
+        {gallery && gallery.length > 0 && <Gallery gallery={gallery} />}
       </main>
 
       <FooterSection />

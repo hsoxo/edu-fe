@@ -75,7 +75,7 @@ const FooterSection: React.FC = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="w-5 h-5 text-white" />
-                <span>20378 88 Ave Unit 200, Langley</span>
+                <span>20378 88 Ave, Langley Twp, BC V1M 2Y4</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Clock className="w-5 h-5 text-white" />
