@@ -2,7 +2,7 @@ import FooterSection from '@/components/FooterSection';
 import Header from '@/components/Header';
 import Image from 'next/image';
 import { BookOpen, Heart, Lightbulb, Palette, Users } from 'lucide-react';
-import { PenTool, Brain, Calculator, Bus } from 'lucide-react';
+import { PenTool, Languages, Calculator, Bus } from 'lucide-react';
 import Script from 'next/script';
 import { LATITUDE, LONGITUDE } from '@/data/constants';
 
@@ -138,7 +138,7 @@ export default function AfterSchool() {
                 bg: 'bg-[#EAF3FF]'
               },
               {
-                icon: <Brain className="w-7 h-7 text-[#2E7D32]" />,
+                icon: <Languages className="w-7 h-7 text-[#2E7D32]" />,
                 title: 'Chinese Learning',
                 bg: 'bg-[#E9F6EC]'
               },
