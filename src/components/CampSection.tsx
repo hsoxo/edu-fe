@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Palette, Trees, Sparkles, Gift, Sun, Users } from 'lucide-react';
+import { Palette, Sparkles } from 'lucide-react';
 import Link from 'next/link';
 
 const camps = [
