@@ -312,7 +312,12 @@
         "description": "Chinese-Canadian animation artist with a strong background in both traditional and digital arts. A graduate of Beijing Film Academy and Vancouver Film School, he has contributed to several North American TV productions, bringing creative vision and technical expertise to animation storytelling."
       }
     ],
-    "gallery": ["/images/sketching-1.jpg", "/images/sketching-2.jpg", "/images/sketching-3.jpg"]
+    "gallery": [
+      "/images/20251109134354_222_1.jpg",
+      "/images/20251109134354_223_1.png",
+      "/images/20251109134354_224_1.jpg",
+      "/images/20251109134355_226_1.jpg"
+    ]
   },
   {
     "id": "fashiondesigner",
@@ -340,6 +345,11 @@
         "description": "With over 10 years of experience, Ms. Yu specializes in watercolor, anime illustration, and creative design. She teaches children aged 4–15 and leads the After School Program, inspiring young artists to explore creativity and confidence through art."
       }
     ],
-    "gallery": ["/images/sketching-1.jpg", "/images/sketching-2.jpg", "/images/sketching-3.jpg"]
+    "gallery": [
+      "/images/20251109134434_227_1.jpg",
+      "/images/20251109134435_228_1.jpg",
+      "/images/20251109134435_229_1.jpg",
+      "/images/20251109134436_230_1.jpg"
+    ]
   }
 ]

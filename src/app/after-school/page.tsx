@@ -16,24 +16,23 @@ export const metadata: Metadata = {
     'VanLearn Education offers structured after-school programs in Langley, serving families near Josette Dandurand, Donna Gabriel Robins, and Lynn Fripps Elementary Schools. Academic tutoring, homework help, and enrichment activities for Willoughby and Walnut Grove students.',
 
   keywords: [
-    'after school program langley',
+    'after school langley',
     'after school willoughby',
-    'after school josette dandurand elementary',
-    'after school donna gabriel robins elementary',
-    'after school lynn fripps elementary',
+    'after school walnut grove',
+    'after school josette dandurand',
+    'after school donna gabriel robins',
+    'after school lynn fripps',
     'homework tutoring langley',
     'english and math after school',
-    'after school tutoring willoughby',
-    'after school near josette dandurand',
-    'after school near donna gabriel robins',
-    'after school near lynn fripps',
     'after school activities for kids',
     'vanlearn after school program',
     'tutoring center langley willoughby',
+    'tutoring center langley walnut grove',
     'after school care near willoughby town centre',
-    'langley after school tutoring for elementary students',
+    'langley after school tutoring',
     'after school pickup and homework support langley',
-    'chinese and french language tutoring willoughby'
+    'chinese and french language tutoring willoughby',
+    'chinese and french language tutoring walnut grove'
   ],
 
   openGraph: {
@@ -41,8 +40,7 @@ export const metadata: Metadata = {
     locale: 'en_CA',
     url: 'https://vanlearn.com/after-school',
     siteName: 'VanLearn Education',
-    title:
-      'After School Programs Near Josette Dandurand, Donna Gabriel Robins & Lynn Fripps Schools | VanLearn Education',
+    title: 'After School Programs in Langley | Willoughby & Walnut Grove | VanLearn Education',
     description:
       'VanLearn provides after-school programs for students near Josette Dandurand, Donna Gabriel Robins, and Lynn Fripps Elementary Schools in Willoughby. Academic support and enrichment activities for Langley families.',
     images: [
@@ -57,7 +55,7 @@ export const metadata: Metadata = {
 
   twitter: {
     card: 'summary_large_image',
-    title: 'After School Programs near Josette Dandurand & Donna Gabriel Robins Schools | VanLearn Education',
+    title: 'After School Programs in Langley | Willoughby & Walnut Grove | VanLearn Education',
     description:
       'Personalized after-school tutoring in Willoughby and Walnut Grove. Serving students from Josette Dandurand, Donna Gabriel Robins, and Lynn Fripps Elementary Schools.',
     images: ['/images/after-school-hero.jpg']
@@ -83,7 +81,7 @@ export const metadata: Metadata = {
 export default function AfterSchool() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-      <title>After School Programs in Willoughby & Langley | VanLearn Education</title>
+      <title>After School Programs in Willoughby & Walnut Grove | Langley | VanLearn Education</title>
 
       <Header />
 
@@ -101,8 +99,9 @@ export default function AfterSchool() {
             <h1 className="text-5xl md:text-6xl font-bold mb-4 drop-shadow-lg">After School Programs in Langley</h1>
 
             <p className="max-w-3xl text-lg md:text-xl text-gray-100 mb-6 leading-relaxed">
-              Proudly serving families in <strong>Willoughby</strong> — supporting students from nearby schools like
-              <strong> Josette Dandurand</strong>, <strong>Donna Gabriel Robins</strong>, and
+              Proudly serving families in <strong>Willoughby</strong> and <strong>Walnut Grove</strong> — supporting
+              students from nearby schools like <strong> Josette Dandurand</strong>,{' '}
+              <strong>Donna Gabriel Robins</strong>, and
               <strong> Lynn Fripps Elementary</strong> with structured learning, homework tutoring, and enrichment
               activities.
             </p>
@@ -318,36 +317,47 @@ export default function AfterSchool() {
       <Script id="after-school-jsonld" type="application/ld+json">
         {JSON.stringify({
           '@context': 'https://schema.org',
-          '@type': 'EducationalOrganization',
-          name: 'VanLearn Education After-School Programs',
-          url: 'https://vanlearn.com/after-school',
-          logo: 'https://vanlearn.com/images/logo.png',
-          description:
-            'After-school tutoring and enrichment programs serving families near Josette Dandurand, Donna Gabriel Robins, and Lynn Fripps Elementary Schools in Willoughby, Langley.',
-          areaServed: [
-            { '@type': 'Place', name: 'Willoughby, Langley, BC' },
-            { '@type': 'Place', name: 'Josette Dandurand Elementary School' },
-            { '@type': 'Place', name: 'Donna Gabriel Robins Elementary School' },
-            { '@type': 'Place', name: 'Lynn Fripps Elementary School' }
-          ],
-          address: {
-            '@type': 'PostalAddress',
-            streetAddress: '20378 88 Ave',
-            addressLocality: 'Langley Twp',
-            addressRegion: 'BC',
-            postalCode: 'V1M 2Y4',
-            addressCountry: 'CA'
-          },
-          contactPoint: {
-            '@type': 'ContactPoint',
-            telephone: '+1-236-989-1968',
-            contactType: 'Customer Service'
-          },
-          geo: {
-            '@type': 'GeoCoordinates',
-            latitude: LATITUDE,
-            longitude: LONGITUDE
-          }
+          '@graph': [
+            {
+              '@type': 'WebSite',
+              '@id': 'https://vanlearn.com/#website',
+              url: 'https://vanlearn.com/',
+              name: 'VanLearn Education',
+              alternateName: 'VanLearn'
+            },
+            {
+              '@type': 'EducationalOrganization',
+              name: 'VanLearn Education After-School Programs',
+              url: 'https://vanlearn.com/after-school',
+              logo: 'https://vanlearn.com/images/logo.png',
+              description:
+                'After-school tutoring and enrichment programs serving families near Josette Dandurand, Donna Gabriel Robins, and Lynn Fripps Elementary Schools in Willoughby, Langley.',
+              areaServed: [
+                { '@type': 'Place', name: 'Willoughby, Langley, BC' },
+                { '@type': 'Place', name: 'Josette Dandurand Elementary School' },
+                { '@type': 'Place', name: 'Donna Gabriel Robins Elementary School' },
+                { '@type': 'Place', name: 'Lynn Fripps Elementary School' }
+              ],
+              address: {
+                '@type': 'PostalAddress',
+                streetAddress: '20378 88 Ave',
+                addressLocality: 'Langley Twp',
+                addressRegion: 'BC',
+                postalCode: 'V1M 2Y4',
+                addressCountry: 'CA'
+              },
+              contactPoint: {
+                '@type': 'ContactPoint',
+                telephone: '+1-236-989-1968',
+                contactType: 'Customer Service'
+              },
+              geo: {
+                '@type': 'GeoCoordinates',
+                latitude: LATITUDE,
+                longitude: LONGITUDE
+              }
+            }
+          ]
         })}
       </Script>
     </div>
