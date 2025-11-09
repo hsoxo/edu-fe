@@ -4,6 +4,7 @@ import FooterSection from '@/components/FooterSection';
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
+import CampSection from '@/components/CampSection';
 import AfterSchoolSection from '@/components/AfterSchoolSection';
 import { LATITUDE, LONGITUDE } from '@/data/constants';
 import Script from 'next/script';
@@ -18,6 +19,7 @@ export default function Home() {
       <CoursesSection />
 
       <AfterSchoolSection />
+      <CampSection />
 
       <AboutSection />
 
