@@ -9,7 +9,7 @@ const camps = [
     icon: <Palette className="w-7 h-7 text-[#D32F2F]" />,
     title: 'Creative Art Exploration',
     desc: 'Daily themed art projects that combine imagination, color, and storytelling.',
-    items: ['Watercolor & Clay Art', 'Winter-themed Crafts', 'Story-inspired Painting'],
+    items: ['Watercolor & Clay Art', 'Winter/Spring/Summer themed Crafts', 'Story-inspired Painting'],
     bgColor: 'bg-[#FFF4F4]'
   },
   {
@@ -19,13 +19,6 @@ const camps = [
     items: ['Christmas Ornament Design', 'Snowflake Collage', 'New Year Art Projects'],
     bgColor: 'bg-[#FFF6E5]'
   }
-  //   {
-  //     icon: <Trees className="w-7 h-7 text-[#2E7D32]" />,
-  //     title: 'Outdoor Learning & Play',
-  //     desc: 'Balanced schedule between indoor art creation and outdoor adventures.',
-  //     items: ['Sketching in Nature', 'Outdoor Team Games', 'Winter Scavenger Hunt'],
-  //     bgColor: 'bg-[#E9F6EC]'
-  //   }
 ];
 
 const CampSection: React.FC = () => {
@@ -50,7 +43,7 @@ const CampSection: React.FC = () => {
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#B71C1C]">Art Camp</h2>
           <p className="text-lg text-gray-700">
-            A joyful blend of art, creativity, and winter wonder — where imagination warms the season.
+            A joyful blend of art, creativity, and wonder — where imagination warms the season.
           </p>
         </motion.div>
 

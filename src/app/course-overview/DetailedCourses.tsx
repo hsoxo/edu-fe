@@ -21,7 +21,7 @@ const courses = [
         link: '/course/englishreadingwriting'
       },
       {
-        title: 'Public Speaking & Debate',
+        title: 'Public Speaking',
         image: '/images/publicspeaking.png',
         link: '/course/publicspeaking'
       },

@@ -42,13 +42,19 @@
         "photo": "/images/brianne.jpg",
         "education": "",
         "description": "I graduated from the University of Saskatchewan in 2020 with my Bachelor of Education and began my teaching career that same year. Since then, I have gained experience working with students across all grade levels. I am especially passionate about literacy and helping students strengthen their English language skills. I work to design individualized and engaging lessons that support each learner’s unique needs and goals. My aim is to help students build confidence, curiosity, and a lasting love of learning."
+      },
+      {
+        "name": "Ms. Kathryn Bjornson",
+        "photo": "/images/kathryn.jpg",
+        "education": "",
+        "description": "My name is Kate. I have bachelor degrees in English and Education, a Masters in English, and I’m currently working on a Doctorate degree in Education. I have over 28 years experience as an English teacher, and I’ve been teaching English as a Second Language online for 6 years. I have taught Chinese students from age 4 to 18. I can help you focus on conversational English, vocabulary, grammar, reading strategies and pronunciation. I have experience with preparation for international exams like IELTS and TOEFL."
       }
     ]
   },
   {
     "id": "publicspeaking",
     "course": {
-      "title": "Public Speaking & Debate",
+      "title": "Public Speaking",
       "coverImage": "/images/publicspeaking.jpg",
       "overviewTitle": "Course Overview",
       "overviewText": "Leaders of Tomorrow is a professionally designed program dedicated to developing young people's leadership skills. Through time-tested concepts, tutorials, and instructors, we help young people not only overcome the fear and tension of public speaking, but improve effective communication and build confidence in interpersonal communication."
@@ -60,6 +66,14 @@
         "education": "",
         "description": "Jeanie David is passionate about encouraging and developing speaking and leadership qualities in students. She brings over 30 years' experience teaching and guiding children. Jeanie has taught a variety of ECE classes, as well as Development programs including Public speaking for Grade 1-12."
       }
+    ],
+    "gallery": [
+      "/images/20251109153953_257_1-min.jpg",
+      "/images/20251109143047_240_1-min.jpg",
+      "/images/20251109143052_241_1-min.jpg",
+      "/images/20251109143101_242_1-min.jpg",
+      "/images/20251109143116_243_1-min.jpg",
+      "/images/20251109143121_244_1-min.jpg"
     ]
   },
   {

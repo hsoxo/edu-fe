@@ -212,7 +212,7 @@ export default function Camp() {
         <div>
           <h3 className="text-2xl font-bold text-[#B71C1C] mb-4 flex items-center justify-center gap-2">
             <span className="w-8 h-[2px] bg-[#E57373]" />
-            Week 2 · New Year Art Camp (Dec 29 - Jan 2)
+            Week 2 · New Year English & Art Camp (Dec 29 - Jan 2)
             <span className="w-8 h-[2px] bg-[#E57373]" />
           </h3>
 
@@ -229,38 +229,41 @@ export default function Camp() {
                 {[
                   {
                     date: 'Dec 29',
-                    theme: 'Blessing Printmaking',
+                    theme: 'Blessing Printmaking <br /> English Reading & Writing',
                     bg: 'bg-[#FFF4F4]',
                     desc: '“Hundred Blessings” — traditional woodblock printmaking of the Chinese character Fu (福) for “Fortune.”'
                   },
                   {
                     date: 'Dec 30',
-                    theme: 'Blue-and-White Porcelain Painting',
+                    theme: 'Blue-and-White Porcelain Painting <br /> English Reading & Writing',
                     bg: 'bg-[#EAF3FF]',
                     desc: 'Decorative ceramic-style art featuring Fu (福) and “Success Arrives with the Horse” motifs.'
                   },
                   {
                     date: 'Dec 31',
-                    theme: 'New Year Creative Art',
+                    theme: 'New Year Creative Art <br /> English Reading & Writing',
                     bg: 'bg-[#FFF8E1]',
                     desc: 'Festive crafts — fireworks collage, Chinese knots, and joyful New Year themes.'
                   },
                   {
                     date: 'Jan 1',
-                    theme: '3D Creative Art',
+                    theme: '3D Creative Art <br /> English Reading & Writing',
                     bg: 'bg-[#E9F6EC]',
                     desc: 'Sculpted flowers, clay lion mascots, and Lunar New Year decorations.'
                   },
                   {
                     date: 'Jan 2',
-                    theme: '“Persimmons for Good Luck” Crafts',
+                    theme: '“Persimmons for Good Luck” Crafts <br /> English Reading & Writing',
                     bg: 'bg-[#FFF0F6]',
                     desc: 'DIY twist-stick persimmon trees and lucky hanging ornaments symbolizing good fortune.'
                   }
                 ].map((item, i) => (
                   <tr key={i} className={`${item.bg} hover:bg-red-50 transition-all duration-300`}>
                     <td className="py-4 px-4 font-semibold text-[#B71C1C]">{item.date}</td>
-                    <td className="py-4 px-4 font-medium text-[#1E88E5] italic">{item.theme}</td>
+                    <td
+                      className="py-4 px-4 font-medium text-[#1E88E5] italic"
+                      dangerouslySetInnerHTML={{ __html: item.theme }}
+                    />
                     <td className="py-4 px-4 text-gray-700 leading-relaxed">{item.desc}</td>
                   </tr>
                 ))}
