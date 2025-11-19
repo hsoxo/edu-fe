@@ -120,7 +120,7 @@ export default function Camp() {
 
           <p className="relative text-xl font-bold md:text-xl text-gray-100 mb-8 leading-relaxed drop-shadow-[0_4px_10px_rgba(0,0,0,0.6)]">
             <span className="inline-block border-t border-gray-300 w-10 mr-3 align-middle"></span>
-            Next Session: Dec 29, 2025 - Jan 2, 2026
+            Next Session: Dec 22, 2025 - Jan 2, 2026
             <span className="inline-block border-t border-gray-300 w-10 ml-3 align-middle"></span>
           </p>
 

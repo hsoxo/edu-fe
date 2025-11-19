@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     'after school walnut grove',
     'after school josette dandurand',
     'after school donna gabriel robins',
+    'after school willoughby elementary',
     'after school lynn fripps',
     'homework tutoring langley',
     'english and math after school',
@@ -101,7 +102,7 @@ export default function AfterSchool() {
             <p className="max-w-3xl text-lg md:text-xl text-gray-100 mb-6 leading-relaxed">
               Proudly serving families in <strong>Willoughby</strong> and <strong>Walnut Grove</strong> — supporting
               students from nearby schools like <strong> Josette Dandurand</strong>,{' '}
-              <strong>Donna Gabriel Robins</strong>, and
+              <strong>Donna Gabriel Robins</strong>, and <strong>Willoughby Elementary</strong>, and{' '}
               <strong> Lynn Fripps Elementary</strong> with structured learning, homework tutoring, and enrichment
               activities.
             </p>
@@ -336,7 +337,8 @@ export default function AfterSchool() {
                 { '@type': 'Place', name: 'Willoughby, Langley, BC' },
                 { '@type': 'Place', name: 'Josette Dandurand Elementary School' },
                 { '@type': 'Place', name: 'Donna Gabriel Robins Elementary School' },
-                { '@type': 'Place', name: 'Lynn Fripps Elementary School' }
+                { '@type': 'Place', name: 'Lynn Fripps Elementary School' },
+                { '@type': 'Place', name: 'Willoughby Elementary School' }
               ],
               address: {
                 '@type': 'PostalAddress',
