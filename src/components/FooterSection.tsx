@@ -7,6 +7,7 @@ import ReCAPTCHA from 'react-google-recaptcha';
 import { toast } from 'sonner';
 
 const FooterSection: React.FC = () => {
+  const recaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
   const [token, setToken] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     name: '',
@@ -24,6 +25,17 @@ const FooterSection: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!recaptchaSiteKey) {
+      toast.error('Contact form captcha is not configured.');
+      return;
+    }
+
+    if (!token) {
+      toast.error('Please complete the captcha.');
+      return;
+    }
+
     setLoading(true);
 
     try {
@@ -158,13 +170,19 @@ const FooterSection: React.FC = () => {
               />
             </div>
 
-            <ReCAPTCHA ref={recaptchaRef} sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!} onChange={setToken} />
+            {recaptchaSiteKey ? (
+              <ReCAPTCHA ref={recaptchaRef} sitekey={recaptchaSiteKey} onChange={setToken} />
+            ) : (
+              <p className="rounded border border-amber-200 bg-amber-50 px-3 py-2 text-sm text-amber-800">
+                Contact form captcha is not configured.
+              </p>
+            )}
 
             {/* 提交按钮 */}
             <div>
               <button
                 type="submit"
-                disabled={loading}
+                disabled={loading || !recaptchaSiteKey}
                 className="w-full bg-slate-600 hover:bg-slate-700 disabled:bg-slate-400 text-white px-6 py-3 rounded-lg font-semibold shadow transition"
               >
                 {loading ? 'Submitting...' : 'Submit'}

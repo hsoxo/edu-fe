@@ -4,34 +4,43 @@ import Image from 'next/image';
 import Script from 'next/script';
 import { LATITUDE, LONGITUDE } from '@/data/constants';
 import type { Metadata } from 'next';
-import { Brush, BookOpen, Clock, Apple, Palette, Trees } from 'lucide-react';
+import {
+  Bot,
+  Brain,
+  Brush,
+  CalendarDays,
+  CheckCircle2,
+  Clock,
+  Palette,
+  Sparkles,
+  Trees,
+  Users
+} from 'lucide-react';
+import FlyerPreview from '@/components/FlyerPreview';
 import Gallery from '@/components/Gallery';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.vanlearn.com'),
 
-  title: 'Langley Spring & Summer Camps | Willoughby & Walnut Grove | VanLearn Education',
+  title: '2026 Langley Summer Camp | Art, AI Robotics & Chess | VanLearn Education',
   description:
-    'VanLearn Education offers exciting Spring and Summer Camps in Langley for kids aged 5–12. Creative learning, science exploration, and outdoor adventures for students in Willoughby and Walnut Grove.',
+    'Registration is open for VanLearn International Education 2026 Summer Camp in Langley. Choose Art Camp, AI Robotics Camp, or Chess Camp with outdoor activities, small classes, and weekly themes.',
 
   keywords: [
-    'langley summer camp',
-    'willoughby summer camp',
-    'walnut grove camp',
-    'langley spring camp',
-    'creative camp langley',
-    'kids camp langley',
-    'art camp langley',
-    'science camp langley',
-    'vanlearn camp',
+    '2026 langley summer camp',
     'vanlearn summer camp',
-    'langley kids enrichment camp',
-    'after school camp langley',
-    'academic camp langley',
-    'summer programs for kids langley',
-    'day camp near willoughby town centre',
-    'education camp langley',
-    'steam camp langley'
+    'langley art camp',
+    'langley robotics camp',
+    'langley chess camp',
+    'ai robotics camp langley',
+    'kids summer camp langley',
+    'willoughby summer camp',
+    'walnut grove summer camp',
+    'summer art camp langley',
+    'chess classes langley',
+    'stem camp langley',
+    'outdoor activities camp langley',
+    'vanlearn international education'
   ],
 
   openGraph: {
@@ -39,25 +48,25 @@ export const metadata: Metadata = {
     locale: 'en_CA',
     url: 'https://vanlearn.com/camp',
     siteName: 'VanLearn Education',
-    title: 'Langley Spring & Summer Camps | Willoughby & Walnut Grove | VanLearn Education',
+    title: '2026 Langley Summer Camp | Art, AI Robotics & Chess | VanLearn Education',
     description:
-      'Join VanLearn’s creative and academic Spring & Summer Camps in Langley. Serving families near Willoughby and Walnut Grove with art, science, and fun learning adventures.',
+      'Join VanLearn’s 2026 Summer Camp in Langley. Full-day and half-day options include Art, AI Robotics, Chess, and outdoor activities.',
     images: [
       {
-        url: '/images/camp-hero.jpg',
+        url: '/images/20251109142647_239_1.jpg',
         width: 1200,
         height: 630,
-        alt: 'Summer Camp in Langley - VanLearn Education'
+        alt: '2026 Summer Camp in Langley - VanLearn Education'
       }
     ]
   },
 
   twitter: {
     card: 'summary_large_image',
-    title: 'Langley Spring & Summer Camps | VanLearn Education',
+    title: '2026 Langley Summer Camp | VanLearn Education',
     description:
-      'Fun, creative, and educational Spring & Summer Camps in Willoughby and Walnut Grove. Explore art, science, and teamwork with VanLearn.',
-    images: ['/images/camp-hero.jpg']
+      'Art, AI Robotics, Chess, and outdoor activities for VanLearn International Education 2026 Summer Camp.',
+    images: ['/images/20251109142647_239_1.jpg']
   },
 
   alternates: {
@@ -89,289 +98,413 @@ const GALLERY = [
   '/images/20251109153024_256_1-min.jpg'
 ];
 
+const CAMP_FLYERS = [
+  {
+    src: '/images/5181778650381_.pic.webp',
+    title: 'July Art Camp',
+    alt: 'VanLearn July full-day and half-day art summer camp flyer',
+    hideAfter: '2026-07-26'
+  },
+  {
+    src: '/images/5051778649291_.pic_hd.webp',
+    title: 'August English & Art Camp',
+    alt: 'VanLearn August all-day English and art summer camp flyer'
+  },
+  {
+    src: '/images/5061778649293_.pic_hd.webp',
+    title: 'AI Robot Summer Camp',
+    alt: 'VanLearn AI robot summer camp flyer'
+  },
+  {
+    src: '/images/5151778649896_.pic_hd.webp',
+    title: 'Summer Chess Camp',
+    alt: 'VanLearn summer chess camp flyer'
+  }
+];
+
+const COURSE_HIGHLIGHTS = [
+  {
+    icon: Users,
+    title: 'Small Class Sizes',
+    desc: 'Personalized and patient guidance from our instructors.',
+    tone: 'border-[#f5cfc4] bg-[#fff0e8] text-[#b35042] shadow-sm'
+  },
+  {
+    icon: Brain,
+    title: 'Practice Meets Logic',
+    desc: 'A balanced mix of hands-on crafting, mental training, and focused problem solving.',
+    tone: 'border-[#dccdec] bg-[#ede5f5] text-[#6b5aa8] shadow-sm'
+  },
+  {
+    icon: Sparkles,
+    title: 'Holistic Growth',
+    desc: 'Designed to build concentration, confidence, creativity, and stronger self-expression.',
+    tone: 'border-[#cfe2ec] bg-[#e6f1fa] text-[#3a7991] shadow-sm'
+  },
+  {
+    icon: CalendarDays,
+    title: 'Daily Freshness',
+    desc: 'New themes every week keep camp active, varied, and full of discovery.',
+    tone: 'border-[#f2dfb1] bg-[#fff2d6] text-[#8b6c2e] shadow-sm'
+  },
+  {
+    icon: CheckCircle2,
+    title: 'Inclusive Learning',
+    desc: 'Programs are tailored for children of different ages, skill levels, and learning styles.',
+    tone: 'border-[#cfe5d3] bg-[#e6f1e9] text-[#3d7b58] shadow-sm'
+  },
+  {
+    icon: Trees,
+    title: 'Healthy Balance',
+    desc: 'Outdoor activities are built in to balance learning, rest, movement, and play.',
+    tone: 'border-[#f5cfc4] bg-[#fff0e8] text-[#b35042] shadow-sm'
+  }
+];
+
+const CAMP_PROGRAMS = [
+  {
+    icon: Palette,
+    flyers: [CAMP_FLYERS[0], CAMP_FLYERS[1]],
+    title: 'Full-Day/Half-Day Art Camp + Outdoor Activities',
+    subtitle: 'Unleash creativity and explore the world of aesthetics.',
+    accent: 'text-[#b35042]',
+    iconTone: 'bg-white text-[#b35042] border border-[#f5cfc4]',
+    borderTone: 'border-[#f5cfc4]',
+    cardTone: 'bg-[#fff7f3]',
+    topTone: 'bg-[#f0a89a]',
+    details: [
+      ['Activities', 'Painting / Crafting / Design / DIY'],
+      ['Weekly Themes', 'A fresh and exciting experience every week'],
+      ['Goal', 'Small class sizes to enhance aesthetic sense and self-expression']
+    ],
+    times: ['Class Time: 9:00 AM - 3:00 PM', 'Paid Extended Care: 3:00 PM - 5:00 PM'],
+    dates: ['July Art Camp: July 6 - July 31, 2026', 'August English & Art: August 10 - August 28, 2026']
+  },
+  {
+    icon: Bot,
+    flyers: [CAMP_FLYERS[2]],
+    title: 'AI Robotics Camp + Outdoor Activities',
+    subtitle: 'Explore the fascinating world of mechanics, power, and AI.',
+    accent: 'text-[#3a7991]',
+    iconTone: 'bg-white text-[#3a7991] border border-[#cfe2ec]',
+    borderTone: 'border-[#cfe2ec]',
+    cardTone: 'bg-[#f3f8fc]',
+    topTone: 'bg-[#a8cee0]',
+    details: [
+      ['Hands-on Building', 'Construct your very own robots'],
+      ['Critical Thinking', 'Learn mechanical structures and logical reasoning'],
+      ['STEM Focus', 'Spark creativity and a lifelong interest in technology']
+    ],
+    times: ['Class Time: 9:30 AM - 12:30 PM', 'Morning Session'],
+    dates: ['Weekly sessions: July 6 - August 14, 2026']
+  },
+  {
+    icon: Brain,
+    flyers: [CAMP_FLYERS[3]],
+    title: 'Chess Camp',
+    subtitle: 'From basic rules to advanced tactics, students improve logic, focus, and judgment.',
+    accent: 'text-[#3d7b58]',
+    iconTone: 'bg-white text-[#3d7b58] border border-[#cfe5d3]',
+    borderTone: 'border-[#cfe5d3]',
+    cardTone: 'bg-[#f3f9f4]',
+    topTone: 'bg-[#b1d8be]',
+    details: [
+      ['Foundational Class', 'Perfect for beginners'],
+      ['Advanced Class', 'Strategic improvement for intermediate players'],
+      ['Expert Coaching', 'Professional guidance plus fun tournaments']
+    ],
+    times: ['Class Time: 1:30 PM - 3:30 PM', 'Afternoon Session'],
+    dates: ['Weekly sessions: July 6 - August 14, 2026']
+  }
+];
+
+const QUICK_FACTS = [
+  {
+    label: 'Camp Season',
+    value: 'July 6 - August 28, 2026',
+    tone: 'border-[#f2dfb1] bg-[#fff2d6] text-[#8b6c2e]'
+  },
+  {
+    label: 'Core Skills',
+    value: 'Concentration, logical reasoning, strategic thinking',
+    tone: 'border-[#cfe2ec] bg-[#e6f1fa] text-[#3a7991]'
+  },
+  {
+    label: 'Program Options',
+    value: 'Art, AI Robotics, Chess, outdoor activities',
+    tone: 'border-[#f5cfc4] bg-[#fff0e8] text-[#b35042]'
+  },
+  {
+    label: 'Location',
+    value: 'VanLearn International Education, Langley',
+    tone: 'border-[#cfe5d3] bg-[#e6f1e9] text-[#3d7b58]'
+  }
+];
+
+const HERO_TRACKS = [
+  { label: 'Creative Art', icon: Palette },
+  { label: 'AI Robotics', icon: Bot },
+  { label: 'Chess Strategy', icon: Brain }
+];
+
+const EXPERIENCE_ITEMS = [
+  {
+    title: 'Art + Design',
+    icon: Brush,
+    text: 'Painting, crafting, design, and DIY projects.',
+    border: 'border-[#f5cfc4]',
+    background: 'bg-[#fff0e8]',
+    iconColor: 'text-[#b35042]'
+  },
+  {
+    title: 'Logic + STEM',
+    icon: Bot,
+    text: 'Mechanical structures, AI thinking, and robotics builds.',
+    border: 'border-[#cfe2ec]',
+    background: 'bg-[#e6f1fa]',
+    iconColor: 'text-[#3a7991]'
+  },
+  {
+    title: 'Strategy + Focus',
+    icon: Brain,
+    text: 'Chess fundamentals, tactics, judgment, and tournaments.',
+    border: 'border-[#cfe5d3]',
+    background: 'bg-[#e6f1e9]',
+    iconColor: 'text-[#3d7b58]'
+  }
+];
+
 export default function Camp() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <div className="min-h-screen bg-[#fff9f4]">
       <Header />
 
-      {/* ===== Hero Section ===== */}
-      <section className="relative h-[520px] w-full">
+      <section className="relative min-h-[610px] w-full overflow-hidden">
         <Image
           src="/images/20251109142647_239_1.jpg"
-          alt="Langley Summer Camp for Kids"
+          alt="2026 VanLearn International Education Summer Camp"
           fill
           className="object-cover"
           priority
         />
-        <div
-          className={
-            `absolute inset-0 flex flex-col justify-center items-center text-center text-white px-6` +
-            ` bg-gradient-to-b from-black/0 via-black/10 to-black/20`
-          }
-        >
-          <h1
-            className={
-              'text-5xl md:text-6xl font-extrabold mb-4 tracking-tight drop-shadow-[0_4px_10px_rgba(0,0,0,0.6)]' +
-              ' transition-transform duration-500 hover:scale-[1.03]'
-            }
-          >
-            Winter & Spring & Summer Art Camp
-          </h1>
+        <div className="absolute inset-0 bg-gradient-to-br from-[#f3a89b]/55 via-[#fad9b0]/25 to-[#cfe2ec]/35" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/20 to-black/55" />
+        <div className="absolute right-[12%] top-24 hidden rotate-6 rounded-full bg-[#fff4f0] px-5 py-2 text-sm font-bold text-[#b35042] shadow-sm md:block">
+          Art
+        </div>
+        <div className="absolute bottom-32 left-[12%] hidden -rotate-3 rounded-full bg-[#eaf3fb] px-5 py-2 text-sm font-bold text-[#3a7991] shadow-sm md:block">
+          Robotics
+        </div>
+        <div className="absolute bottom-20 right-[20%] hidden rotate-2 rounded-full bg-[#eaf3ec] px-5 py-2 text-sm font-bold text-[#3d7b58] shadow-sm md:block">
+          Chess
+        </div>
+        <div className="relative z-10 flex min-h-[610px] flex-col justify-center px-6 py-24 text-white">
+          <div className="mx-auto w-full max-w-[1120px]">
+            <p className="mb-4 inline-flex rounded-full bg-[#ffe9dc] px-4 py-2 text-sm font-bold uppercase tracking-[0.12em] text-[#b35042] shadow-sm">
+              Registration Now Open
+            </p>
+            <h1 className="max-w-4xl text-4xl font-extrabold leading-tight tracking-tight drop-shadow md:text-6xl">
+              2026 VanLearn International Education Summer Camp
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg font-medium leading-relaxed text-white/90 md:text-xl">
+              Enhance concentration, logical reasoning, and strategic thinking through hands-on camp experiences.
+            </p>
+            <p className="mt-3 max-w-2xl text-base leading-relaxed text-white/85 md:text-lg">
+              This summer, let your child do more than just play. Give them the chance to grow through their interests
+              and build confidence through guided practice.
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <a
+                href="#programs"
+                className="inline-flex items-center justify-center rounded-full bg-white px-7 py-3 text-sm font-bold text-slate-950 shadow-sm transition hover:-translate-y-0.5 hover:bg-[#fff4f0]"
+              >
+                View Camp Options
+              </a>
+              <a
+                href="#contact"
+                className="inline-flex items-center justify-center rounded-full border border-white/80 bg-[#d9695c] px-7 py-3 text-sm font-bold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[#c45648]"
+              >
+                Register Now
+              </a>
+            </div>
+            <div className="mt-10 grid max-w-3xl gap-3 sm:grid-cols-3">
+              {HERO_TRACKS.map((track, idx) => {
+                const Icon = track.icon;
+                const iconTones = [
+                  'bg-[#fff4f0] text-[#b35042]',
+                  'bg-[#eaf3fb] text-[#3a7991]',
+                  'bg-[#eaf3ec] text-[#3d7b58]'
+                ];
 
-          <p className="relative text-xl font-bold md:text-xl text-gray-100 mb-8 leading-relaxed drop-shadow-[0_4px_10px_rgba(0,0,0,0.6)]">
-            <span className="inline-block border-t border-gray-300 w-10 mr-3 align-middle"></span>
-            Next Session: Dec 22, 2025 - Jan 2, 2026
-            <span className="inline-block border-t border-gray-300 w-10 ml-3 align-middle"></span>
+                return (
+                  <div
+                    key={track.label}
+                    className="flex items-center gap-3 rounded-2xl bg-white/90 p-3 text-slate-950 shadow-sm"
+                  >
+                    <div className={`flex h-10 w-10 items-center justify-center rounded-xl ${iconTones[idx]}`}>
+                      <Icon className="h-5 w-5" aria-hidden="true" />
+                    </div>
+                    <span className="text-sm font-bold">{track.label}</span>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white">
+        <div className="mx-auto grid max-w-[1120px] gap-6 px-6 py-12 md:grid-cols-4">
+          {QUICK_FACTS.map(item => (
+            <div key={item.label} className={`rounded-2xl border p-5 shadow-sm ${item.tone}`}>
+              <p className="text-xs font-bold uppercase tracking-[0.16em] opacity-75">{item.label}</p>
+              <p className="mt-2 text-base font-bold leading-snug">{item.value}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-[1120px] px-6 py-16">
+        <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#b35042]">Course Highlights</p>
+            <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-950 md:text-5xl">
+              Built for active learning and steady growth
+            </h2>
+            <p className="mt-5 text-base leading-relaxed text-slate-600 md:text-lg">
+              Each camp combines interest-based learning with patient instruction, giving students room to explore,
+              practice, and build confidence in a supportive environment.
+            </p>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-2">
+            {COURSE_HIGHLIGHTS.map(highlight => {
+              const Icon = highlight.icon;
+
+              return (
+                <div key={highlight.title} className={`rounded-2xl border p-5 ${highlight.tone}`}>
+                  <Icon className="h-7 w-7" aria-hidden="true" />
+                  <h3 className="mt-4 text-lg font-bold text-slate-950">{highlight.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-700">{highlight.desc}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section id="programs" className="bg-white px-6 py-16">
+        <div className="mx-auto max-w-[1120px]">
+          <div className="max-w-3xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#b35042]">3 Popular Themed Camps</p>
+            <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-950 md:text-5xl">
+              Choose the camp path that fits your child
+            </h2>
+          </div>
+
+          <div className="mt-10 grid gap-6 lg:grid-cols-3">
+            {CAMP_PROGRAMS.map(program => {
+              const Icon = program.icon;
+
+              return (
+                <article
+                  key={program.title}
+                  className={`overflow-hidden rounded-2xl border text-slate-900 shadow-sm ${program.borderTone} ${program.cardTone}`}
+                >
+                  <div className={`h-2 ${program.topTone}`} />
+                  <div className="p-6">
+                    <FlyerPreview flyers={program.flyers} />
+                    <div className={`mt-5 flex h-12 w-12 items-center justify-center rounded-lg ${program.iconTone}`}>
+                      <Icon className="h-6 w-6" aria-hidden="true" />
+                    </div>
+                    <h3 className={`mt-5 text-xl font-bold leading-tight ${program.accent}`}>{program.title}</h3>
+                    <p className="mt-3 text-sm leading-relaxed text-slate-600">{program.subtitle}</p>
+
+                    <dl className="mt-6 space-y-4">
+                      {program.details.map(([label, value]) => (
+                        <div key={label}>
+                          <dt className="text-sm font-semibold text-slate-950">{label}</dt>
+                          <dd className="mt-1 text-sm leading-relaxed text-slate-600">{value}</dd>
+                        </div>
+                      ))}
+                    </dl>
+
+                    <div className="mt-6 border-t border-slate-200 pt-5">
+                      <div className="flex items-start gap-3 text-sm text-slate-700">
+                        <Clock className="mt-0.5 h-4 w-4 flex-shrink-0 text-slate-500" aria-hidden="true" />
+                        <div>
+                          {program.times.map(item => (
+                            <p key={item}>{item}</p>
+                          ))}
+                        </div>
+                      </div>
+                      <div className="mt-4 flex items-start gap-3 text-sm text-slate-700">
+                        <CalendarDays className="mt-0.5 h-4 w-4 flex-shrink-0 text-slate-500" aria-hidden="true" />
+                        <div>
+                          {program.dates.map(item => (
+                            <p key={item}>{item}</p>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-6 py-16">
+        <div className="mx-auto max-w-[1120px]">
+          <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr] lg:items-center">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#b35042]">Camp Experience</p>
+              <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-950 md:text-5xl">
+                Hands-on projects with room to move
+              </h2>
+              <p className="mt-5 text-base leading-relaxed text-slate-600 md:text-lg">
+                Students practice creative work, technology thinking, and strategic decision making while staying active
+                through outdoor activities.
+              </p>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-3">
+              {EXPERIENCE_ITEMS.map(item => {
+                const Icon = item.icon;
+
+                return (
+                  <div key={item.title} className={`rounded-2xl border ${item.border} ${item.background} p-5 shadow-sm`}>
+                    <Icon className={`h-7 w-7 ${item.iconColor}`} aria-hidden="true" />
+                    <h3 className="mt-4 text-lg font-bold text-slate-950">{item.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-slate-600">{item.text}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white px-6 py-16">
+        <div className="mx-auto max-w-6xl text-center">
+          <h2 className="text-3xl font-extrabold tracking-tight text-slate-950 md:text-5xl">Summer Camp Moments</h2>
+          <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-slate-600">
+            A look at VanLearn’s creative learning environment and student activities.
           </p>
-
-          <a
-            href="#contact"
-            className={
-              'bg-[#E23E3E] text-white px-10 py-3 rounded-full text-sm md:text-base font-semibold ' +
-              'hover:bg-[#c92d2d] hover:shadow-[0_0_20px_rgba(226,62,62,0.5)] transition-all duration-300'
-            }
-          >
-            Register Now
-          </a>
-        </div>
-      </section>
-
-      <section className="max-w-5xl mx-auto py-16 px-6 text-center">
-        {/* Section 主标题 */}
-        <h2 className="text-4xl md:text-5xl font-extrabold text-[#B71C1C] mb-12 tracking-tight">
-          🎄 Winter Art Camp 2025
-        </h2>
-
-        <p className="text-gray-700 max-w-2xl mx-auto mb-10 text-base md:text-lg">
-          Join one week or both! Each week features a unique art theme — perfect for children who love creativity,
-          colors, and festive fun.
-        </p>
-
-        {/* Week 1 */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-bold text-[#B71C1C] mb-4 flex items-center justify-center gap-2">
-            <span className="w-8 h-[2px] bg-[#E57373]" />
-            Week 1 · Christmas Art Camp (Dec 22 - Dec 26)
-            <span className="w-8 h-[2px] bg-[#E57373]" />
-          </h3>
-
-          <div className="overflow-x-auto shadow-lg rounded-2xl border border-red-100 bg-gradient-to-b from-[#fff8f8] to-white">
-            <table className="min-w-full text-sm md:text-base text-gray-800">
-              <thead className="bg-gradient-to-r from-[#B71C1C] via-[#D32F2F] to-[#C62828] text-white">
-                <tr>
-                  <th className="py-4 px-4 text-left font-semibold text-center w-24">📅 Date</th>
-                  <th className="py-4 px-4 text-left font-semibold text-center">🎨 Theme</th>
-                  <th className="py-4 px-4 text-left font-semibold text-center">✨ Activities</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-red-50">
-                {[
-                  {
-                    date: 'Dec 22',
-                    theme: 'Christmas Colors & Patterns',
-                    bg: 'bg-[#FFF4F4]',
-                    desc: 'Color exploration painting and festive Christmas paper crafts to celebrate the season.'
-                  },
-                  {
-                    date: 'Dec 23',
-                    theme: 'Resin Sand Christmas Tree',
-                    bg: 'bg-[#EAF3FF]',
-                    desc: 'Material experiment and 3D textured Christmas tree creation using resin sand.'
-                  },
-                  {
-                    date: 'Dec 24',
-                    theme: 'Gingerbread House Design',
-                    bg: 'bg-[#FFF8E1]',
-                    desc: 'Design, decorate, and create sweet gingerbread-inspired holiday crafts.'
-                  },
-                  {
-                    date: 'Dec 25',
-                    theme: 'Winter Landscape Painting',
-                    bg: 'bg-[#E9F6EC]',
-                    desc: 'Observation and color study — painting a serene “Snowy Christmas” winter scene.'
-                  },
-                  {
-                    date: 'Dec 26',
-                    theme: 'Winter Animal Collage Art',
-                    bg: 'bg-[#FFF0F6]',
-                    desc: 'Animal-themed collage design with creative layering and festive textures.'
-                  }
-                ].map((item, i) => (
-                  <tr key={i} className={`${item.bg} hover:bg-red-50 transition-all duration-300`}>
-                    <td className="py-4 px-4 font-semibold text-[#B71C1C]">{item.date}</td>
-                    <td className="py-4 px-4 font-medium text-[#1E88E5] italic">{item.theme}</td>
-                    <td className="py-4 px-4 text-gray-700 leading-relaxed">{item.desc}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          <div className="mt-10">
+            <Gallery gallery={GALLERY} />
           </div>
         </div>
-
-        {/* Week 2 */}
-        <div>
-          <h3 className="text-2xl font-bold text-[#B71C1C] mb-4 flex items-center justify-center gap-2">
-            <span className="w-8 h-[2px] bg-[#E57373]" />
-            Week 2 · New Year English & Art Camp (Dec 29 - Jan 2)
-            <span className="w-8 h-[2px] bg-[#E57373]" />
-          </h3>
-
-          <div className="overflow-x-auto shadow-lg rounded-2xl border border-red-100 bg-gradient-to-b from-[#fff8f8] to-white">
-            <table className="min-w-full text-sm md:text-base text-gray-800">
-              <thead className="bg-gradient-to-r from-[#B71C1C] via-[#D32F2F] to-[#C62828] text-white">
-                <tr>
-                  <th className="py-4 px-4 text-left font-semibold text-center w-24">📅 Date</th>
-                  <th className="py-4 px-4 text-left font-semibold text-center">🎨 Theme</th>
-                  <th className="py-4 px-4 text-left font-semibold text-center">✨ Activities</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-red-50">
-                {[
-                  {
-                    date: 'Dec 29',
-                    theme: 'Blessing Printmaking <br /> English Reading & Writing',
-                    bg: 'bg-[#FFF4F4]',
-                    desc: '“Hundred Blessings” — traditional woodblock printmaking of the Chinese character Fu (福) for “Fortune.”'
-                  },
-                  {
-                    date: 'Dec 30',
-                    theme: 'Blue-and-White Porcelain Painting <br /> English Reading & Writing',
-                    bg: 'bg-[#EAF3FF]',
-                    desc: 'Decorative ceramic-style art featuring Fu (福) and “Success Arrives with the Horse” motifs.'
-                  },
-                  {
-                    date: 'Dec 31',
-                    theme: 'New Year Creative Art <br /> English Reading & Writing',
-                    bg: 'bg-[#FFF8E1]',
-                    desc: 'Festive crafts — fireworks collage, Chinese knots, and joyful New Year themes.'
-                  },
-                  {
-                    date: 'Jan 1',
-                    theme: '3D Creative Art <br /> English Reading & Writing',
-                    bg: 'bg-[#E9F6EC]',
-                    desc: 'Sculpted flowers, clay lion mascots, and Lunar New Year decorations.'
-                  },
-                  {
-                    date: 'Jan 2',
-                    theme: '“Persimmons for Good Luck” Crafts <br /> English Reading & Writing',
-                    bg: 'bg-[#FFF0F6]',
-                    desc: 'DIY twist-stick persimmon trees and lucky hanging ornaments symbolizing good fortune.'
-                  }
-                ].map((item, i) => (
-                  <tr key={i} className={`${item.bg} hover:bg-red-50 transition-all duration-300`}>
-                    <td className="py-4 px-4 font-semibold text-[#B71C1C]">{item.date}</td>
-                    <td
-                      className="py-4 px-4 font-medium text-[#1E88E5] italic"
-                      dangerouslySetInnerHTML={{ __html: item.theme }}
-                    />
-                    <td className="py-4 px-4 text-gray-700 leading-relaxed">{item.desc}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        {/* Footer Note */}
-        <div className="mt-10 text-sm text-gray-500 italic">
-          ❄️ *Each day includes story time, snack breaks, and supervised creative play.*
-        </div>
-      </section>
-
-      <section className="max-w-6xl mx-auto py-16 px-6 text-center rounded-3xl">
-        <h2 className="text-4xl font-extrabold text-[#B71C1C] mb-12 tracking-tight">🌟 Our Camp Highlights</h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-left">
-          {/* 🎨 Creative & Inspiring */}
-          <div className="p-6 rounded-2xl bg-[#FFF4F4] hover:bg-[#FFEAEA] transition duration-300 shadow-sm">
-            <h3 className="text-2xl font-bold text-[#B71C1C] mb-3 flex items-center gap-3">
-              <Brush className="w-7 h-7 text-[#B71C1C]" />
-              Creative & Inspiring
-            </h3>
-            <p className="text-gray-700 leading-relaxed">
-              Art + Outdoor Sketching — Students enjoy both indoor painting and outdoor sketching sessions under the
-              winter sun.
-              <span className="block mt-2 text-[#2E7D32] font-semibold">
-                🎁 All art materials are provided free of charge!
-              </span>
-            </p>
-          </div>
-
-          {/* 📚 Academic Enrichment */}
-          <div className="p-6 rounded-2xl bg-[#EAF3FF] hover:bg-[#DDEEFF] transition duration-300 shadow-sm">
-            <h3 className="text-2xl font-bold text-[#1565C0] mb-3 flex items-center gap-3">
-              <BookOpen className="w-7 h-7 text-[#1565C0]" />
-              Academic Enrichment
-            </h3>
-            <p className="text-gray-700 leading-relaxed">
-              English Reading & Writing — Fun, age-appropriate language lessons that build confidence, creativity, and
-              expression.
-            </p>
-          </div>
-
-          {/* 🕕 Flexible Schedule */}
-          <div className="p-6 rounded-2xl bg-[#FFF6E5] hover:bg-[#FFF1D4] transition duration-300 shadow-sm">
-            <h3 className="text-2xl font-bold text-[#F57C00] mb-3 flex items-center gap-3">
-              <Clock className="w-7 h-7 text-[#F57C00]" />
-              Flexible Schedule
-            </h3>
-            <p className="text-gray-700 leading-relaxed">
-              6 Hours a Day — A full-day learning experience with an optional <em>extended care program</em> (available
-              for an extra fee).
-            </p>
-          </div>
-
-          {/* 🍎 Healthy Snacks */}
-          <div className="p-6 rounded-2xl bg-[#E9F6EC] hover:bg-[#DCF1DF] transition duration-300 shadow-sm">
-            <h3 className="text-2xl font-bold text-[#2E7D32] mb-3 flex items-center gap-3">
-              <Apple className="w-7 h-7 text-[#2E7D32]" />
-              Healthy Snacks
-            </h3>
-            <p className="text-gray-700 leading-relaxed">
-              Free Snacks Provided — Nutritious and delicious treats to keep kids energized and happy throughout the
-              day.
-            </p>
-          </div>
-
-          {/* 👩‍🎨 Professional Teachers */}
-          <div className="p-6 rounded-2xl bg-[#F8E9FF] hover:bg-[#F2D8FF] transition duration-300 shadow-sm">
-            <h3 className="text-2xl font-bold text-[#9C27B0] mb-3 flex items-center gap-3">
-              <Palette className="w-7 h-7 text-[#9C27B0]" />
-              Professional Teachers
-            </h3>
-            <p className="text-gray-700 leading-relaxed">
-              Taught by Art School Graduates — Our instructors are passionate, professional art educators with years of
-              experience guiding young learners.
-            </p>
-          </div>
-
-          {/* 🌳 Active & Engaging */}
-          <div className="p-6 rounded-2xl bg-[#E0F7FA] hover:bg-[#CFF3F7] transition duration-300 shadow-sm">
-            <h3 className="text-2xl font-bold text-[#00838F] mb-3 flex items-center gap-3">
-              <Trees className="w-7 h-7 text-[#00838F]" />
-              Active & Engaging
-            </h3>
-            <p className="text-gray-700 leading-relaxed">
-              Outdoor Activities Included — A joyful balance of art creation and active play, keeping children inspired,
-              social, and refreshed.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="max-w-6xl mx-auto py-16 px-6 mb-16 text-center bg-gradient-to-b from-[#fff9f9] to-white rounded-3xl">
-        <h2 className="text-4xl font-extrabold text-[#B71C1C] mb-12 tracking-tight">✨ Moments of Joy</h2>
-        <Gallery gallery={GALLERY} />
       </section>
 
       <FooterSection />
       <div className="border-t border-white/20 py-4">
-        <div className="max-w-[1120px] mx-auto px-6 text-center text-sm text-black/80">
+        <div className="mx-auto max-w-[1120px] px-6 text-center text-sm text-black/80">
           © {new Date().getFullYear()} Wenxue International. All rights reserved.
         </div>
       </div>
 
-      {/* ===== JSON-LD ===== */}
       <Script id="camp-jsonld" type="application/ld+json">
         {JSON.stringify({
           '@context': 'https://schema.org',
@@ -385,11 +518,11 @@ export default function Camp() {
             },
             {
               '@type': 'EducationalOrganization',
-              name: 'VanLearn Education Camp Programs',
+              name: 'VanLearn International Education 2026 Summer Camp',
               url: 'https://vanlearn.com/camp',
               logo: 'https://vanlearn.com/images/logo.png',
               description:
-                'VanLearn Education offers fun, creative, and educational Spring and Summer Camps for students in Willoughby and Walnut Grove, Langley.',
+                'VanLearn International Education offers 2026 Summer Camp programs in Langley, including Art Camp, AI Robotics Camp, Chess Camp, and outdoor activities.',
               areaServed: [
                 { '@type': 'Place', name: 'Langley, BC' },
                 { '@type': 'Place', name: 'Willoughby' },
@@ -412,6 +545,19 @@ export default function Camp() {
                 '@type': 'GeoCoordinates',
                 latitude: LATITUDE,
                 longitude: LONGITUDE
+              },
+              hasOfferCatalog: {
+                '@type': 'OfferCatalog',
+                name: '2026 Summer Camp Programs',
+                itemListElement: CAMP_PROGRAMS.map(program => ({
+                  '@type': 'Course',
+                  name: program.title,
+                  description: program.subtitle,
+                  provider: {
+                    '@type': 'EducationalOrganization',
+                    name: 'VanLearn Education'
+                  }
+                }))
               }
             }
           ]
