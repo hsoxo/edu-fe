@@ -264,13 +264,19 @@ export default function AfterSchool() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10">
               {[
                 {
-                  name: 'Ms. Zoey Wang',
-                  image: '/images/zoey.jpg',
-                  desc: 'McGill University graduate with a degree in Psychology. She loves working with children and creating a warm, engaging environment where they can learn and grow with confidence. Her lessons combine creativity, play, and discovery to make every day fun and meaningful.'
+                  name: 'Ms. Zoe Zhong',
+                  image: '/images/zoe-zhong.jpg',
+                  position: '50% 10%',
+                  desc: `With over 8 years of experience teaching ESL in elementary schools, she is a senior educator
+                      and experienced homeroom teacher who loves creating warm, engaging learning experiences for
+                      children. With training in cooperative learning, gamification, curiosity-driven learning, and
+                      project-based learning, she encourages children to stay curious, think deeply, and grow with
+                      confidence in a relaxed and joyful environment.`
                 },
                 {
                   name: 'Ms. Hera Yu',
                   image: '/images/hera.jpg',
+                  position: 'center',
                   desc: `With over 10 years of experience, Ms. Yu specializes in watercolor, anime illustration, and
                       creative design. She teaches children aged 4–15 and leads the After School Program, inspiring
                       young artists to explore creativity and confidence through art.`
@@ -281,7 +287,14 @@ export default function AfterSchool() {
                   className="bg-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden"
                 >
                   <div className="relative w-full h-64 overflow-hidden">
-                    <Image src={t.image} alt={t.name} width={400} height={400} className="object-cover w-full h-full" />
+                    <Image
+                      src={t.image}
+                      alt={t.name}
+                      width={400}
+                      height={400}
+                      style={{ objectPosition: t.position }}
+                      className="object-cover w-full h-full"
+                    />
                   </div>
                   <div className="p-6 text-left">
                     <h3 className="text-lg font-semibold text-gray-800">{t.name}</h3>
