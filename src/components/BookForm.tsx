@@ -38,7 +38,7 @@ const SimpleBookingForm: React.FC = () => {
           value={formData.name}
           onChange={handleChange}
           required
-          className="w-full border border-gray-300 rounded px-3 py-2 focus:ring-emerald-500 focus:border-emerald-500"
+          className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-[#E53935] focus:border-[#E53935]"
         />
       </div>
 
@@ -53,7 +53,7 @@ const SimpleBookingForm: React.FC = () => {
           value={formData.email}
           onChange={handleChange}
           required
-          className="w-full border border-gray-300 rounded px-3 py-2 focus:ring-emerald-500 focus:border-emerald-500"
+          className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-[#E53935] focus:border-[#E53935]"
         />
       </div>
 
@@ -67,7 +67,7 @@ const SimpleBookingForm: React.FC = () => {
           value={formData.message}
           onChange={handleChange}
           rows={4}
-          className="w-full border border-gray-300 rounded px-3 py-2 focus:ring-emerald-500 focus:border-emerald-500"
+          className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-[#E53935] focus:border-[#E53935]"
         />
       </div>
 
@@ -75,7 +75,7 @@ const SimpleBookingForm: React.FC = () => {
       <div>
         <button
           type="submit"
-          className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-lg font-semibold shadow transition"
+          className="rounded-full bg-[#B71C1C] px-6 py-3 font-semibold text-white shadow-sm transition-colors hover:bg-[#E53935]"
         >
           提交预约
         </button>

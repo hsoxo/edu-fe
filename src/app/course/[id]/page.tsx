@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Header from '@/components/Header';
 import FooterSection from '@/components/FooterSection';
+import CopyrightBar from '@/components/CopyrightBar';
 import courses from '@/data/courses.json';
 import Gallery from '@/components/Gallery';
 import { Metadata } from 'next';
@@ -99,10 +100,10 @@ export default async function CourseDetailPage({ params }: CoursePageProps) {
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       <Header />
 
-      <main className="max-w-5xl mx-auto py-16 px-4 sm:px-6 lg:px-8 space-y-24">
+      <main className="max-w-[1120px] mx-auto py-16 px-6 space-y-20">
         {/* === 课程标题 === */}
         <section className="text-center">
-          <h1 className="text-4xl font-bold text-gray-800 mb-6">{course.title}</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-[#B71C1C] mb-6">{course.title}</h1>
           {course.coverImage ? (
             <p className="text-gray-500 text-lg max-w-3xl mx-auto">
               Explore this program’s highlights and meet our experienced instructors.
@@ -151,8 +152,8 @@ export default async function CourseDetailPage({ params }: CoursePageProps) {
 
         {/* === 教师介绍 === */}
         <section className="py-16 px-6">
-          <div className="max-w-6xl mx-auto text-center mb-12">
-            <h2 className="text-3xl font-bold text-slate-700">Our Instructors</h2>
+          <div className="max-w-[1120px] mx-auto text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#B71C1C]">Our Instructors</h2>
             <p className="text-gray-600 mt-3">
               Meet our experienced and passionate teachers who guide students toward academic and creative success.
             </p>
@@ -191,9 +192,7 @@ export default async function CourseDetailPage({ params }: CoursePageProps) {
       </main>
 
       <FooterSection />
-      <div className="border-t border-white/20 py-4 text-center text-sm text-black/80">
-        © {new Date().getFullYear()} VanLearn International. All rights reserved.
-      </div>
+      <CopyrightBar />
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import FooterSection from '@/components/FooterSection';
+import CopyrightBar from '@/components/CopyrightBar';
 import Header from '@/components/Header';
 import Image from 'next/image';
 import Script from 'next/script';
@@ -20,7 +21,7 @@ import FlyerPreview from '@/components/FlyerPreview';
 import Gallery from '@/components/Gallery';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.vanlearn.com'),
+  metadataBase: new URL('https://vanlearn.com'),
 
   title: '2026 Langley Summer Camp | Art, AI Robotics & Chess | VanLearn Education',
   description:
@@ -276,7 +277,7 @@ const EXPERIENCE_ITEMS = [
 
 export default function Camp() {
   return (
-    <div className="min-h-screen bg-[#fff9f4]">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       <Header />
 
       <section className="relative min-h-[610px] w-full overflow-hidden">
@@ -300,10 +301,10 @@ export default function Camp() {
         </div>
         <div className="relative z-10 flex min-h-[610px] flex-col justify-center px-6 py-24 text-white">
           <div className="mx-auto w-full max-w-[1120px]">
-            <p className="mb-4 inline-flex rounded-full bg-[#ffe9dc] px-4 py-2 text-sm font-bold uppercase tracking-[0.12em] text-[#b35042] shadow-sm">
+            <p className="mb-4 inline-flex rounded-full bg-[#FFF4F4] px-4 py-2 text-sm font-bold uppercase tracking-[0.12em] text-[#B71C1C] shadow-sm">
               Registration Now Open
             </p>
-            <h1 className="max-w-4xl text-4xl font-extrabold leading-tight tracking-tight drop-shadow md:text-6xl">
+            <h1 className="max-w-4xl text-4xl md:text-5xl font-bold leading-tight tracking-tight drop-shadow">
               2026 VanLearn International Education Summer Camp
             </h1>
             <p className="mt-6 max-w-2xl text-lg font-medium leading-relaxed text-white/90 md:text-xl">
@@ -316,13 +317,13 @@ export default function Camp() {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
                 href="#programs"
-                className="inline-flex items-center justify-center rounded-full bg-white px-7 py-3 text-sm font-bold text-slate-950 shadow-sm transition hover:-translate-y-0.5 hover:bg-[#fff4f0]"
+                className="inline-flex items-center justify-center rounded-full bg-white px-8 py-3 font-semibold text-[#B71C1C] shadow-sm transition-colors hover:bg-[#FFF4F4]"
               >
                 View Camp Options
               </a>
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center rounded-full border border-white/80 bg-[#d9695c] px-7 py-3 text-sm font-bold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[#c45648]"
+                className="inline-flex items-center justify-center rounded-full bg-[#B71C1C] px-8 py-3 font-semibold text-white shadow-sm transition-colors hover:bg-[#E53935]"
               >
                 Register Now
               </a>
@@ -339,7 +340,7 @@ export default function Camp() {
                 return (
                   <div
                     key={track.label}
-                    className="flex items-center gap-3 rounded-2xl bg-white/90 p-3 text-slate-950 shadow-sm"
+                    className="flex items-center gap-3 rounded-2xl bg-white/90 p-3 text-gray-900 shadow-sm"
                   >
                     <div className={`flex h-10 w-10 items-center justify-center rounded-xl ${iconTones[idx]}`}>
                       <Icon className="h-5 w-5" aria-hidden="true" />
@@ -354,7 +355,7 @@ export default function Camp() {
       </section>
 
       <section className="bg-white">
-        <div className="mx-auto grid max-w-[1120px] gap-6 px-6 py-12 md:grid-cols-4">
+        <div className="mx-auto grid max-w-[1120px] gap-6 px-6 py-16 md:grid-cols-4">
           {QUICK_FACTS.map(item => (
             <div key={item.label} className={`rounded-2xl border p-5 shadow-sm ${item.tone}`}>
               <p className="text-xs font-bold uppercase tracking-[0.16em] opacity-75">{item.label}</p>
@@ -367,11 +368,11 @@ export default function Camp() {
       <section className="mx-auto max-w-[1120px] px-6 py-16">
         <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#b35042]">Course Highlights</p>
-            <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-950 md:text-5xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#E53935]">Course Highlights</p>
+            <h2 className="mt-3 text-3xl md:text-4xl font-bold text-[#B71C1C] tracking-tight">
               Built for active learning and steady growth
             </h2>
-            <p className="mt-5 text-base leading-relaxed text-slate-600 md:text-lg">
+            <p className="mt-5 text-base leading-relaxed text-gray-600 md:text-lg">
               Each camp combines interest-based learning with patient instruction, giving students room to explore,
               practice, and build confidence in a supportive environment.
             </p>
@@ -384,8 +385,8 @@ export default function Camp() {
               return (
                 <div key={highlight.title} className={`rounded-2xl border p-5 ${highlight.tone}`}>
                   <Icon className="h-7 w-7" aria-hidden="true" />
-                  <h3 className="mt-4 text-lg font-bold text-slate-950">{highlight.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-slate-700">{highlight.desc}</p>
+                  <h3 className="mt-4 text-lg font-bold text-gray-900">{highlight.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-gray-700">{highlight.desc}</p>
                 </div>
               );
             })}
@@ -396,8 +397,8 @@ export default function Camp() {
       <section id="programs" className="bg-white px-6 py-16">
         <div className="mx-auto max-w-[1120px]">
           <div className="max-w-3xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#b35042]">3 Popular Themed Camps</p>
-            <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-950 md:text-5xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#E53935]">3 Popular Themed Camps</p>
+            <h2 className="mt-3 text-3xl md:text-4xl font-bold text-[#B71C1C] tracking-tight">
               Choose the camp path that fits your child
             </h2>
           </div>
@@ -409,7 +410,7 @@ export default function Camp() {
               return (
                 <article
                   key={program.title}
-                  className={`overflow-hidden rounded-2xl border text-slate-900 shadow-sm ${program.borderTone} ${program.cardTone}`}
+                  className={`overflow-hidden rounded-2xl border text-gray-900 shadow-sm ${program.borderTone} ${program.cardTone}`}
                 >
                   <div className={`h-2 ${program.topTone}`} />
                   <div className="p-6">
@@ -418,28 +419,28 @@ export default function Camp() {
                       <Icon className="h-6 w-6" aria-hidden="true" />
                     </div>
                     <h3 className={`mt-5 text-xl font-bold leading-tight ${program.accent}`}>{program.title}</h3>
-                    <p className="mt-3 text-sm leading-relaxed text-slate-600">{program.subtitle}</p>
+                    <p className="mt-3 text-sm leading-relaxed text-gray-600">{program.subtitle}</p>
 
                     <dl className="mt-6 space-y-4">
                       {program.details.map(([label, value]) => (
                         <div key={label}>
-                          <dt className="text-sm font-semibold text-slate-950">{label}</dt>
-                          <dd className="mt-1 text-sm leading-relaxed text-slate-600">{value}</dd>
+                          <dt className="text-sm font-semibold text-gray-900">{label}</dt>
+                          <dd className="mt-1 text-sm leading-relaxed text-gray-600">{value}</dd>
                         </div>
                       ))}
                     </dl>
 
                     <div className="mt-6 border-t border-slate-200 pt-5">
-                      <div className="flex items-start gap-3 text-sm text-slate-700">
-                        <Clock className="mt-0.5 h-4 w-4 flex-shrink-0 text-slate-500" aria-hidden="true" />
+                      <div className="flex items-start gap-3 text-sm text-gray-700">
+                        <Clock className="mt-0.5 h-4 w-4 flex-shrink-0 text-gray-500" aria-hidden="true" />
                         <div>
                           {program.times.map(item => (
                             <p key={item}>{item}</p>
                           ))}
                         </div>
                       </div>
-                      <div className="mt-4 flex items-start gap-3 text-sm text-slate-700">
-                        <CalendarDays className="mt-0.5 h-4 w-4 flex-shrink-0 text-slate-500" aria-hidden="true" />
+                      <div className="mt-4 flex items-start gap-3 text-sm text-gray-700">
+                        <CalendarDays className="mt-0.5 h-4 w-4 flex-shrink-0 text-gray-500" aria-hidden="true" />
                         <div>
                           {program.dates.map(item => (
                             <p key={item}>{item}</p>
@@ -459,11 +460,11 @@ export default function Camp() {
         <div className="mx-auto max-w-[1120px]">
           <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr] lg:items-center">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#b35042]">Camp Experience</p>
-              <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-950 md:text-5xl">
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#E53935]">Camp Experience</p>
+              <h2 className="mt-3 text-3xl md:text-4xl font-bold text-[#B71C1C] tracking-tight">
                 Hands-on projects with room to move
               </h2>
-              <p className="mt-5 text-base leading-relaxed text-slate-600 md:text-lg">
+              <p className="mt-5 text-base leading-relaxed text-gray-600 md:text-lg">
                 Students practice creative work, technology thinking, and strategic decision making while staying active
                 through outdoor activities.
               </p>
@@ -476,8 +477,8 @@ export default function Camp() {
                 return (
                   <div key={item.title} className={`rounded-2xl border ${item.border} ${item.background} p-5 shadow-sm`}>
                     <Icon className={`h-7 w-7 ${item.iconColor}`} aria-hidden="true" />
-                    <h3 className="mt-4 text-lg font-bold text-slate-950">{item.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-slate-600">{item.text}</p>
+                    <h3 className="mt-4 text-lg font-bold text-gray-900">{item.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-gray-600">{item.text}</p>
                   </div>
                 );
               })}
@@ -487,9 +488,9 @@ export default function Camp() {
       </section>
 
       <section className="bg-white px-6 py-16">
-        <div className="mx-auto max-w-6xl text-center">
-          <h2 className="text-3xl font-extrabold tracking-tight text-slate-950 md:text-5xl">Summer Camp Moments</h2>
-          <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-slate-600">
+        <div className="mx-auto max-w-[1120px] text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#B71C1C] tracking-tight">Summer Camp Moments</h2>
+          <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-gray-600">
             A look at VanLearn’s creative learning environment and student activities.
           </p>
           <div className="mt-10">
@@ -499,11 +500,7 @@ export default function Camp() {
       </section>
 
       <FooterSection />
-      <div className="border-t border-white/20 py-4">
-        <div className="mx-auto max-w-[1120px] px-6 text-center text-sm text-black/80">
-          © {new Date().getFullYear()} Wenxue International. All rights reserved.
-        </div>
-      </div>
+      <CopyrightBar />
 
       <Script id="camp-jsonld" type="application/ld+json">
         {JSON.stringify({

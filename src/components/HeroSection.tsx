@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 const HeroSection: React.FC = () => {
   return (
-    <div className="relative w-full min-h-[80vh] lg:h-[80vh] overflow-hidden">
+    <div className="relative w-full min-h-[80vh] overflow-hidden">
       {/* 背景视频 */}
       <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover">
         <source src="https://videos.pexels.com/video-files/5200029/5200029-hd_1920_1080_25fps.mp4" type="video/mp4" />
@@ -22,7 +22,7 @@ const HeroSection: React.FC = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
-        className="relative z-10 flex items-center justify-center h-full px-6 sm:px-10"
+        className="relative z-10 flex min-h-[80vh] items-center justify-center px-6 py-16 sm:px-10"
       >
         <div className="max-w-[1120px] w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* 左侧内容 */}
@@ -75,13 +75,13 @@ const HeroSection: React.FC = () => {
             >
               <a
                 href="#contact"
-                className="bg-[#B71C1C] hover:bg-[#A4161A] text-white px-8 py-3 rounded-lg font-semibold shadow-md transition"
+                className="inline-flex items-center justify-center rounded-full bg-[#B71C1C] px-8 py-3 font-semibold text-white shadow-sm transition-colors hover:bg-[#E53935]"
               >
                 Contact Us
               </a>
               <a
                 href="/course-overview"
-                className="border border-white/70 hover:bg-white hover:text-[#B71C1C] px-8 py-3 rounded-lg font-semibold transition text-center"
+                className="inline-flex items-center justify-center rounded-full border border-white/70 px-8 py-3 font-semibold text-white transition-colors hover:bg-white hover:text-[#B71C1C]"
               >
                 View Courses
               </a>

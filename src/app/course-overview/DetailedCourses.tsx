@@ -7,8 +7,7 @@ const courses = [
   {
     category: 'English Programs',
     subtitle: 'Enhance English reading, writing and communication skills.',
-    icon: <BookOpen className="text-red-600" size={52} />,
-    color: 'from-orange-100 to-orange-50',
+    icon: <BookOpen className="text-[#B71C1C]" size={52} />,
     items: [
       {
         title: 'WORDLY WISE 3000 & Grammar',
@@ -40,8 +39,7 @@ const courses = [
   {
     category: 'Secondary Languages',
     subtitle: 'Build global communication skills through multilingual learning.',
-    icon: <Languages className="text-red-600" size={52} />,
-    color: 'from-blue-100 to-blue-50',
+    icon: <Languages className="text-[#B71C1C]" size={52} />,
     items: [
       {
         title: 'Chinese Language',
@@ -63,8 +61,7 @@ const courses = [
   {
     category: 'Math & Science Programs (AP/IB)',
     subtitle: 'Foster logical thinking and problem-solving through math and science courses.',
-    icon: <Sigma className="text-red-600" size={52} />,
-    color: 'from-green-100 to-green-50',
+    icon: <Sigma className="text-[#B71C1C]" size={52} />,
     items: [
       {
         title: 'Mathematics Tutoring',
@@ -86,8 +83,7 @@ const courses = [
   {
     category: 'Arts & Chess',
     subtitle: 'Cultivate creativity, music appreciation, and strategic thinking.',
-    icon: <Palette className="text-red-600" size={52} />,
-    color: 'from-purple-100 to-purple-50',
+    icon: <Palette className="text-[#B71C1C]" size={52} />,
     items: [
       {
         title: 'Piano & Guzheng',
@@ -126,8 +122,8 @@ const courses = [
 export default function CoursesSection() {
   const router = useRouter();
   return (
-    <section className="bg-gray-50 pt-8 pb-16 text-gray-800">
-      <div className="max-w-7xl mx-auto px-6 space-y-20">
+    <section className="bg-gray-50 py-16 text-gray-800">
+      <div className="max-w-[1120px] mx-auto px-6 space-y-20">
         {courses.map((section, idx) => (
           <div key={idx} className="space-y-6">
             {/* === Section Header === */}
@@ -136,7 +132,7 @@ export default function CoursesSection() {
                 <div className="flex items-center gap-4">
                   <div>{section.icon}</div>
                   <div className="flex flex-col">
-                    <h2 className="text-2xl md:text-3xl font-bold text-slate-700">{section.category}</h2>
+                    <h2 className="text-2xl md:text-3xl font-bold text-[#B71C1C]">{section.category}</h2>
                     <p className="text-sm text-gray-500 mt-1">{section.subtitle}</p>
                   </div>
                 </div>

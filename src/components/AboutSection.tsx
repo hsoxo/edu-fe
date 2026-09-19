@@ -22,14 +22,14 @@ const AboutSection: React.FC = () => {
   return (
     <section className="bg-gradient-to-b from-white to-[#FFF8F7] pt-16 pb-20 overflow-hidden">
       <motion.div
-        className="max-w-[1120px] mx-auto px-4 grid lg:grid-cols-2 gap-14 items-center"
+        className="max-w-[1120px] mx-auto px-6 grid lg:grid-cols-2 gap-14 items-center"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
       >
         {/* 左侧文字内容 */}
         <motion.div custom={0} variants={fadeInUp}>
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#B71C1C]">About VanLearn Education</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-[#B71C1C] mb-6">About VanLearn Education</h2>
 
           <p className="text-gray-700 leading-relaxed mb-10 text-[17px]">
             VanLearn International is a professional education institute specializing in international programs. We are

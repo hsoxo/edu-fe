@@ -1,4 +1,5 @@
 import FooterSection from '@/components/FooterSection';
+import CopyrightBar from '@/components/CopyrightBar';
 import Header from '@/components/Header';
 import Image from 'next/image';
 import { BookOpen, Heart, Lightbulb, Palette, Users } from 'lucide-react';
@@ -9,7 +10,7 @@ import { LATITUDE, LONGITUDE } from '@/data/constants';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.vanlearn.ca'),
+  metadataBase: new URL('https://vanlearn.com'),
 
   title: 'After School Programs in Langley | Willoughby & Walnut Grove | VanLearn Education',
   description:
@@ -82,7 +83,6 @@ export const metadata: Metadata = {
 export default function AfterSchool() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-      <title>After School Programs in Willoughby & Walnut Grove | Langley | VanLearn Education</title>
 
       <Header />
 
@@ -97,7 +97,7 @@ export default function AfterSchool() {
             priority
           />
           <div className="absolute inset-0 bg-black/45 flex flex-col justify-center items-center text-center text-white px-6">
-            <h1 className="text-5xl md:text-6xl font-bold mb-4 drop-shadow-lg">After School Programs in Langley</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 drop-shadow-lg">After School Programs in Langley</h1>
 
             <p className="max-w-3xl text-lg md:text-xl text-gray-100 mb-6 leading-relaxed">
               Proudly serving families in <strong>Willoughby</strong> and <strong>Walnut Grove</strong> — supporting
@@ -109,7 +109,7 @@ export default function AfterSchool() {
 
             <a
               href="#contact"
-              className="bg-[#E23E3E] text-white px-8 py-3 rounded-full text-sm md:text-base font-semibold hover:bg-[#c92d2d] transition shadow-md"
+              className="inline-flex items-center justify-center rounded-full bg-[#B71C1C] px-8 py-3 font-semibold text-white shadow-sm transition-colors hover:bg-[#E53935]"
             >
               Contact Us
             </a>
@@ -117,10 +117,10 @@ export default function AfterSchool() {
         </section>
 
         {/* ===== Overview Section ===== */}
-        <section className="max-w-6xl mx-auto py-16 px-6 bg-gray-50">
+        <section className="max-w-[1120px] mx-auto py-16 px-6 bg-gray-50">
           {/* Section 标题 */}
           <div className="text-center mb-14">
-            <h2 className="text-4xl font-bold text-[#B71C1C] mb-4">Comprehensive After-School Learning</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#B71C1C] mb-4">Comprehensive After-School Learning</h2>
             <p className="text-gray-700 max-w-3xl mx-auto leading-relaxed text-lg">
               Our after-school programs help students grow in a supportive, structured, and fun environment beyond
               regular school hours.
@@ -200,9 +200,9 @@ export default function AfterSchool() {
         </section>
 
         <section id="benefits" className="bg-white py-20">
-          <div className="max-w-6xl mx-auto px-6 text-center">
+          <div className="max-w-[1120px] mx-auto px-6 text-center">
             {/* Section 标题 */}
-            <h2 className="text-4xl font-bold text-[#B71C1C] mb-12">Why Choose VanLearn After School?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#B71C1C] mb-12">Why Choose VanLearn After School?</h2>
 
             {/* 四个亮点 */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -253,8 +253,8 @@ export default function AfterSchool() {
 
         {/* ===== Teachers Section ===== */}
         <section className="bg-gray-50 py-16">
-          <div className="max-w-6xl mx-auto px-6 text-center">
-            <h2 className="text-4xl font-bold text-[#B71C1C] mb-12">Meet Our Teachers</h2>
+          <div className="max-w-[1120px] mx-auto px-6 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#B71C1C] mb-12">Meet Our Teachers</h2>
 
             <p className="text-gray-600 max-w-3xl mx-auto mb-12">
               Our dedicated and experienced educators provide personalized guidance, ensuring every student feels
@@ -305,25 +305,21 @@ export default function AfterSchool() {
         </section>
 
         {/* ===== CTA Section ===== */}
-        <section className="py-14 text-center">
+        <section className="py-16 text-center">
           <h2 className="text-2xl font-bold mb-3 text-[#B71C1C]">Ready to experience VanLearn After School Support?</h2>
           <p className="text-sm mb-6">
             Give your child a supportive, enriching environment that builds confidence and lifelong learning habits.
           </p>
           <a
             href="#contact"
-            className="px-6 py-3 rounded-full font-semibold text-sm transition bg-red-600 hover:bg-red-700 text-white"
+            className="inline-flex items-center justify-center rounded-full bg-[#B71C1C] px-8 py-3 font-semibold text-white shadow-sm transition-colors hover:bg-[#E53935]"
           >
             Contact Us
           </a>
         </section>
       </div>
       <FooterSection />
-      <div className="border-t border-white/20 py-4">
-        <div className="max-w-[1120px] mx-auto px-6 text-center text-sm text-black/80">
-          © {new Date().getFullYear()} Wenxue International. All rights reserved.
-        </div>
-      </div>
+      <CopyrightBar />
 
       <Script id="after-school-jsonld" type="application/ld+json">
         {JSON.stringify({

@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.vanlearn.com'),
+  metadataBase: new URL('https://vanlearn.com'),
 
   title: {
     default: 'VanLearn Education | Academic & Language Programs in Langley & Burnaby',

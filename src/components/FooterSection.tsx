@@ -109,7 +109,7 @@ const FooterSection: React.FC = () => {
         <div className="relative">
           {loading && (
             <div className="absolute inset-0 bg-white/80 flex items-center justify-center z-10 rounded-lg">
-              <div className="w-10 h-10 border-4 border-slate-600 border-t-transparent rounded-full animate-spin"></div>
+              <div className="w-10 h-10 border-4 border-[#B71C1C] border-t-transparent rounded-full animate-spin"></div>
             </div>
           )}
 
@@ -119,7 +119,7 @@ const FooterSection: React.FC = () => {
             {/* 姓名 */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
-                Name <span className="text-slate-500">*</span>
+                Name <span className="text-[#E53935]">*</span>
               </label>
               <input
                 type="text"
@@ -127,13 +127,13 @@ const FooterSection: React.FC = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full border border-gray-300 rounded px-3 py-2 focus:ring-emerald-500 focus:border-emerald-500"
+                className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-[#E53935] focus:border-[#E53935]"
               />
             </div>
 
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
-                Email <span className="text-slate-500">*</span>
+                Email <span className="text-[#E53935]">*</span>
               </label>
               <input
                 type="email"
@@ -141,20 +141,20 @@ const FooterSection: React.FC = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full border border-gray-300 rounded px-3 py-2 focus:ring-emerald-500 focus:border-emerald-500"
+                className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-[#E53935] focus:border-[#E53935]"
               />
             </div>
 
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
-                Phone <span className="text-slate-500">*</span>
+                Phone <span className="text-[#E53935]">*</span>
               </label>
               <input
                 type="tel"
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                className="w-full border border-gray-300 rounded px-3 py-2 focus:ring-emerald-500 focus:border-emerald-500"
+                className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-[#E53935] focus:border-[#E53935]"
               />
             </div>
 
@@ -166,7 +166,7 @@ const FooterSection: React.FC = () => {
                 value={formData.message}
                 onChange={handleChange}
                 rows={3}
-                className="w-full border border-gray-300 rounded px-3 py-2 focus:ring-emerald-500 focus:border-emerald-500"
+                className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-[#E53935] focus:border-[#E53935]"
               />
             </div>
 
@@ -183,7 +183,7 @@ const FooterSection: React.FC = () => {
               <button
                 type="submit"
                 disabled={loading || !recaptchaSiteKey}
-                className="w-full bg-slate-600 hover:bg-slate-700 disabled:bg-slate-400 text-white px-6 py-3 rounded-lg font-semibold shadow transition"
+                className="w-full rounded-full bg-[#B71C1C] px-6 py-3 font-semibold text-white shadow-sm transition-colors hover:bg-[#E53935] disabled:bg-gray-400"
               >
                 {loading ? 'Submitting...' : 'Submit'}
               </button>

@@ -1,4 +1,5 @@
 import FooterSection from '@/components/FooterSection';
+import CopyrightBar from '@/components/CopyrightBar';
 import Header from '@/components/Header';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -25,7 +26,7 @@ export default function Home() {
 
           <div>
             {/* 姓名 + 职位 */}
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-700 mb-1">Jody Wang</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-1">Jody Wang</h2>
             <p className="text-lg text-gray-600 font-medium mb-8">Founder</p>
 
             {/* 简介条目（列表形式） */}
@@ -37,7 +38,7 @@ export default function Home() {
               </li>
               <li>
                 Founder and Director of
-                <span className="font-semibold text-slate-900"> Vanlearn International Education</span>, recognized for
+                <span className="font-semibold text-gray-900"> Vanlearn International Education</span>, recognized for
                 excellence in language and academic programs
               </li>
               <li>
@@ -55,7 +56,7 @@ export default function Home() {
         <div className="max-w-[1120px] mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Text */}
           <div className="max-w-[600px]">
-            <h2 className="text-4xl font-bold text-slate-800 mb-1 tracking-tight">Stephen Ni</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-1">Stephen Ni</h2>
             <p className="text-lg text-gray-500 font-medium mb-6">Founder</p>
 
             <ul className="list-disc list-outside pl-6 space-y-3 text-[18px] text-gray-800 leading-[1.6] mb-6">
@@ -71,7 +72,7 @@ export default function Home() {
             </ul>
 
             <div>
-              <h3 className="text-lg font-semibold text-slate-700 mb-2">Specialties:</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Specialties:</h3>
               <ul className="list-disc list-outside pl-6 space-y-2 text-[17px] text-gray-700 leading-[1.6]">
                 <li>IELTS & TOEFL — Foundation, Intensive, and Advanced Preparation</li>
                 <li>Adult ESL and Young Learner EAL Programs</li>
@@ -113,11 +114,7 @@ export default function Home() {
       </section>
 
       <FooterSection />
-      <div className="border-t border-white/20 py-4">
-        <div className="max-w-[1120px] mx-auto px-6 text-center text-sm text-black/80">
-          © {new Date().getFullYear()} Wenxue International. All rights reserved.
-        </div>
-      </div>
+      <CopyrightBar />
     </div>
   );
 }

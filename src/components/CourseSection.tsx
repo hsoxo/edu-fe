@@ -48,7 +48,7 @@ const CoursesSection: React.FC = () => {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-48 bg-[radial-gradient(ellipse_at_center,_rgba(229,57,53,0.07)_0%,_transparent_70%)]" />
 
       <motion.div
-        className="max-w-[1120px] mx-auto px-4 relative z-10"
+        className="max-w-[1120px] mx-auto px-6 relative z-10"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
@@ -61,7 +61,7 @@ const CoursesSection: React.FC = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#B71C1C]">Premium Course System</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-[#B71C1C] mb-4">Premium Course System</h2>
           <p className="text-lg text-gray-700">Four core domains designed to enhance students’ all-round abilities</p>
         </motion.div>
 

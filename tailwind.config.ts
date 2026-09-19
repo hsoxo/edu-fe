@@ -11,7 +11,18 @@ export default {
 		extend: {
 			colors: {
 				surface: "#ffffff",
-				"surface-elevated": "oklab(92% 0 0 / 1) mix(#0e9f6e 8%)", // 不能直接写 color-mix，用近似色
+				"surface-elevated": "#f8fafc",
+
+				// 品牌色：全站唯一来源，页面里不要再写裸 hex
+				brand: {
+					DEFAULT: '#B71C1C', // 主色：标题、主按钮
+					light: '#E53935', // 亮红：hover、强调文字
+					dark: '#A4161A', // 深红：按钮 active
+					soft: '#E57373', // 柔红：列表圆点等装饰
+					tint: '#FFF4F4', // 浅底：图标底色
+					wash: '#FFF8F7', // 更浅的区块底色
+					line: '#FFE5E5' // 卡片描边
+				},
 
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',

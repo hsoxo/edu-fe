@@ -1,4 +1,5 @@
 import FooterSection from '@/components/FooterSection';
+import CopyrightBar from '@/components/CopyrightBar';
 import Header from '@/components/Header';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -6,7 +7,7 @@ import type { Metadata } from 'next';
 import { Award, Medal, Sparkles, Trophy } from 'lucide-react';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.vanlearn.com'),
+  metadataBase: new URL('https://vanlearn.com'),
 
   title: 'Awards & Achievements | VanLearn International Education',
   description:
@@ -24,14 +25,14 @@ export const metadata: Metadata = {
   ],
 
   alternates: {
-    canonical: '/awards'
+    canonical: 'https://vanlearn.com/awards'
   },
 
   openGraph: {
     title: 'Awards & Achievements | VanLearn International Education',
     description:
       'Recognized for excellence in education, innovation, and community service — the awards our students and programs have earned.',
-    url: '/awards',
+    url: 'https://vanlearn.com/awards',
     type: 'website'
   }
 };
@@ -102,7 +103,7 @@ export default function AwardsPage() {
             <Award className="w-4 h-4" />
             Recognized Excellence
           </span>
-          <h1 className="text-3xl md:text-5xl font-bold text-[#B71C1C] mb-5">Our Awards &amp; Achievements</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-[#B71C1C] mb-5">Our Awards &amp; Achievements</h1>
           <p className="text-gray-700 text-lg max-w-2xl mx-auto">
             Vanlearn International has been recognized for excellence in education, innovation, and community service.
             Each award represents our commitment to helping students reach their full potential.
@@ -144,7 +145,7 @@ export default function AwardsPage() {
                 <span className="inline-flex items-center gap-2 rounded-full bg-[#FFF0F0] text-[#B71C1C] text-xs font-semibold uppercase tracking-wide px-3 py-1 mb-4">
                   Behind the Results
                 </span>
-                <h2 className="text-2xl md:text-3xl font-bold text-[#B71C1C] mb-1">Nick Ni</h2>
+                <h2 className="text-3xl md:text-4xl font-bold text-[#B71C1C] mb-1">Nick Ni</h2>
                 <p className="text-gray-500 font-medium mb-5">IELTS Speaking &amp; Listening Instructor</p>
 
                 <div className="flex flex-wrap gap-2 mb-6">
@@ -190,7 +191,7 @@ export default function AwardsPage() {
             {AWARDS.map((award, idx) => (
               <div
                 key={idx}
-                className="bg-white rounded-xl shadow-sm hover:shadow-md border border-[#FFE5E5] overflow-hidden transition-all"
+                className="bg-white rounded-2xl shadow-sm hover:shadow-md border border-[#FFE5E5] overflow-hidden transition-all"
               >
                 <div className="relative w-full h-56 bg-gray-100">
                   <Image src={award.image} alt={award.title} fill className="object-cover" />
@@ -232,11 +233,7 @@ export default function AwardsPage() {
       </section>
 
       <FooterSection />
-      <div className="border-t border-white/20 py-4">
-        <div className="max-w-[1120px] mx-auto px-6 text-center text-sm text-black/80">
-          © {new Date().getFullYear()} Wenxue International. All rights reserved.
-        </div>
-      </div>
+      <CopyrightBar />
     </div>
   );
 }

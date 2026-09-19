@@ -132,7 +132,7 @@ const Header = () => {
             <div key={item.label}>
               <Link
                 href={item.href}
-                className="block px-2 py-4 text-lg sm:text-xl font-semibold text-gray-700 hover:bg-slate-100 hover:text-slate-600 transition-colors"
+                className="block px-2 py-4 text-lg sm:text-xl font-semibold text-gray-700 hover:bg-[#FFF4F4] hover:text-[#E53935] transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 {item.label}
