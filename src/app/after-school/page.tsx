@@ -266,7 +266,6 @@ export default function AfterSchool() {
                 {
                   name: 'Ms. Zoe Zhong',
                   image: '/images/zoe-zhong.jpg',
-                  position: '50% 10%',
                   desc: `With over 8 years of experience teaching ESL in elementary schools, she is a senior educator
                       and experienced homeroom teacher who loves creating warm, engaging learning experiences for
                       children. With training in cooperative learning, gamification, curiosity-driven learning, and
@@ -276,7 +275,6 @@ export default function AfterSchool() {
                 {
                   name: 'Ms. Hera Yu',
                   image: '/images/hera.jpg',
-                  position: 'center',
                   desc: `With over 10 years of experience, Ms. Yu specializes in watercolor, anime illustration, and
                       creative design. She teaches children aged 4–15 and leads the After School Program, inspiring
                       young artists to explore creativity and confidence through art.`
@@ -286,14 +284,13 @@ export default function AfterSchool() {
                   key={i}
                   className="bg-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden"
                 >
-                  <div className="relative w-full h-64 overflow-hidden">
+                  <div className="relative w-full aspect-[3/2] overflow-hidden bg-gray-100">
                     <Image
                       src={t.image}
                       alt={t.name}
-                      width={400}
-                      height={400}
-                      style={{ objectPosition: t.position }}
-                      className="object-cover w-full h-full"
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 540px"
+                      className="object-cover"
                     />
                   </div>
                   <div className="p-6 text-left">

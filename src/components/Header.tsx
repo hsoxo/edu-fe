@@ -9,7 +9,8 @@ const NAV_ITEMS = [
   { label: 'Courses', href: '/course-overview' },
   { label: 'After-School', href: '/after-school' },
   { label: 'Camp', href: '/camp' },
-  { label: 'Education Planning', href: '/education-planning' },
+  { label: 'Consultation', href: '/education-planning' },
+  { label: 'Awards', href: '/awards' },
   {
     label: 'About Us',
     href: '/about-us',
@@ -56,12 +57,12 @@ const Header = () => {
           </div>
 
           {/* Desktop Nav */}
-          <div className="hidden lg:flex items-center text-gray-600 whitespace-nowrap text-lg">
+          <div className="hidden lg:flex items-center text-gray-600 whitespace-nowrap text-base xl:text-lg">
             {NAV_ITEMS.map(item => (
               <div key={item.label} className="relative group">
                 <Link
                   href={item.href}
-                  className="relative font-semibold h-40 px-3 flex items-center text-gray-700 hover:text-[#E53935] transition-colors"
+                  className="relative font-semibold h-40 px-2 xl:px-3 flex items-center text-gray-700 hover:text-[#E53935] transition-colors"
                 >
                   <span>{item.label}</span>
                   {/* 下划线 hover 动效 */}
@@ -123,19 +124,37 @@ const Header = () => {
       {/* Mobile Menu */}
       <div
         className={`absolute top-40 left-0 w-full bg-white shadow-lg z-40 overflow-hidden transform transition-all duration-300 ${
-          isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+          isOpen ? 'max-h-[700px] opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
         <div className="flex flex-col divide-y divide-gray-200 px-4">
           {NAV_ITEMS.map(item => (
-            <Link
-              key={item.label}
-              href={item.href}
-              className="block px-2 py-4 text-lg sm:text-xl font-semibold text-gray-700 hover:bg-slate-100 hover:text-slate-600 transition-colors"
-              onClick={() => setIsOpen(false)}
-            >
-              {item.label}
-            </Link>
+            <div key={item.label}>
+              <Link
+                href={item.href}
+                className="block px-2 py-4 text-lg sm:text-xl font-semibold text-gray-700 hover:bg-slate-100 hover:text-slate-600 transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                {item.label}
+              </Link>
+
+              {item.subItems && item.subItems.length > 0 && (
+                <div className="pb-2">
+                  {item.subItems
+                    .filter(sub => sub.href !== item.href)
+                    .map(sub => (
+                      <Link
+                        key={sub.label}
+                        href={sub.href}
+                        className="block px-5 py-2.5 text-base text-gray-600 hover:text-[#E53935] transition-colors"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {sub.label}
+                      </Link>
+                    ))}
+                </div>
+              )}
+            </div>
           ))}
         </div>
       </div>

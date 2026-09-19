@@ -1,6 +1,7 @@
 import FooterSection from '@/components/FooterSection';
 import Header from '@/components/Header';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -97,59 +98,17 @@ export default function Home() {
       {/* Our Awards Section */}
       <section className="py-20 bg-gradient-to-b from-[#FFF8F7] via-white to-[#F9FBFF]">
         <div className="max-w-[1120px] mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#B71C1C] mb-4">Our Awards & Achievements</h2>
-          <p className="text-gray-700 max-w-2xl mx-auto mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#B71C1C] mb-4">Our Awards &amp; Achievements</h2>
+          <p className="text-gray-700 max-w-2xl mx-auto mb-8">
             Vanlearn International has been recognized for excellence in education, innovation, and community service.
             Each award represents our commitment to helping students reach their full potential.
           </p>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-            {[
-              {
-                image: '/images/organization-award.jpg',
-                title: 'Vancouver Stone Painting Contest',
-                desc: 'We received the Organization Award, and our students received the 2nd, 5th, and 7th place prizes.'
-              },
-              {
-                image: '/images/award2.jpg',
-                title: 'Fish Art Contest',
-                desc: 'One of our students won 1st place in the Fish Art Contest.'
-              },
-              {
-                image: '/images/award3.jpg',
-                title: 'Canada Youth Visual Art Contest',
-                desc: 'One of our students received the Outstanding Artwork Award in the Canada Youth Visual Art Contest.'
-              },
-              {
-                image: '/images/award4.jpg',
-                title: 'Power Speaking Contest',
-                desc: 'Our students achieved 1st, 2nd, and 3rd place in the Power Speaking Contest.'
-              },
-              {
-                image: '/images/award5.jpg',
-                title: 'Leaders of Tomorrow: Impromptu Speech Competition',
-                desc: 'One of our students from our program won 1st place. One of our students was invited to speak at the TEDx Youth event.'
-              },
-              {
-                image: '/images/award6.png',
-                title: 'IELTS',
-                desc: 'Our students made significant progress after studying for 10-20 lessons.'
-              }
-            ].map((award, idx) => (
-              <div
-                key={idx}
-                className="bg-white rounded-xl shadow-sm hover:shadow-md border border-[#FFE5E5] overflow-hidden transition-all"
-              >
-                <div className="relative w-full h-56 bg-gray-100">
-                  <Image src={award.image} alt={award.title} fill className="object-cover" />
-                </div>
-                <div className="p-6 text-left">
-                  <h3 className="text-lg font-semibold text-[#B71C1C] mb-2">{award.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{award.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+          <Link
+            href="/awards"
+            className="inline-flex items-center justify-center rounded-full bg-[#B71C1C] text-white font-semibold px-8 py-3 hover:bg-[#E53935] transition-colors"
+          >
+            See Our Awards &amp; Achievements
+          </Link>
         </div>
       </section>
 
